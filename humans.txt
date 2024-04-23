@@ -1,0 +1,21 @@
+//<link rel="author" href="humans.txt">
+
+/* TEAM */
+                         
+Role: Name, company      
+Site: email, link to a contact form, etc.
+GitHub:                           
+Location: City, Country.
+
+[...]
+													
+/* THANKS */
+						
+Name: name or url
+[...]
+                                                   
+/* SITE */
+
+Built with                            
+Components:
+Software:
