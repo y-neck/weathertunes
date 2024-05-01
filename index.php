@@ -4,3 +4,4 @@
     <p class="text-9xl">test tailwind</p>
     it f*cking works
 </body>
+<?php require_once './frontend/components/footer.php'; ?>
