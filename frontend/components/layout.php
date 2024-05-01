@@ -1,18 +1,23 @@
 <head>
-    <meta charset="utf-8">
     <!--Default character set: https://www.w3schools.com/html/html_charset.asp-->
-    <title>Weathertunes</title>
+    <meta charset="utf-8">
     <!--Tab title-->
-    <meta name="description" content="">
+    <title>Weathertunes</title>
     <!--Description of web page-->
-    <meta name="keywords" content="weather, tunes, music, spotify, api">
+    <meta name="description" content="">
     <!--define keywords for search engines-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="weather, tunes, music, spotify, api">
     <!--Responsive web design:https://www.w3schools.com/css/css_rwd_viewport.asp-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="">
     <!--TODO: Tab image-->
+    <link rel="icon" href="">
 
+    <!-- Tailwind Config -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!--<link rel="stylesheet" href=".css">    <!--TODO: Insert CSS file-->
+
+    <!-- Font files -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
 </head>
