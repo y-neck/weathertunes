@@ -13,5 +13,6 @@
     <link rel="icon" href="">
     <!--TODO: Tab image-->
 
+    <script src="https://cdn.tailwindcss.com"></script>
     <!--<link rel="stylesheet" href=".css">    <!--TODO: Insert CSS file-->
 </head>
