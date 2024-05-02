@@ -1,7 +1,9 @@
-<?php require_once './frontend/components/layout.php'; ?>
+<?php
+require_once './frontend/components/layout.php';
+require_once './backend/db/db.config.php';
+?>
 
 <body>
-    <p class="text-9xl">test tailwind</p>
-    it f*cking works
+
 </body>
 <?php require_once './frontend/components/footer.php'; ?>
