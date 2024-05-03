@@ -5,9 +5,9 @@ require_once './backend/db/db.config.php';
 
 <body>
 <main class="p-[3%]">
-    <div id="main-box" class="flex flex-col gap-1 border border-gray-200 w-full">
-        <div id="top-box" class="flex flex-row h-[20vh] gap-1 w-full">
-            <div id="status-box" class="grid grid-rows-2 grid-cols-2 border border-gray-200 gap-1 w-full">
+    <div id="main-box" class="flex flex-col gap-1 border border-gray-200 aspect-[3/2] w-full">
+        <div id="top-box" class="flex flex-row gap-1 w-full">
+            <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] border border-gray-200 gap-1 w-full">
                 <div id="weather-desc-box" class="col-span-2 rounded-lg bg-gray-200">Sonnig</div>
                 <div id="weather-icon-box" class="bg-gray-300 rounded-lg">Icon Wetter</div>
                 <div id="flag-icon-box" class="bg-gray-300 rounded-lg">Flag</div>
