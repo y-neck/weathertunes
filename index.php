@@ -4,19 +4,19 @@ require_once './backend/db/db.config.php';
 ?>
 
 <body>
-<main class="px-[6%] pt-[2%]">
-    <div id="main-box" class="flex flex-col gap-3 border border-gray-200 aspect-[3/2] w-full">
+<main class="px-[6%] font-bold pt-[2%]">
+    <div id="main-box" class="flex flex-col gap-3 aspect-[3/2] w-full">
         <div id="top-box" class="flex flex-row gap-3 w-full">
-            <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] border border-gray-200 gap-3 w-full">
+            <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] gap-3 w-full">
                 <div id="weather-desc-box" class="col-span-2 rounded-lg bg-gray-200">Sonnig</div>
                 <div id="weather-icon-box" class="bg-gray-300 rounded-lg">Icon Wetter</div>
                 <div id="flag-icon-box" class="bg-gray-300 rounded-lg">Flag</div>
             </div>    
-            <div id="temp-box" class="border border-gray-200 bg-gray-300 rounded-lg w-full">temp</div>
+            <div id="temp-box" class="bg-gray-300 rounded-lg w-full">temp</div>
         </div>
         
         <div id="bottom-box" class="flex flex-row h-[10vh] w-full">
-            <div id="play-button" class="border bg-gray-300 border-gray-200 rounded-lg w-full">click play</div>
+            <div id="play-button" class="bg-gray-300 shadow-lg rounded-lg w-full">click play</div>
            
         </div>
     </div>
@@ -25,7 +25,7 @@ require_once './backend/db/db.config.php';
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4VN7J0uq62foOhZndwOegy?utm_source=generator&theme=0" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
     <div id="past-weather-box" class="flex flex-row h-[20vh] w-full">
-            <div id="play-box" class="border bg-gray-300 border-gray-200 rounded-lg w-full">click play</div>
+            <div id="play-box" class="bg-gray-300 rounded-lg w-full">click play</div>
 </main>
 <?php require_once './frontend/components/footer.html'; ?>
 </body>

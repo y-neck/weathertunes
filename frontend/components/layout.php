@@ -15,6 +15,7 @@
 
     <!-- Tailwind Config -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../tailwind.config.js"></script>
 
     <!-- Font files -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
