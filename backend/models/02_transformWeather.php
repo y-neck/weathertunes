@@ -4,8 +4,7 @@ require_once '../models/01_extractWeather.php';
 // print_r($weatherdata);
 reduceWeatherData($weatherdata);
 
-
-print_r($weatherdata);
+//print_r($weatherdata);
 
 
 function reduceWeatherData(&$data)  // Reduce data to relevant values

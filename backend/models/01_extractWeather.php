@@ -1,5 +1,4 @@
 <?php
-require_once '../db/db.config.php';
 
 // define API URL
 $url = 'https://api.open-meteo.com/v1/forecast?latitude=46.9481&longitude=7.4474&current=temperature_2m,is_day,weather_code,wind_speed_10m';
