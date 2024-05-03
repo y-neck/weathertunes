@@ -25,5 +25,5 @@ require_once './backend/db/db.config.php';
         <iframe id="spotify-iframe" src="https://open.spotify.com/embed/track/yourSpotifyTrackID" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
 </main>
-<?php require_once './frontend/components/footer.php'; ?>
+<?php require_once './frontend/components/footer.html'; ?>
 </body> 
