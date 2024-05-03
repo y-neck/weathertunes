@@ -12,7 +12,7 @@ require_once './backend/db/db.config.php';
                 <div id="weather-icon-box" class="bg-gray-300 rounded-lg">Icon Wetter</div>
                 <div id="flag-icon-box" class="bg-gray-300 rounded-lg">Flag</div>
             </div>    
-            <div id="temp-box" class="border border-gray-200 w-full"></div>
+            <div id="temp-box" class="border border-gray-200 bg-gray-300 rounded-lg w-full">temp</div>
         </div>
         
         <div id="bottom-box" class="flex flex-row h-[10vh] gap-1 w-full">
