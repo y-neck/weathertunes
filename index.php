@@ -5,19 +5,19 @@ require_once './backend/db/db.config.php';
 
 <body>
 <main class="p-[3%]">
-    <div id="main-box" class="flex flex-col gap-1 w-full">
+    <div id="main-box" class="flex flex-col gap-1 border border-gray-200 w-full">
         <div id="top-box" class="flex flex-row h-[20vh] gap-1 w-full">
             <div id="status-box" class="grid grid-rows-2 grid-cols-2 border border-gray-200 gap-1 w-full">
-                <div id="weather-desc-box" class="col-span-2 bg-gray-200">Sonnig</div>
-                <div id="weather-icon-box" class="bg-gray-300">Icon Wetter</div>
-                <div id="flag-icon-box" class="bg-gray-300">Flag</div>
+                <div id="weather-desc-box" class="col-span-2 rounded-lg bg-gray-200">Sonnig</div>
+                <div id="weather-icon-box" class="bg-gray-300 rounded-lg">Icon Wetter</div>
+                <div id="flag-icon-box" class="bg-gray-300 rounded-lg">Flag</div>
             </div>    
             <div id="temp-box" class="border border-gray-200 w-full"></div>
         </div>
         
         <div id="bottom-box" class="flex flex-row h-[10vh] gap-1 w-full">
-            <div id="play-box" class="border border-gray-200 w-full">click play</div>
-            <div id="slider-box" class="border border-gray-200 w-full">I'll be bar</div>
+            <div id="play-box" class="border bg-gray-300 border-gray-200 rounded-lg w-full">click play</div>
+            <div id="slider-box" class="border bg-gray-300 border-gray-200 rounded-lg w-full">I'll be bar</div>
         </div>
     </div>
     <!-- Adjusted div for Spotify iframe -->
