@@ -1,0 +1,17 @@
+/* Reference: https: //stackoverflow.com/questions/69150928/how-to-create-multiple-themes-using-tailwind-css */
+
+
+@layer base
+
+/* add layer cascade */
+    {
+    html[data-theme="sonnig"] {
+        /* Color as rgb values */
+        --color-text: 255 255 255;
+        --color-background: 255 181 77;
+        --color-middle: 218 132 11;
+        --color-dark: 191 112 0;
+    }
+
+
+}
