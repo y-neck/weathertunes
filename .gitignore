@@ -7,6 +7,7 @@
 ehthumbs.db
 Thumbs.db
 *.config.php
+*.config.js
 
 # build output
 dist/
