@@ -1,12 +1,10 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-    content: ['./src/**/*.{html,js}'],
+tailwind.config = {
     theme: {
         colors: {
             'sonnig1': '#D9830B',
             'sonnig2': '#BF7000',
             'sonnig3': '#FFB54D',
-            
+
             'wolkig1': '#637A99',
             'wolkig2': '#4B5B73',
             'wolkig3': '#A3B4CC',
@@ -34,7 +32,7 @@ module.exports = {
             'allgemein1': '#F2F2F2',
             'allgemein2': '#1A1A1A',
 
-           
+
         },
         fontFamily: {
             sans: ['Roboto Flex', 'sans-serif'],
@@ -42,7 +40,7 @@ module.exports = {
         extend: {
             boxShadow: {
                 '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
-              }
+            }
         }
     }
 }
