@@ -25,7 +25,7 @@ require_once './backend/db/db.config.php';
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4VN7J0uq62foOhZndwOegy?utm_source=generator&theme=0" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
-    <div id="past-weather-box" class="flex flex-col gap-0 w-full">
+    <div id="past-weather-box" class="flex flex-col gap-0 w-full mb-2">
                 <div id="past-weather-test-box" class="rounded-t-lg h-[10vh] bg-gray-200">Sonnig</div>
                 <div id="past-weather-icon-box" class="rounded-b-lg h-[10vh] bg-gray-300">Icon Wetter</div>
     </div>
