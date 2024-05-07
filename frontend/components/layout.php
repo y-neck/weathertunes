@@ -15,10 +15,31 @@
 
     <!-- Tailwind Config -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../tailwind.config.js"></script>
-
+    <!--     <script src="../styles/tailwind.config.mjs"></script> -->
+    <script>
+        tailwind.config = {
+            theme: {
+                colors: {
+                    text: 'rgb(var(--color-text) / <alpha-value>)',
+                    background: 'rgb(var(--color-background) / <alpha-value>)',
+                    middle: 'rgb(var(--color-middle) / <alpha-value>)',
+                    dark: 'rgb(var(--color-dark) / <alpha-value>)',
+                },
+                fontFamily: {
+                    sans: ['Roboto Flex', 'sans-serif'],
+                },
+                extend: {
+                    boxShadow: {
+                        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
     <!-- Font files -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="frontend/public/styles/themes.css">
 </head>
