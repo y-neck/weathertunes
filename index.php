@@ -10,7 +10,9 @@ require_once './backend/db/db.config.php';
             <div id="top-box" class="flex flex-row gap-3 w-full">
                 <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] gap-1 w-full">
                     <div id="weather-desc-box" class="col-span-2 rounded-lg bg-gray-200">Wetterbeschreibung</div>
-                    <div id="weather-icon-box" class="bg-gray-300 rounded-lg">Icon Wetter</div>
+                    <div id="weather-icon-box" class="bg-gray-300 rounded-lg">
+                        <img src="../frontend/public/images/Icon.svg" alt="">
+                    </div>
                     <div id="flag-icon-box" class="bg-gray-300 rounded-lg">Flag</div>
                 </div>
                 <div id="temp-box" class="bg-gray-300 rounded-lg w-full">temp</div>
