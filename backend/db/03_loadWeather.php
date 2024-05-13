@@ -1,5 +1,5 @@
 <?php
-require_once '../models/02_transformWeather.php';
+require_once '../db/02_transformWeather.php';
 require_once '../db/db.config.php';
 
 $data = [

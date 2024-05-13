@@ -1,5 +1,5 @@
 <?php
-require_once '../models/01_extractWeather.php';
+require_once '../db/01_extractWeather.php';
 
 // print_r($weatherdata);
 reduceWeatherData($weatherdata);
