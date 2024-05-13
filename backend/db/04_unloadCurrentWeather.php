@@ -29,12 +29,12 @@ try {
     $weatherCode = [];
     $windSpeed = [];
 
-    // Loop through the data and add it to the arrays
+    // Loop through the data and assign to variables
     foreach ($weatherdata as $row) {
-        $temperature[] = $row['temperature'];
-        $isDay[] = $row['is_day'];
-        $weatherCode[] = $row['weather_code'];
-        $windSpeed[] = $row['wind_speed'];
+        $temperature = (int)$row['temperature'];    // Convert temperature to integer
+        $isDay = (int)$row['is_day'];
+        $weatherCode = (int)$row['weather_code'];
+        $windSpeed = (int)$row['wind_speed'];
     }
 
     // Prepare array structure
@@ -47,7 +47,7 @@ try {
 
     // Return the array as JSON
     header('Content-Type: application/json');
-    echo json_encode($weather_result);
+    //      echo json_encode($weather_result);
 } catch (PDOException $e) {
     // Log error and throw exception
     error_log("Error connecting to database: " . $e->getMessage());
