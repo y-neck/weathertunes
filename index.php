@@ -9,7 +9,7 @@ require_once './backend/db/db.config.php';
         <div id="main-box" class="flex flex-col gap-3 aspect-[3/2] w-full">
             <div id="top-box" class="flex flex-row gap-3 w-full">
                 <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] gap-1 w-full">
-                    <div id="weather-desc-box" class="col-span-2 rounded-lg bg-gray-200">Sonnig</div>
+                    <div id="weather-desc-box" class="col-span-2 rounded-lg bg-gray-200">Wetterbeschreibung</div>
                     <div id="weather-icon-box" class="bg-gray-300 rounded-lg">Icon Wetter</div>
                     <div id="flag-icon-box" class="bg-gray-300 rounded-lg">Flag</div>
                 </div>
@@ -27,7 +27,7 @@ require_once './backend/db/db.config.php';
         </div>
 
         <div id="past-weather-box" class="flex flex-col gap-0 w-full mb-2">
-            <div id="past-weather-test-box" class="rounded-t-lg h-[10vh] bg-gray-200">Sonnig</div>
+            <div id="past-weather-text-box" class="rounded-t-lg h-[10vh] bg-gray-200">Wetterbeschreibung</div>
             <div id="past-weather-icon-box" class="rounded-b-lg h-[10vh] bg-gray-300">Icon Wetter</div>
         </div>
     </main>
