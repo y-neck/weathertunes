@@ -5,6 +5,13 @@
 
 /* add layer cascade */
     {
+    html[data-theme="fallback"] {
+        --color-text: 0 0 0;
+        --color-background: 255 255 255;
+        --color-middle: 181 181 181;
+        --color-dark: 128 128 128;
+    }
+
     html[data-theme="sonnig"] {
         /* Color as rgb values */
         --color-text: 255 255 255;
@@ -12,6 +19,8 @@
         --color-middle: 218 132 11;
         --color-dark: 191 112 0;
     }
+
+
 
 
 }
