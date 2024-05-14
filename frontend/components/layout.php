@@ -33,20 +33,10 @@
                     sm: '0.8rem',
                     base: '1rem',
                     xl: '2rem',
-                    'moButton': ['2.2rem', {
-                        lineHeight: '2.2rem',
-                        letterSpacing: '-0.005 em',
-                        fontWeight: '500',
-                        fontStretch: "25%",
-                    }],
+                    'moButton': '2.2rem',
                     '3xl': '1.953rem',
                     '4xl': '2.441rem',
-                    'moTemp': ['5rem', {
-                        lineHeight: '5rem',
-                        letterSpacing: '-0.01em',
-                        fontWeight: '250',
-                        fontStretch: "25%",
-                    }],
+                    'moTemp': '5rem',
                 },
                 extend: {
                     boxShadow: {
@@ -63,3 +53,36 @@
 
     <link rel="stylesheet" href="./frontend/public/styles/themes.css">
 </head>
+
+<style>
+    /* Global font styling */
+    * {
+        font-family: 'Roboto Flex', sans-serif;
+        font-variation-settings:
+            "slnt" 0,
+            /* slant */
+            "wdth" 25,
+            /* width */
+            "wght" 250,
+            /* weight */
+            "GRAD" 100,
+            /* gradient */
+            "opsz" 68,
+            /* opticalSize */
+            "XOPQ" 96,
+            /* x-height */
+            "YOPQ" 79,
+            /* y-height */
+            "XTRA" 468,
+            /* x-advance */
+            "YTUC" 712,
+            /* y-advance */
+            "YTLC" 514,
+            /* y-lead */
+            "YTDE" -203,
+            /* y-trail */
+            "YTFI" 738;
+        /* y-extend */
+        letter-spacing: -1;
+    }
+</style>
