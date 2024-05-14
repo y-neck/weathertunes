@@ -1,13 +1,12 @@
 <?php
 // Import db config and current weatherdata
 require_once '../db/db.config.php';
-require_once '../db/04_unloadCurrentWeather.php';
+require '../db/04_unloadCurrentWeather.php';
 
 // print_r($weatherdata);
 
 // Extract weatherCode from $weatherdata
 $weatherCodeValue = isset($weatherCode) ? $weatherCode : null;
-
 
 try {
     // Connect to database
@@ -32,22 +31,24 @@ try {
     }
 
     // Initialize array to hold weatherCodeDescription value
-    // Initialize array to hold weatherCodeDescription value
     $weatherCodeDescription = [];
 
     // Loop through the data and assign to variables
     foreach ($weatherCodeData as $row) {
-        $weatherCodeDescription = $row['weather_description'];
+        $weatherCodeDescription = (string)$row['weather_description'];
     }
 
-    // Array structure
-    $weatherCode_result = [
+    $weather_result = [
+        'temperature' => $temperature,
+        'isDay' => $isDay,
+        'weatherCode' => $weatherCode,
+        'windSpeed' => $windSpeed,
         'weatherCodeDescription' => $weatherCodeDescription
+
     ];
-    print_r($weatherCode_result);
-    // Return the array as JSON
-    // header('Content-Type: application/json');
-    // echo json_encode($weather_result);
+
+    // Print data for debugging
+    echo json_encode($weather_result);
 } catch (PDOException $e) {
     // Log error and throw exception
     error_log("Error connecting to database: " . $e->getMessage());

@@ -37,17 +37,11 @@ try {
         $windSpeed = (int)$row['wind_speed'];
     }
 
-    // Prepare array structure
-    $weather_result = [
-        'temperature' => $temperature,
-        'isDay' => $isDay,
-        'weatherCode' => $weatherCode,
-        'windSpeed' => $windSpeed
-    ];
-
     // Return the array as JSON
     header('Content-Type: application/json');
-    echo json_encode($weather_result);
+
+    // Check
+    // echo json_encode($weather_result);
 } catch (PDOException $e) {
     // Log error and throw exception
     error_log("Error connecting to database: " . $e->getMessage());

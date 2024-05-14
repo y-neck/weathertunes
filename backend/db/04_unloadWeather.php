@@ -11,7 +11,6 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Get data from database
-    // Get data from database
     $stmt = $pdo->prepare("SELECT temperature, is_day, weather_code, wind_speed FROM Weather");
     $stmt->execute();
     $weatherdata = $stmt->fetchAll(PDO::FETCH_ASSOC); // fetch data from database table Weather

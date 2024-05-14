@@ -1,7 +1,6 @@
 // Get data from 04_unloadWeather.js
-const currentWeatherUrl = './backend/db/04_unloadCurrentWeather.php'
 const pastWeatherUrl = './backend/db/04_unloadWeather.php'
-//const weatherCodeUrl = ''
+const mergedWeatherUrl = './backend/db/05_mergeCurrentWeather.php'
 
 // Define html elements
 const weatherDescriptionBox = document.querySelector('#weather-desc-box')
@@ -9,9 +8,9 @@ const weatherIconBox = document.querySelector('#weather-icon-box')
 const windBox = document.querySelector('#flag-icon-box')
 const temperatureBox = document.querySelector('#temp-box')
 
-// Fetch current temperature
+// Fetch current weather values
 try {
-    fetch(currentWeatherUrl)
+    fetch(mergedWeatherUrl)
         .then(response => {
             // Check if the response is successful (status code 200)
             if (!response.ok) {
@@ -24,10 +23,12 @@ try {
         .then(data => {
             //console.log('Current Weather: ', data)
             temperatureBox.innerHTML = `${data.temperature}°C`
+            weatherDescriptionBox.innerHTML = data.weatherCodeDescription;
+
+            //windBox.innerHTML = data.windSpeed;
+            
         })
 }
 catch (error) {
     console.log(error)
 }
-
-// Fetch current weatherCodeDescription
