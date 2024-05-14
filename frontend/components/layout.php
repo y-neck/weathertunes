@@ -24,6 +24,7 @@
                     background: 'rgb(var(--color-background) / <alpha-value>)',
                     middle: 'rgb(var(--color-middle) / <alpha-value>)',
                     dark: 'rgb(var(--color-dark) / <alpha-value>)',
+                    text2: 'rgb(var(--color-text2) / <alpha-value>)',
                 },
                 fontFamily: {
                     sans: ['Roboto Flex', 'sans-serif'],

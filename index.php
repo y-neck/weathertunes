@@ -3,7 +3,7 @@ require_once './frontend/components/layout.php';
 require_once './backend/db/db.config.php';
 ?>
 
-<html lang="de" data-theme="schnee">
+<html lang="de" data-theme="sturm">
 
 <body class="bg-background text-text">
     <main class="px-[6%] font-bold pt-[2%]">

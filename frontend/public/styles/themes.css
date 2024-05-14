@@ -10,46 +10,52 @@
         --color-background: 255 255 255;
         --color-middle: 181 181 181;
         --color-dark: 128 128 128;
+        --color-text2: 242 242 242;
     }
 
     html[data-theme="klar"] { 
         /* Color as rgb values */
-        --color-text: 255 255 255;
+        --color-text: 242 242 242;
         --color-background: 255 181 77;
         --color-middle: 217 132 11;
         --color-dark: 191 112 0;
+        --color-text2: 242 242 242;
     }
 
     html[data-theme="wulche"] { 
         /* Color as rgb values */
-        --color-text: 255 255 255;
+        --color-text: 242 242 242;
         --color-background: 163 180 204;
         --color-middle: 99 122 153;
         --color-dark: 75 91 115;
+        --color-text2: 242 242 242;
     }
 
     html[data-theme="näbu"] { 
         /* Color as rgb values */
-        --color-text: 255 255 255;
+        --color-text: 242 242 242;
         --color-background: 170 177 178;
         --color-middle: 85 88 89;
         --color-dark: 61 63 64;
+        --color-text2: 242 242 242;
     }
 
     html[data-theme="nisu"] { 
         /* Color as rgb values */
-        --color-text: 255 255 255;
+        --color-text: 242 242 242;
         --color-background: 172 191 185;
         --color-middle: 76 89 85;
         --color-dark: 54 64 61;
+        --color-text2: 242 242 242;
     }
 
     html[data-theme="räge"] { 
         /* Color as rgb values */
-        --color-text: 255 255 255;
+        --color-text: 242 242 242;
         --color-background: 89 108 128;
         --color-middle: 46 61 77;
         --color-dark: 41 53 64;
+        --color-text2: 242 242 242;
     }
 
     html[data-theme="schnee"] { 
@@ -58,14 +64,16 @@
         --color-background: 218 224 229; 
         --color-middle: 184 200 217;
         --color-dark: 153 172 191;
+        --color-text2: 242 242 242;
     }
     
     html[data-theme="sturm"] { 
         /* Color as rgb values */
-        --color-text: 255 255 255;
+        --color-text: 242 242 242;
         --color-background: 17 15 26;
         --color-middle: 61 54 77;
         --color-dark: 37 31 51;
+        --color-text2: 242 242 242;
     }
 
 
