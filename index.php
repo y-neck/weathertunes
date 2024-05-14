@@ -12,9 +12,9 @@ require_once './backend/db/db.config.php';
                 <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] gap-1 w-full">
                     <div id="weather-desc-box" class="col-span-2 rounded-lg bg-gray-200">Wetterbeschreibung</div>
                     <div id="weather-icon-box" class="bg-gray-300 rounded-lg">Icon</div>
-                    <div id="flag-icon-box" class="bg-gray-300 shadow-3xl rounded-lg">Flag</div>
+                    <div id="flag-icon-box" class="bg-gray-300 shadow-main rounded-lg">Flag</div>
                 </div>
-                <div id="temp-box" class="bg-gray-300 rounded-3xl w-full">temp</div>
+                <div id="temp-box" class="bg-gray-300 rounded-main w-full">temp</div>
             </div>
 
             <div id="bottom-box" class="flex flex-row h-[10vh] w-full">
