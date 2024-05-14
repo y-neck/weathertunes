@@ -32,14 +32,20 @@
                     sm: '0.8rem',
                     base: '1rem',
                     xl: '1.25rem',
-                    '2xl': ['1.5rem', {
+                    'moButton': ['1.5rem', {
                         lineHeight: '2rem',
-                        letterSpacing: '-0.01em',
-                        fontWeight: '500',
+                        letterSpacing: '-0.005 em',
+                        fontWeight: '250',
+                        fontStretch: "25%",
                     }],
                     '3xl': '1.953rem',
                     '4xl': '2.441rem',
-                    '5xl': '3.8rem',
+                    'moTemp': ['5rem', {
+                        lineHeight: '5rem',
+                        letterSpacing: '-0.01em',
+                        fontWeight: '250',
+                        fontStretch: "25%",
+                    }],
                 },
                 extend: {
                     boxShadow: {
