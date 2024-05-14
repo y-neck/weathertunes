@@ -1,6 +1,6 @@
 // Get data from 04_unloadWeather.js
-const currentWeatherUrl = 'backend/db/04_unloadCurrentWeather.php'
-const pastWeatherUrl = 'backend/db/04_unloadWeather.php'
+const currentWeatherUrl = './backend/db/04_unloadCurrentWeather.php'
+const pastWeatherUrl = './backend/db/04_unloadWeather.php'
 //const weatherCodeUrl = ''
 
 // Define html elements
@@ -9,7 +9,7 @@ const weatherIconBox = document.querySelector('#weather-icon-box')
 const windBox = document.querySelector('#flag-icon-box')
 const temperatureBox = document.querySelector('#temp-box')
 
-// Fetch current weather
+// Fetch current temperature
 try {
     fetch(currentWeatherUrl)
         .then(response => {
@@ -29,3 +29,5 @@ try {
 catch (error) {
     console.log(error)
 }
+
+// Fetch current weatherCodeDescription
