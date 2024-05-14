@@ -14,7 +14,7 @@ require_once 'backend/db/db.config.php';
                     <div id="weather-icon-box" class="bg-gray-300 shadow-main rounded-lg">Icon</div>
                     <div id="flag-icon-box" class="bg-gray-300 shadow-main rounded-lg">Flag</div>
                 </div>
-                <div id="temp-box" class="bg-gray-300 shadow-main rounded-main rounded-lg w-full">temp</div>
+                <div id="temp-box" class="flex justify-center items-center bg-gray-300 shadow-main rounded-main rounded-lg w-full">temp</div>
             </div>
 
             <div id="bottom-box" class="flex flex-row h-[10vh] w-full">
