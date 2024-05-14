@@ -6,14 +6,14 @@
 /* add layer cascade */
     {
     html[data-theme="fallback"] {
-        --color-text: 0 0 0;
-        --color-background: 255 255 255;
-        --color-middle: 181 181 181;
-        --color-dark: 128 128 128;
+        --color-text: 242 242 242;
+        --color-background: 26 26 26;
+        --color-middle: 89 89 89;
+        --color-dark: 51 51 51;
         --color-text2: 242 242 242;
     }
 
-    html[data-theme="klar"] { 
+    html[data-theme="klar"] {
         /* Color as rgb values */
         --color-text: 242 242 242;
         --color-background: 255 181 77;
@@ -22,7 +22,7 @@
         --color-text2: 242 242 242;
     }
 
-    html[data-theme="wulche"] { 
+    html[data-theme="wulche"] {
         /* Color as rgb values */
         --color-text: 242 242 242;
         --color-background: 163 180 204;
@@ -31,7 +31,7 @@
         --color-text2: 242 242 242;
     }
 
-    html[data-theme="näbu"] { 
+    html[data-theme="näbu"] {
         /* Color as rgb values */
         --color-text: 242 242 242;
         --color-background: 170 177 178;
@@ -40,7 +40,7 @@
         --color-text2: 242 242 242;
     }
 
-    html[data-theme="nisu"] { 
+    html[data-theme="nisu"] {
         /* Color as rgb values */
         --color-text: 242 242 242;
         --color-background: 172 191 185;
@@ -49,7 +49,7 @@
         --color-text2: 242 242 242;
     }
 
-    html[data-theme="räge"] { 
+    html[data-theme="räge"] {
         /* Color as rgb values */
         --color-text: 242 242 242;
         --color-background: 89 108 128;
@@ -58,16 +58,16 @@
         --color-text2: 242 242 242;
     }
 
-    html[data-theme="schnee"] { 
+    html[data-theme="schnee"] {
         /* Color as rgb values */
         --color-text: 26 26 26;
-        --color-background: 218 224 229; 
+        --color-background: 218 224 229;
         --color-middle: 184 200 217;
         --color-dark: 153 172 191;
         --color-text2: 242 242 242;
     }
-    
-    html[data-theme="sturm"] { 
+
+    html[data-theme="sturm"] {
         /* Color as rgb values */
         --color-text: 242 242 242;
         --color-background: 17 15 26;
