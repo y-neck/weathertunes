@@ -11,7 +11,9 @@ require_once './backend/db/db.config.php';
             <div id="top-box" class="flex flex-row gap-5 w-full">
                 <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] text-moButton gap-2 w-full">
                     <div id="weather-desc-box" class="flex justify-center items-center col-span-2 shadow-main rounded-lg bg-middle">NÄBU</div>
-                    <div id="weather-icon-box" class="flex justify-center items-center bg-middle shadow-main rounded-lg">Icon</div>
+                    <div id="weather-icon-box" class="flex justify-center items-center bg-gray-300 shadow-main rounded-lg text-black">
+                        <img src="frontend/public/img/weather_icons/neg/Icons_Neg_Naebu.png" alt="Weather Icon" class="h-full w-auto">
+                    </div>
                     <div id="flag-icon-box" class="flex justify-center items-center bg-middle shadow-main rounded-lg">Flag</div>
                 </div>
                 <div id="temp-box" class="flex justify-center items-center text-moTemp bg-dark shadow-main rounded-main rounded-lg w-full">temp</div>
