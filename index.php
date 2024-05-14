@@ -7,14 +7,14 @@ require_once 'backend/db/db.config.php';
 
 <body class="bg-background text-text">
     <main class="px-[6%] font-bold pt-[2%]">
-        <div id="main-box" class="flex flex-col gap-3 aspect-[3/2] w-full">
-            <div id="top-box" class="flex flex-row gap-3 w-full">
-                <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] gap-1 w-full">
-                    <div id="weather-desc-box" class="col-span-2 rounded-lg bg-gray-200">Wetterbeschreibung</div>
-                    <div id="weather-icon-box" class="bg-gray-300 rounded-lg">Icon</div>
+        <div id="main-box" class="flex flex-col gap-6 aspect-[3/2] w-full">
+            <div id="top-box" class="flex flex-row gap-4 w-full">
+                <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] gap-2 w-full">
+                    <div id="weather-desc-box" class="col-span-2 shadow-main rounded-lg bg-gray-200">Wetterbeschreibung</div>
+                    <div id="weather-icon-box" class="bg-gray-300 shadow-main rounded-lg">Icon</div>
                     <div id="flag-icon-box" class="bg-gray-300 shadow-main rounded-lg">Flag</div>
                 </div>
-                <div id="temp-box" class="bg-gray-300 rounded-main w-full">temp</div>
+                <div id="temp-box" class="bg-gray-300 shadow-main rounded-main rounded-lg w-full">temp</div>
             </div>
 
             <div id="bottom-box" class="flex flex-row h-[10vh] w-full">
