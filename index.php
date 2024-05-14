@@ -12,7 +12,7 @@ require_once './backend/db/db.config.php';
                 <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] text-moButton gap-2 w-full">
                     <div id="weather-desc-box" class="flex justify-center items-center col-span-2 shadow-main rounded-lg bg-middle"></div>
                     <div id="weather-icon-box" class="flex justify-center items-center bg-middle shadow-main rounded-lg">
-                        <img src="frontend\public\img\weather_icons\neg\Icons_Neg_Naebu.png" alt="NÄBU" class="h-full w-auto"> 
+                        <img src="frontend/public/img/weather_icons/neg/Icons_Neg_Naebu.png" alt="NÄBU" class="h-full w-auto"> 
                     </div>
                     <div id="flag-icon-box" class="flex justify-center items-center bg-middle shadow-main rounded-lg">Flag</div>
                 </div>
