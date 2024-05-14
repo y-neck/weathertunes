@@ -56,8 +56,8 @@
         /* Color as rgb values */
         --color-text: 26 26 26;
         --color-background: 218 224 229;
-        --color-middle: 184 200 217;
-        --color-dark: 153 172 191;
+        --color-middle: 153 172 191;
+        --color-dark: 184 200 217;
     }
     
     html[data-theme="sturm"] { 
