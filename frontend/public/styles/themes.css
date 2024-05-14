@@ -54,7 +54,7 @@
 
     html[data-theme="schnee"] { 
         /* Color as rgb values */
-        --color-text: 255 255 255;
+        --color-text: 26 26 26;
         --color-background: 218 224 229;
         --color-middle: 184 200 217;
         --color-dark: 153 172 191;
