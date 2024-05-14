@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="de" data-theme="klar">
 <?php
 require_once './frontend/components/layout.php';
