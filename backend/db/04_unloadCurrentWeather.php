@@ -47,7 +47,7 @@ try {
 
     // Return the array as JSON
     header('Content-Type: application/json');
-    //      echo json_encode($weather_result);
+    echo json_encode($weather_result);
 } catch (PDOException $e) {
     // Log error and throw exception
     error_log("Error connecting to database: " . $e->getMessage());

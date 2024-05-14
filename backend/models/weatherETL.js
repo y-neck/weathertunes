@@ -1,6 +1,7 @@
 // Get data from 04_unloadWeather.js
-const currentWeatherUrl = 'https://214434-6.web.fhgr.ch/backend/db/04_unloadCurrentWeather.php'
-const pastWeatherUrl = 'https://214434-6.web.fhgr.ch/backend/db/04_unloadWeather.php'
+const currentWeatherUrl = 'backend/db/04_unloadCurrentWeather.php'
+const pastWeatherUrl = 'backend/db/04_unloadWeather.php'
+//const weatherCodeUrl = ''
 
 // Define html elements
 const weatherDescriptionBox = document.querySelector('#weather-desc-box')
