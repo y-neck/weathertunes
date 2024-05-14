@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="de" data-theme="klar">
 <?php
 require_once './frontend/components/layout.php';
 require_once './backend/db/db.config.php';
 ?>
+
+<html lang="de" data-theme="klar">
 
 <body class="bg-background text-text">
     <main class="px-[6%] font-bold pt-[2%]">
