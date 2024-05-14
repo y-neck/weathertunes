@@ -18,7 +18,7 @@ require_once './backend/db/db.config.php';
             </div>
 
             <div id="bottom-box" class="flex flex-row h-[10vh] w-full">
-                <div id="play-button" class="flex justify-center items-center bg-text shadow-main text-dark rounded-lg w-full">click play</div>
+                <div id="play-button" class="flex justify-center items-center bg-text shadow-main text-moButton text-dark rounded-lg w-full">click play</div>
 
             </div>
         </div>
