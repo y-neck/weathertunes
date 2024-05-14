@@ -32,11 +32,11 @@
                 fontSize: {
                     sm: '0.8rem',
                     base: '1rem',
-                    xl: '1.25rem',
-                    'moButton': ['1.5rem', {
-                        lineHeight: '2rem',
+                    xl: '2rem',
+                    'moButton': ['2.2rem', {
+                        lineHeight: '2.2rem',
                         letterSpacing: '-0.005 em',
-                        fontWeight: '250',
+                        fontWeight: '500',
                         fontStretch: "25%",
                     }],
                     '3xl': '1.953rem',
