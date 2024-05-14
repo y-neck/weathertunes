@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="klar">
 <?php
-require_once './frontend/components/layout.php';
-require_once './backend/db/db.config.php';
+require_once 'frontend/components/layout.php';
+require_once 'backend/db/db.config.php';
 ?>
 
 <body class="bg-background text-text">
