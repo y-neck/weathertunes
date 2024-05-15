@@ -8,7 +8,7 @@ if (!code) {
 } else {
     const accessToken = await getAccessToken(clientId, code);
     const profile = await fetchProfile(accessToken);
-    populateUI(profile);
+    console.log(profile);
 }
 
 /**
