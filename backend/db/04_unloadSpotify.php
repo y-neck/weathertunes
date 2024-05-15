@@ -40,13 +40,6 @@ try {
         'fallbackPlaylist' => (string)$spotifyParameters[0]['fallback_playlist'],
     ]);
 
-    // Regex returned data
-    // array_walk_recursive($spotifyParameters, function (&$item, $key) {
-    //     // https://www.w3schools.com/php//func_regex_preg_replace.asp
-    //     $item = preg_replace('/\//', '', $item);
-    // });
-
-
     // Return the array as JSON
     header('Content-Type: application/json');
     //echo json_encode($spotifyParameters);
