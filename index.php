@@ -31,8 +31,8 @@ require_once './backend/db/db.config.php';
 
         <div id="past-weather-box" class="flex flex-col gap-0 w-full">
             <div id="past-weather-text-box" class="flex justify-center items-center rounded-t-lg h-[10vh] text-moButton shadow-main bg-middle">WETTERRÜCKLICK</div>
-            <div id="past-weather-icon-box" class="flex justify-center mb-5 items-center rounded-b-lg h-[10vh] shadow-main bg-dark">
-                Hie chunt wätter
+            <div id="past-weather-icon-box" class="flex justify-start mb-5 items-center rounded-b-lg h-[10vh] shadow-main bg-dark">
+                <img src="frontend/public/img/standard_icons/timeline.svg" alt="Past Weather Icon" class="h-auto w-[95%]">
             </div>
         </div>
     </main>
