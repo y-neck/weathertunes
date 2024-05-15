@@ -15,7 +15,7 @@ require_once './backend/db/db.config.php';
                     <div id="weather-icon-box" class="flex justify-center items-center bg-middle shadow-main rounded-lg">
                         <img src="" alt="Wätterlag" class="h-full w-auto">
                     </div>
-                    <div id="flag-icon-box" class="flex justify-center items-center bg-middle shadow-main rounded-lg">Flag</div>
+                    <div id="flag-icon-box" class="flex justify-center items-center bg-middle shadow-main rounded-lg">Windstärchi</div>
                 </div>
                 <div id="temp-box" class="flex justify-center items-center text-moTemp bg-dark shadow-main rounded-main rounded-lg w-full">Temp</div>
             </div>
@@ -33,14 +33,14 @@ require_once './backend/db/db.config.php';
         <div id="past-weather-box" class="flex flex-col gap-0 w-full">
             <div id="past-weather-text-box" class="flex justify-center items-center rounded-t-lg h-[10vh] text-moButton shadow-main bg-middle">WETTERRÜCKLICK</div>
             <div id="past-weather-icon-box" class="flex justify-start mb-5 items-center rounded-b-lg h-[10vh] shadow-main bg-dark">
-                    <img src="frontend/public/img/standard_icons/timeline.svg" alt="Past Weather Icon" class="h-auto w-[95%]">
-                </div>
-                <div class="placeholder-container absolute top-0 left-0 w-full h-full flex justify-center items-center">
-                    <img src="frontend/public/img/standard_icons/placeholder1.png" alt="Placeholder 1" class="h-auto w-[20%] mx-2">
-                    <img src="frontend/public/img/standard_icons/placeholder2.png" alt="Placeholder 2" class="h-auto w-[20%] mx-2">
-                    <img src="frontend/public/img/standard_icons/placeholder3.png" alt="Placeholder 3" class="h-auto w-[20%] mx-2">
-                </div>
+                <img src="frontend/public/img/standard_icons/timeline.svg" alt="Past Weather Icon" class="h-auto w-[95%]">
             </div>
+            <div class="placeholder-container absolute top-0 left-0 w-full h-full flex justify-center items-center">
+                <img src="frontend/public/img/standard_icons/placeholder1.png" alt="Placeholder 1" class="h-auto w-[20%] mx-2">
+                <img src="frontend/public/img/standard_icons/placeholder2.png" alt="Placeholder 2" class="h-auto w-[20%] mx-2">
+                <img src="frontend/public/img/standard_icons/placeholder3.png" alt="Placeholder 3" class="h-auto w-[20%] mx-2">
+            </div>
+        </div>
         </div>
     </main>
     <?php require_once './frontend/components/footer.html'; ?>
