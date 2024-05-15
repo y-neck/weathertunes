@@ -3,6 +3,7 @@ require_once './frontend/components/layout.php';
 require_once './backend/db/db.config.php';
 ?>
 
+<script src="./backend/models/spotifyETL.js"></script>
 <html lang="de" id="webPage" data-theme="fallback">
 
 <body>
@@ -20,7 +21,7 @@ require_once './backend/db/db.config.php';
             </div>
 
             <div id="bottom-box" class="flex flex-row h-[10vh] w-full">
-                <div id="play-button" class="flex justify-center items-center bg-text shadow-main text-moButton text-dark rounded-lg w-full">TUNE IN</div>
+                <div id="play-button" class="flex justify-center items-center bg-text shadow-main text-moButton text-dark rounded-lg w-full" onclick="getPlaylist()">TUNE IN</div>
 
             </div>
         </div>
