@@ -15,7 +15,9 @@
 
     <!-- Tailwind Config -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!--     <script src="../styles/tailwind.config.mjs"></script> -->
+    <!-- LottieFiles CDN -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -66,7 +68,7 @@
             "wght" 250,
             /* weight */
             "GRAD" 100,
-            /* gradient */
+            /* grad */
             "opsz" 68,
             /* opticalSize */
             "XOPQ" 96,
