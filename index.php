@@ -29,9 +29,9 @@ require_once './backend/db/db.config.php';
             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4VN7J0uq62foOhZndwOegy?utm_source=generator&theme=0" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
 
-        <div id="past-weather-box" class="flex flex-col gap-0 w-full mb-2">
+        <div id="past-weather-box" class="flex flex-col gap-0 w-full">
             <div id="past-weather-text-box" class="flex justify-center items-center rounded-t-lg h-[10vh] text-moButton shadow-main bg-middle">WETTERRÜCKLICK</div>
-            <div id="past-weather-icon-box" class="flex justify-center items-center rounded-b-lg h-[10vh] shadow-main bg-dark">
+            <div id="past-weather-icon-box" class="flex justify-center mb-5 items-center rounded-b-lg h-[10vh] shadow-main bg-dark">
                 Hie chunt wätter
             </div>
         </div>
