@@ -70,23 +70,23 @@ try {
             switch (data.windSpeed) {
                 case data.windSpeed < 12:
                     if (data.weatherCodeDescription === 'Schnee') {
-                        windBox.innerHTML = `<lottie-player src="frontend/public/json/Wind_Pos_Level_1.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
+                        windBox.innerHTML = `<lottie-player src="frontend/public/animations/Wind_Pos_Level_1.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
                     } else {
-                        windBox.innerHTML = `<lottie-player src="frontend/public/json/Wind_Neg_Level_1.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
+                        windBox.innerHTML = `<lottie-player src="frontend/public/animations/Wind_Neg_Level_1.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
                     }
                     break;
                 case data.windSpeed >= 12 && data.windSpeed < 40:
                     if (data.weatherCodeDescription === 'Schnee') {
-                        windBox.innerHTML = `<lottie-player src="frontend/public/json/Wind_Pos_Level_2.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
+                        windBox.innerHTML = `<lottie-player src="frontend/public/animations/Wind_Pos_Level_2.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
                     } else {
-                        windBox.innerHTML = `<lottie-player src="frontend/public/json/Wind_Neg_Level_2.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
+                        windBox.innerHTML = `<lottie-player src="frontend/public/animations/Wind_Neg_Level_2.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
                     }
                     break;
                 case data.windSpeed >= 40:
                     if (data.weatherCodeDescription === 'Schnee') {
-                        windBox.innerHTML = `<lottie-player src="frontend/public/json/Wind_Pos_Level_3.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
+                        windBox.innerHTML = `<lottie-player src="frontend/public/animations/Wind_Pos_Level_3.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
                     } else {
-                        windBox.innerHTML = `<lottie-player src="frontend/public/json/Wind_Neg_Level_3.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
+                        windBox.innerHTML = `<lottie-player src="frontend/public/animations/Wind_Neg_Level_3.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
                     }
             }
         })
