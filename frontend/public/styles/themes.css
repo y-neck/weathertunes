@@ -22,6 +22,15 @@
         --color-text2: 242 242 242;
     }
 
+    html[data-theme="nacht"] {
+        /* Color as rgb values */
+        --color-text: 242 242 242;
+        --color-background: 9 9 26;
+        --color-middle: 27 27 77;
+        --color-dark: 18 18 51;
+        --color-text2: 242 242 242;
+    }
+
     html[data-theme="wulche"] {
         /* Color as rgb values */
         --color-text: 242 242 242;

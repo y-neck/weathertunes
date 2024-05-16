@@ -33,7 +33,7 @@ try {
                         htmlPage.setAttribute('data-theme', 'klar');    // Set respective color-theme
                         weatherIconBox.innerHTML = `<img src="frontend/public/img/weather_icons/neg/Icons_Neg_Klar_Tag.png" alt="Klar" class="h-full w-auto p-[10px]">`;    // Display 'Klar' icon
                     } else {
-                        htmlPage.setAttribute('data-theme', 'klar');
+                        htmlPage.setAttribute('data-theme', 'nacht');
                         weatherIconBox.innerHTML = `<img src="frontend/public/img/weather_icons/neg/Icons_Neg_Klar_Nacht.png" alt="Klar-Nacht" class="h-full w-auto p-[10px]">`;
                     } break;
                 case 'Wulche':
