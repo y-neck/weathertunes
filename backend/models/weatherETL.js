@@ -1,6 +1,7 @@
 // Get data from 04_unloadWeather.js
-const pastWeatherUrl = './backend/db/04_unloadWeather.php'
-const mergedWeatherUrl = './backend/db/05_mergeCurrentWeather.php'
+const pastWeatherUrl = './backend/db/04_unloadWeather.php';
+const mergedWeatherUrl = './backend/db/05_mergeCurrentWeather.php';
+const spotifyParametersUrl = './backend/db/04_unloadSpotify.php';
 
 // Define html elements
 const htmlPage = document.querySelector('#webPage')
@@ -9,6 +10,8 @@ const weatherIconBox = document.querySelector('#weather-icon-box')
 const windBox = document.querySelector('#flag-icon-box')
 const temperatureBox = document.querySelector('#temp-box')
 const lottiePlayer = document.querySelector('lottie-player')
+const player = document.querySelector('#spotify-container');
+
 
 // Fetch current weather values
 try {
@@ -68,7 +71,7 @@ try {
                     weatherIconBox.innerHTML = `<img src="frontend/public/img/weather_icons/neg/Icons_Neg_Sturm.png" alt="Sturm" class="h-full w-auto p-[10px]">`;
             }
 
-            if (data.windSpeed < 12)  {
+            if (data.windSpeed < 12) {
                 if (data.weatherCodeDescription === 'Schnee') {
                     lottiePlayer.load('frontend/public/animations/Wind_Pos_Level_1.json');
                 } else {

@@ -15,7 +15,7 @@ require_once './backend/db/db.config.php';
                         <img src="" alt="Wätterlag" class="h-full w-auto">
                     </div>
                     <div id="flag-icon-box" class="flex justify-center items-center bg-middle shadow-main rounded-lg">
-                        <lottie-player background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>
+                        <lottie-player background="transparent" speed="1" style="height: 100%; width: 100%;" loop autoplay></lottie-player>
                     </div>
                 </div>
                 <div id="temp-box" class="flex justify-center items-center text-moTemp bg-dark shadow-main rounded-main rounded-lg w-full">Temp</div>
@@ -28,7 +28,7 @@ require_once './backend/db/db.config.php';
         </div>
         <!-- Adjusted div for Spotify iframe -->
         <div id="spotify-container" class="flex justify-center mb-5 m-2 mx-auto w-full">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4VN7J0uq62foOhZndwOegy?utm_source=generator&theme=0" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" class="hidden" src="https://open.spotify.com/embed/playlist/4VN7J0uq62foOhZndwOegy?utm_source=generator&theme=0" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
 
         <div id="past-weather-box" class="flex flex-col gap-0 w-full">

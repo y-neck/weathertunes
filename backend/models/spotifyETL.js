@@ -2,24 +2,48 @@ import { redirectToAuthCodeFlow } from "./spotifyAuth.config.js";
 import { getAccessToken } from "./spotifyAuth.config.js";
 import { fetchProfile } from "./spotifyAuth.config.js";
 
-const spotifyParametersUrl = './backend/db/03_unloadSpotify.php'
+const spotifyParametersUrl = './backend/db/04_unloadSpotify.php';
+const weatherdataUrl = './backend/db/05_mergeCurrentWeather.php';
 
 // Get html elements
 const tuneInBtn = document.querySelector('#play-button');
 const player = document.querySelector('#spotify-container');
 
-
-
 // Event listener for tune in button
 tuneInBtn.addEventListener('click', () => {
+    console.log("tune in button clicked");
+
+    // Load fallback playlist
+    try {
+        fetch(spotifyParametersUrl)
+            .then(response => {
+                // Check if the response is successful (status code 200)
+                if (!response.ok) {
+                    throw new Error(Error);
+                }
+                // Parse the JSON response
+                return response.json();
+            })
+            .then(data => {
+                console.log('Current Weather: ', data)
+                let playerFallbackUrl = data.fallbackPlaylist
+                player.innerHTML = `<iframe style="border-radius:12px" src="${playerFallbackUrl}" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
+            })
+    } catch (error) {
+        console.error(error);
+    }
     // TODO: Check auth -> if not logged in, get api token
     if (!fetchProfile) {
-        // Load fallback playlist
-        
+
+
+
+
+
         // TODO: call spotifyAuth
     }
-    getPlaylist();
-})
+    // getPlaylist();
+}
+)
 
 // Fetch parameter data
 function getPlaylist() {
