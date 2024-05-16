@@ -25,7 +25,7 @@ tuneInBtn.addEventListener('click', () => {
                 return response.json();
             })
             .then(data => {
-                console.log('Current Weather: ', data)
+                console.log('Current Playlist Properties: ', data)
                 let playerFallbackUrl = data.fallbackPlaylist
                 player.innerHTML = `<iframe style="border-radius:12px" src="${playerFallbackUrl}" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
             })
