@@ -36,13 +36,13 @@ require_once './backend/db/db.config.php';
             <div id="past-weather-icon-box" class="relative flex justify-start mb-5 items-center rounded-b-lg h-[10vh] shadow-main bg-dark">
                 <img src="frontend/public/img/standard_icons/timeline.svg" alt="Past Weather Icon" class="h-auto w-[96%]">
                 <div class="placeholder-container absolute top-0 left-0 w-full h-full flex justify-center items-center gap-[10%] z-10">
-                    <div class="placeholder-item bg-dark px-2 h-[60%] w-auto">
+                    <div id="past-weather-icon-1" class="placeholder-item bg-dark px-2 h-[60%] w-auto">
                         <img src="frontend/public/img/weather_icons/neg/Icons_Neg_Klar_Nacht.png" alt="Placeholder 1" class="h-full w-auto">
                     </div>
-                    <div class="placeholder-item bg-dark px-2 h-[60%] w-auto">
+                    <div id="past-weather-icon-2" class="placeholder-item bg-dark px-2 h-[60%] w-auto">
                         <img src="frontend/public/img/weather_icons/neg/Icons_Neg_Klar_Nacht.png" alt="Placeholder 2" class="h-full w-auto">
                     </div>
-                    <div class="placeholder-item bg-dark px-2 h-[60%] w-auto">
+                    <div id="past-weather-icon-3" class="placeholder-item bg-dark px-2 h-[60%] w-auto">
                         <img src="frontend/public/img/weather_icons/neg/Icons_Neg_Klar_Nacht.png" alt="Placeholder 3" class="h-full w-auto">
                     </div>
                 </div>
