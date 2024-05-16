@@ -1,6 +1,6 @@
-const clientId = ''; // TODO: Replace with your client ID
+const clientId = ''; // Replace with your client ID
 const params = new URLSearchParams(window.location.search);
-const redirectUri = '' // TODO: Insert your redirect URI
+const redirectUri = ''
 const code = params.get("code");
 
 if (!code) {
@@ -9,13 +9,14 @@ if (!code) {
     const accessToken = await getAccessToken(clientId, code);
     const profile = await fetchProfile(accessToken);
     console.log(profile);
+    // populateUI(profile);
 }
 
 /**
  * Redirects user to Spotify's authorization code flow
  * @param {string} clientId Spotify client ID
  */
-export async function redirectToAuthCodeFlow(clientId) {
+const redirectToAuthCodeFlow = async (clientId) => {
     const verifier = generateCodeVerifier(128); // Generate PKCE code verifier
     const challenge = await generateCodeChallenge(verifier); // Generate SHA-256 challenge from code verifier
 
@@ -61,8 +62,7 @@ async function generateCodeChallenge(codeVerifier) {
         .replace(/=+$/, ''); // Remove any trailing =
 }
 
-
-export async function getAccessToken(clientId, code, redirectUri) {
+const getAccessToken = async (clientId, code, redirectUri) => {
     // Get code verifier from localStorage
     const verifier = localStorage.getItem("verifier");
 
@@ -84,4 +84,17 @@ export async function getAccessToken(clientId, code, redirectUri) {
     // Parse JSON response and return access_token
     const { access_token } = await result.json();
     return access_token;
+}
+
+// Fetch user profile
+const fetchProfile = async (token) => {
+    const result = await fetch("https://api.spotify.com/v1/me", {
+        method: "GET", headers: { Authorization: `Bearer ${token}` }
+    });
+    return await result.json();
+    console.log(profile);
+}
+
+export {
+    redirectToAuthCodeFlow, getAccessToken
 }
