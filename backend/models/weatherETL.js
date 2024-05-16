@@ -26,6 +26,12 @@ try {
             temperatureBox.innerHTML = `${data.temperature}°C`
             weatherDescriptionBox.innerHTML = data.weatherCodeDescription;
 
+            // Test themes
+            // data.weatherCodeDescription = 'Klar';
+            // data.isDay = 0;
+            // date = '';
+            // console.log(data.weatherCodeDescription, data.isDay, date);
+
             // Case switch for weather icon
             switch (data.weatherCodeDescription) {
                 case 'Klar':    // If weatherCodeDescription is 'Klar'
