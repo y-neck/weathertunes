@@ -66,6 +66,17 @@ try {
                     htmlPage.setAttribute('data-theme', 'sturm');
                     weatherIconBox.innerHTML = `<img src="frontend/public/img/weather_icons/neg/Icons_Neg_Sturm.png" alt="Sturm" class="h-full w-auto p-[10px]">`;
             }
+
+            switch (data.windSpeed) {
+                case data.windSpeed < 12:
+                    windBox.innerHTML = `<lottie-player src="frontend/public/json/Wind_Pos_Level_1.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
+                    break;
+                case data.windSpeed >= 12 && data.windSpeed < 40:
+                    windBox.innerHTML = `<lottie-player src="frontend/public/json/Wind_Pos_Level_2.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
+                    break;
+                case data.windSpeed >= 40:
+                    windBox.innerHTML = `<lottie-player src="frontend/public/json/Wind_Pos_Level_3.json"  background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>`;
+            }
         })
 }
 catch (error) {
