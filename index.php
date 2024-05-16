@@ -14,7 +14,9 @@ require_once './backend/db/db.config.php';
                     <div id="weather-icon-box" class="flex justify-center items-center bg-middle shadow-main rounded-lg">
                         <img src="" alt="Wätterlag" class="h-full w-auto">
                     </div>
-                    <div id="flag-icon-box" class="flex justify-center items-center bg-middle shadow-main rounded-lg">Windstärchi</div>
+                    <div id="flag-icon-box" class="flex justify-center items-center bg-middle shadow-main rounded-lg">
+                        <lottie-player background="transparent"  speed="1"  style="height: 100%; width: 100%;"  loop  autoplay></lottie-player>
+                    </div>
                 </div>
                 <div id="temp-box" class="flex justify-center items-center text-moTemp bg-dark shadow-main rounded-main rounded-lg w-full">Temp</div>
             </div>
