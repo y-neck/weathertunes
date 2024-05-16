@@ -70,23 +70,23 @@ try {
 
             if (data.windSpeed < 12)  {
                 if (data.weatherCodeDescription === 'Schnee') {
-                    lottiePlayer.load("src='frontend/public/animations/Wind_Pos_Level_1.json'");
+                    lottiePlayer.load('frontend/public/animations/Wind_Pos_Level_1.json');
                 } else {
-                    lottiePlayer.load("src='frontend/public/animations/Wind_Neg_Level_1.json'");
+                    lottiePlayer.load('frontend/public/animations/Wind_Neg_Level_1.json');
                 }
             }
             if (data.windSpeed >= 12 && data.windSpeed < 40) {
                 if (data.weatherCodeDescription === 'Schnee') {
-                    lottiePlayer.load("src='frontend/public/animations/Wind_Pos_Level_2.json'");
+                    lottiePlayer.load('frontend/public/animations/Wind_Pos_Level_2.json');
                 } else {
-                    lottiePlayer.load("src='frontend/public/animations/Wind_Neg_Level_2.json'");
+                    lottiePlayer.load('frontend/public/animations/Wind_Neg_Level_2.json');
                 }
             }
             if (data.windSpeed >= 40) {
                 if (data.weatherCodeDescription === 'Schnee') {
-                    lottiePlayer.load("src='frontend/public/animations/Wind_Pos_Level_3.json'");
+                    lottiePlayer.load('frontend/public/animations/Wind_Pos_Level_3.json');
                 } else {
-                    lottiePlayer.load("src='frontend/public/animations/Wind_Neg_Level_3.json'");
+                    lottiePlayer.load('frontend/public/animations/Wind_Neg_Level_3.json');
                 }
             }
         })
