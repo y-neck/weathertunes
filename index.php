@@ -51,6 +51,6 @@ require_once './backend/db/db.config.php';
 </body>
 
 <script src="./backend/models/weatherETL.js"></script>
-<script src="./backend/models/spotifyETL.js"></script>
+<script type="module" src="./backend/models/spotifyETL.js"></script>
 
 </html>
