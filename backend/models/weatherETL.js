@@ -161,7 +161,7 @@ fetch(pastWeatherUrl)
             const imageElement = document.createElement('img');
             imageElement.src = imageSrc;
             imageElement.alt = 'Wätter';
-            imageElement.classList.add('h-full', 'w-auto', 'p-[10px]');
+            imageElement.classList.add('h-full', 'w-auto');
 
             // Append the image element to the appropriate slot
             const slotId = `past-weather-icon-${i + 1}`;
