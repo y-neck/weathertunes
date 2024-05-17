@@ -48,43 +48,175 @@
             }
         }
     </script>
-    <!-- Font files -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
-
+ 
     <link rel="stylesheet" href="./frontend/public/styles/themes.css">
 </head>
 
 <style>
-    /* Global font styling */
+    /* Load Font */
+    @font-face {
+        font-family: 'RobotoFlex';
+        src: url('./frontend/public/fonts/RobotoFlex-VariableFont.ttf') format('truetype');
+    }
+    
+    /* Font styling Moblile */
+    /* Temperature */
     * {
         font-family: 'Roboto Flex', sans-serif;
         font-variation-settings:
             "slnt" 0,
-            /* slant */
+            /* Slant */
             "wdth" 25,
-            /* width */
+            /* Width */
             "wght" 250,
-            /* weight */
+            /* Weight */
             "GRAD" 100,
-            /* grad */
-            "opsz" 68,
-            /* opticalSize */
+            /* Grad */
             "XOPQ" 96,
-            /* x-height */
-            "YOPQ" 79,
-            /* y-height */
+            /* Parametric Thick Stroke */
             "XTRA" 468,
-            /* x-advance */
-            "YTUC" 712,
-            /* y-advance */
-            "YTLC" 514,
-            /* y-lead */
+            /* Parametric Counter Width */
+            "YOPQ" 79,
+            /* Parametric Thin Stroke */
+            "YTAS" 750,
+            /* Parametric Ascender Height */
             "YTDE" -203,
-            /* y-trail */
-            "YTFI" 738;
-        /* y-extend */
-        letter-spacing: -1;
+            /* Parametric Descender Depth */
+            "YTFI" 738,
+            /* Parametric Figure Height */
+            "YTLC" 514,
+            /* Parametric Lowercase Height */
+            "YTUC" 712,
+            /* Parametric Uppercase Height  */
+            "opsz" 68;
+            /* Optical Size */
+    }
+
+    /* Button */
+    * {
+        font-family: 'Roboto Flex', sans-serif;
+        font-variation-settings:
+            "slnt" 0,
+            /* Slant */
+            "wdth" 50,
+            /* Width */
+            "wght" 400,
+            /* Weight */
+            "GRAD" 100,
+            /* Grad */
+            "XOPQ" 96,
+            /* Parametric Thick Stroke */
+            "XTRA" 468,
+            /* Parametric Counter Width */
+            "YOPQ" 79,
+            /* Parametric Thin Stroke */
+            "YTAS" 750,
+            /* Parametric Ascender Height */
+            "YTDE" -203,
+            /* Parametric Descender Depth */
+            "YTFI" 738,
+            /* Parametric Figure Height */
+            "YTLC" 514,
+            /* Parametric Lowercase Height */
+            "YTUC" 712,
+            /* Parametric Uppercase Height  */
+            "opsz" 44;
+            /* Optical Size */   
+    }
+    
+    /* Footer */
+    * {
+        font-family: 'Roboto Flex', sans-serif;
+        font-variation-settings:
+            "slnt" 0,
+            /* Slant */
+            "wdth" 50,
+            /* Width */
+            "wght" 400,
+            /* Weight */
+            "GRAD" 100,
+            /* Grad */
+            "XOPQ" 96,
+            /* Parametric Thick Stroke */
+            "XTRA" 468,
+            /* Parametric Counter Width */
+            "YOPQ" 79,
+            /* Parametric Thin Stroke */
+            "YTAS" 750,
+            /* Parametric Ascender Height */
+            "YTDE" -203,
+            /* Parametric Descender Depth */
+            "YTFI" 738,
+            /* Parametric Figure Height */
+            "YTLC" 514,
+            /* Parametric Lowercase Height */
+            "YTUC" 712,
+            /* Parametric Uppercase Height  */
+            "opsz" 12;
+            /* Optical Size */
+    }
+
+    /* Header 1 */
+    * {
+        font-family: 'Roboto Flex', sans-serif;
+        font-variation-settings:
+            "slnt" 0,
+            /* Slant */
+            "wdth" 50,
+            /* Width */
+            "wght" 550,
+            /* Weight */
+            "GRAD" 50,
+            /* Grad */
+            "XOPQ" 96,
+            /* Parametric Thick Stroke */
+            "XTRA" 468,
+            /* Parametric Counter Width */
+            "YOPQ" 79,
+            /* Parametric Thin Stroke */
+            "YTAS" 750,
+            /* Parametric Ascender Height */
+            "YTDE" -203,
+            /* Parametric Descender Depth */
+            "YTFI" 738,
+            /* Parametric Figure Height */
+            "YTLC" 514,
+            /* Parametric Lowercase Height */
+            "YTUC" 712,
+            /* Parametric Uppercase Height  */
+            "opsz" 44;
+            /* Optical Size */
+    }
+
+    /* Copy Text */
+    * {
+        font-family: 'Roboto Flex', sans-serif;
+        font-variation-settings:
+            "slnt" 0,
+            /* Slant */
+            "wdth" 50,
+            /* Width */
+            "wght" 400,
+            /* Weight */
+            "GRAD" 0,
+            /* Grad */
+            "XOPQ" 96,
+            /* Parametric Thick Stroke */
+            "XTRA" 468,
+            /* Parametric Counter Width */
+            "YOPQ" 79,
+            /* Parametric Thin Stroke */
+            "YTAS" 750,
+            /* Parametric Ascender Height */
+            "YTDE" -203,
+            /* Parametric Descender Depth */
+            "YTFI" 738,
+            /* Parametric Figure Height */
+            "YTLC" 514,
+            /* Parametric Lowercase Height */
+            "YTUC" 712,
+            /* Parametric Uppercase Height  */
+            "opsz" 20;
+            /* Optical Size */
     }
 </style>
