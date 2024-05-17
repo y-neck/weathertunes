@@ -1,5 +1,5 @@
 // Get data from 04_unloadWeather.js
-const pastWeatherUrl = './backend/db/04_unloadWeather.php';
+const pastWeatherUrl = './backend/db/04_unloadPastWeather.php';
 const mergedWeatherUrl = './backend/db/05_mergeCurrentWeather.php';
 const spotifyParametersUrl = './backend/db/04_unloadSpotify.php';
 
@@ -9,8 +9,13 @@ const weatherDescriptionBox = document.querySelector('#weather-desc-box')
 const weatherIconBox = document.querySelector('#weather-icon-box')
 const windBox = document.querySelector('#flag-icon-box')
 const temperatureBox = document.querySelector('#temp-box')
+// Players
 const lottiePlayer = document.querySelector('lottie-player')
 const player = document.querySelector('#spotify-container');
+// Weather review container
+const weatherReviewSlot1 = document.querySelector('#past-weather-icon-1');
+const weatherReviewSlot2 = document.querySelector('#past-weather-icon-2');
+const weatherReviewSlot3 = document.querySelector('#past-weather-icon-3');
 
 
 // Fetch current weather values
@@ -97,3 +102,78 @@ try {
 catch (error) {
     console.log(error)
 }
+
+// Insert past weather into weather review container
+fetch(pastWeatherUrl)
+    .then(response => {
+        // Check if the response is successful (status code 200)
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        // Parse the JSON response
+        return response.json();
+    })
+    .then(data => {
+        // Define a mapping object for weather codes to icon names
+        const weatherIcons = {
+            0: 'Klar_Tag',
+            1: 'Wulche',
+            2: 'Wulche',
+            3: 'Wulche',
+            45: 'Naebu',
+            48: 'Naebu',
+            51: 'Nisu',
+            53: 'Nisu',
+            55: 'Nisu',
+            56: 'Nisu',
+            57: 'Nisu',
+            61: 'Raege',
+            63: 'Raege',
+            65: 'Raege',
+            66: 'Raege',
+            67: 'Raege',
+            80: 'Raege',
+            81: 'Raege',
+            82: 'Raege',
+            71: 'Schnee',
+            73: 'Schnee',
+            75: 'Schnee',
+            77: 'Schnee',
+            85: 'Schnee',
+            86: 'Schnee',
+            95: 'Sturm',
+            96: 'Sturm',
+            99: 'Sturm'
+        };
+
+        // Iterate over each weather code and generate the corresponding image element
+        for (let i = 0; i < data.weatherCode.length; i++) {
+            const code = data.weatherCode[i];
+            const iconName = weatherIcons[code];
+
+            // Remove spaces from iconName
+            const imgRegex = iconName.replace(/\s/g, '');
+
+            // Create the image source URL without spaces
+            const imageSrc = `frontend/public/img/weather_icons/neg/Icons_Neg_${imgRegex}.png`;
+
+            // Create the image element
+            const imageElement = document.createElement('img');
+            imageElement.src = imageSrc;
+            imageElement.alt = 'Wätter';
+            imageElement.classList.add('h-full', 'w-auto', 'p-[10px]');
+
+            // Append the image element to the appropriate slot
+            const slotId = `past-weather-icon-${i + 1}`;
+            const slotElement = document.querySelector(`#${slotId}`);
+            if (slotElement) {
+                slotElement.innerHTML = '';
+                slotElement.appendChild(imageElement);
+            }
+        }
+
+        console.log('Past Weather: ', data);
+    })
+    .catch(error => {
+        console.error('Error fetching past weather data:', error);
+    });
