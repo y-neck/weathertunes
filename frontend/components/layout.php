@@ -55,7 +55,7 @@
 <style>
     /* Load Font */
     @font-face {
-        font-family: 'RobotoFlex';
+        font-family: 'Roboto Flex';
         src: url('./frontend/public/fonts/RobotoFlex-VariableFont.ttf') format('truetype');
     }
     
