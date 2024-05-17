@@ -22,7 +22,7 @@ require_once './backend/db/db.config.php';
             </div>
 
             <div id="bottom-box" class="flex flex-row h-[10vh] w-full">
-                <button id="play-button" class="flex justify-center items-center bg-text shadow-main text-moButton text-dark rounded-lg w-full">TUNE IN</button>
+                <button id="play-button" class="flex justify-center items-center bg-text shadow-main text-moButton text-dark hover:bg-dark hover:text-text transition duration-200 ease-in-out rounded-lg w-full">TUNE IN</button>
 
             </div>
         </div>
