@@ -49,12 +49,20 @@ const redirectToAuthCodeFlow = async (clientId) => {
 }
 
 // Fetch user profile
+/**
+ * Fetch user profile
+ * @param {string} token - Spotify access token
+ * @returns {Promise<Object>} - User's profile information
+ */
 const fetchProfile = async (token) => {
+    // Fetch user profile using access token
     const result = await fetch("https://api.spotify.com/v1/me", {
-        method: "GET", headers: { Authorization: `Bearer ${token}` }
+        method: "GET", // Use GET method
+        headers: { Authorization: `Bearer ${token}` } // Add authorization header with access token
     });
-    return await result.json();
 
+    // Parse JSON response and return profile object
+    return await result.json();
 }
 
 
