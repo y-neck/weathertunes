@@ -219,4 +219,69 @@
             "opsz" 20;
             /* Optical Size */
     }
+
+    /* Copy Text Links */
+    * {
+        font-family: 'Roboto Flex', sans-serif;
+        text-decoration: underline;
+        font-variation-settings:
+            "slnt" 0,
+            /* Slant */
+            "wdth" 50,
+            /* Width */
+            "wght" 400,
+            /* Weight */
+            "GRAD" 0,
+            /* Grad */
+            "XOPQ" 96,
+            /* Parametric Thick Stroke */
+            "XTRA" 468,
+            /* Parametric Counter Width */
+            "YOPQ" 79,
+            /* Parametric Thin Stroke */
+            "YTAS" 750,
+            /* Parametric Ascender Height */
+            "YTDE" -203,
+            /* Parametric Descender Depth */
+            "YTFI" 738,
+            /* Parametric Figure Height */
+            "YTLC" 514,
+            /* Parametric Lowercase Height */
+            "YTUC" 712,
+            /* Parametric Uppercase Height  */
+            "opsz" 20;
+            /* Optical Size */
+    }
+
+    /* Copy Text Bold */
+    * {
+        font-family: 'Roboto Flex', sans-serif;
+        font-variation-settings:
+            "slnt" 0,
+            /* Slant */
+            "wdth" 50,
+            /* Width */
+            "wght" 400,
+            /* Weight */
+            "GRAD" 150,
+            /* Grad */
+            "XOPQ" 96,
+            /* Parametric Thick Stroke */
+            "XTRA" 468,
+            /* Parametric Counter Width */
+            "YOPQ" 79,
+            /* Parametric Thin Stroke */
+            "YTAS" 750,
+            /* Parametric Ascender Height */
+            "YTDE" -203,
+            /* Parametric Descender Depth */
+            "YTFI" 738,
+            /* Parametric Figure Height */
+            "YTLC" 514,
+            /* Parametric Lowercase Height */
+            "YTUC" 712,
+            /* Parametric Uppercase Height  */
+            "opsz" 20;
+            /* Optical Size */
+    }
 </style>
