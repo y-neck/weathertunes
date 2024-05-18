@@ -48,7 +48,7 @@
             }
         }
     </script>
- 
+
     <link rel="stylesheet" href="./frontend/public/styles/themes.css">
 </head>
 
@@ -58,10 +58,10 @@
         font-family: 'Roboto Flex';
         src: url('./frontend/public/fonts/RobotoFlex-VariableFont.ttf') format('truetype');
     }
-    
+
     /* Font styling Moblile */
     /* Temperature */
-    * {
+    #temp-box {
         font-family: 'Roboto Flex', sans-serif;
         font-variation-settings:
             "slnt" 0,
@@ -89,11 +89,11 @@
             "YTUC" 712,
             /* Parametric Uppercase Height  */
             "opsz" 68;
-            /* Optical Size */
+        /* Optical Size */
     }
 
     /* Button */
-    * {
+    button {
         font-family: 'Roboto Flex', sans-serif;
         font-variation-settings:
             "slnt" 0,
@@ -121,11 +121,11 @@
             "YTUC" 712,
             /* Parametric Uppercase Height  */
             "opsz" 44;
-            /* Optical Size */   
+        /* Optical Size */
     }
-    
+
     /* Footer */
-    * {
+    footer a {
         font-family: 'Roboto Flex', sans-serif;
         font-variation-settings:
             "slnt" 0,
@@ -153,11 +153,11 @@
             "YTUC" 712,
             /* Parametric Uppercase Height  */
             "opsz" 12;
-            /* Optical Size */
+        /* Optical Size */
     }
 
     /* Header 1 */
-    * {
+    h1 {
         font-family: 'Roboto Flex', sans-serif;
         font-variation-settings:
             "slnt" 0,
@@ -185,11 +185,12 @@
             "YTUC" 712,
             /* Parametric Uppercase Height  */
             "opsz" 44;
-            /* Optical Size */
+        /* Optical Size */
     }
 
     /* Copy Text */
-    * {
+    *,
+    p {
         font-family: 'Roboto Flex', sans-serif;
         font-variation-settings:
             "slnt" 0,
@@ -217,11 +218,11 @@
             "YTUC" 712,
             /* Parametric Uppercase Height  */
             "opsz" 20;
-            /* Optical Size */
+        /* Optical Size */
     }
 
     /* Copy Text Links */
-    * {
+    a {
         font-family: 'Roboto Flex', sans-serif;
         text-decoration: underline;
         font-variation-settings:
@@ -250,11 +251,11 @@
             "YTUC" 712,
             /* Parametric Uppercase Height  */
             "opsz" 20;
-            /* Optical Size */
+        /* Optical Size */
     }
 
     /* Copy Text Bold */
-    * {
+    b {
         font-family: 'Roboto Flex', sans-serif;
         font-variation-settings:
             "slnt" 0,
@@ -282,6 +283,6 @@
             "YTUC" 712,
             /* Parametric Uppercase Height  */
             "opsz" 20;
-            /* Optical Size */
+        /* Optical Size */
     }
 </style>
