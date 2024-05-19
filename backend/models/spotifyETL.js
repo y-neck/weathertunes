@@ -32,16 +32,6 @@ tuneInBtn.addEventListener('click', () => {
     } catch (error) {
         console.error(error);
     }
-    // TODO: Check auth -> if not logged in, get api token
-    if (!fetchProfile) {
-
-
-
-
-
-        // TODO: call spotifyAuth
-    }
-    // getPlaylist();
 }
 )
 

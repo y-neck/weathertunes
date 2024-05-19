@@ -3,8 +3,10 @@ require_once '../db/db.config.php';
 require '../db/04_unloadCurrentWeather.php';
 
 // Control weatherCode for debugging
-$weatherCode = 0;
-//print_r('Current weatherCode:' . $weatherCode);
+//TODO: Deactivate for production!
+
+// $weatherCode = 0;
+// print_r('Current weatherCode:' . $weatherCode);
 
 try {
     // Connect to database
