@@ -13,7 +13,7 @@ require_once '../components/layout.php';
             <div class="container mx-auto flex justify-center">
                 <img src="..\public\img\groupphoto\PH-gruppenfoto.jpg" alt="Group Picture" class="rounded-lg shadow-lg w-full max-w-4xl">
             </div>
-            <div class="container mx-auto mt-0 p-4 bg-bg flex flex-col">
+            <div class="container mx-auto mt-0 p-4 bg-background flex flex-col text-left">
                 <p class="text-text mb-4">
                     Entwickelt und gestaltet wurde Weathertunes von Cla Töny, Joél Schaller und Yannick Spriessler im Rahmen ihres Bachelorstudiums
                     in Multimedia Productions an der FHGR und BFH. Mehr Informationen findest du <a href="https://www.fhgr.ch/en/" class="underline">hier</a>.
