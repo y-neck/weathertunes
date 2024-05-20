@@ -3,7 +3,7 @@ import { getAccessToken } from "./spotifyAuth.config.js";
 import { fetchProfile } from "./spotifyAuth.config.js";
 
 const spotifyParametersUrl = './backend/db/04_unloadSpotify.php';
-const weatherdataUrl = './backend/db/05_mergeCurrentWeather.php';
+const weatherdataUrl = './backend/db/05_mergeCurrentWeather.php'; // Needed for easter eggs
 
 // Get html elements
 const tuneInBtn = document.querySelector('#play-button');
@@ -14,8 +14,8 @@ tuneInBtn.addEventListener('click', () => {
     // Debug:
     console.log("tune in button clicked");
 
-    // Hide placeholder
-    document.querySelector('#spotify-placeholder').style.display = 'none';
+    // // TODO:Hide placeholder
+    // document.querySelector('#spotify-placeholder').style.display = 'none';
 
     // Load fallback playlist
     try {
@@ -65,7 +65,6 @@ function getPlaylist() {
 
                 // Get request parameters
                 let paramSeedGenre = data.seedGenre.replace(/['"]+/g, ''); // Remove quotes
-                console.log(paramSeedGenre);
                 let paramMinAcousticness = data.minAcousticness;
                 let paramMaxAcousticness = data.maxAcousticness;
                 let paramMinDanceability = data.minDanceability;
@@ -94,19 +93,29 @@ function getPlaylist() {
                     // Fetch recommendations using bearer token
                     const recommendationsResponse = await fetch(genPlaylistUrl, {
                         headers: {
-                            Authorization: 'Bearer ' + accessToken
+                            Authorization: 'Bearer ' + accessToken  // Send bearer token with request
                         }
                     });
                     const recommendationsData = await recommendationsResponse.json();
-
-                    // Hijack spotify player :)
                     // Debug:
                     console.log(recommendationsData);
 
-                    // TODO: Get user profle status to determine if fallback playlist should be displayed
+                    // Hijack spotify player :)
 
+                    // Get user profle status to determine if fallback playlist should be displayed (player only works for premium users)
+                    const profileEndpoint = "https://api.spotify.com/v1/me";
+                    const profile = await fetch(profileEndpoint, {
+                        headers: {
+                            Authorization: 'Bearer ' + accessToken  // Send bearer token with request
+                        }
+                    });
 
-                    if (recommendationsResponse.ok) {
+                    const profileData = await profile.json();
+                    const spotifyProduct = profileData.product;
+                    // Debug:
+                    console.log('Profile Data: ', profileData, spotifyProduct);
+
+                    if (recommendationsResponse.ok && spotifyProduct === "premium") {
                         // Deactivate fallback playlist if data is available and profile is premium
                         document.getElementById("spotify-fallback-player").style.display = "none";
 
@@ -122,3 +131,5 @@ function getPlaylist() {
         console.log(error)
     }
 }
+
+// TODO: Add eastereggs
