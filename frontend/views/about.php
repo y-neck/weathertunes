@@ -190,4 +190,9 @@ require_once '../components/layout.php';
     
     </main>     
 </body>  
+<?php require_once '../components/footer.html'; ?>
 
+<script src="backend/models/weatherETL.js"></script>
+<script type="module" src="backend/models/spotifyETL.js"></script>
+
+</html>
