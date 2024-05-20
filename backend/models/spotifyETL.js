@@ -89,20 +89,27 @@ function getPlaylist() {
                     }
 
                     // Fetch recommendations using bearer token
-                    const response = await fetch(genPlaylistUrl, {
+                    const recommendationsResponse = await fetch(genPlaylistUrl, {
                         headers: {
                             Authorization: 'Bearer ' + accessToken
                         }
                     });
-                    const recommendationsData = await response.json();
+                    const recommendationsData = await recommendationsResponse.json();
 
                     // Hijack spotify player :)
                     // Debug:
                     console.log(recommendationsData);
 
-                    if (response.ok) {
-                        // Deactivate fallback playlist if data is available
+                    // TODO: Get user profle status to determine if fallback playlist should be displayed
+
+
+                    if (recommendationsResponse.ok) {
+                        // Deactivate fallback playlist if data is available and profile is premium
                         document.getElementById("spotify-fallback-player").style.display = "none";
+
+                        // TODO: recommendations to queue
+
+                        // TODO: Play
                     }
                 }
 
