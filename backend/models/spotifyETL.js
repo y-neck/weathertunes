@@ -103,21 +103,3 @@ function getPlaylist() {
         console.log(error)
     }
 }
-
-// Initialize the application
-document.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get('code');
-
-    if (!code) {
-        redirectToAuthCodeFlow(clientId);
-    } else {
-        (async () => {
-            const accessToken = await getAccessToken(clientId, code, redirectUri);
-            localStorage.setItem('access_token', accessToken);
-            const profile = await fetchProfile(accessToken);
-            // Debug:
-            console.log('Profile from spotifyETL: ', profile);
-        })();
-    }
-});
