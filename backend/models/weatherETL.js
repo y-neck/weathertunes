@@ -155,7 +155,12 @@ fetch(pastWeatherUrl)
             const imgRegex = iconName.replace(/\s/g, '');
 
             // Create the image source URL without spaces
-            const imageSrc = `frontend/public/img/weather_icons/neg/Icons_Neg_${imgRegex}.png`;
+            if (data.weatherCodeDescription === 'Schnee') {
+                const imageSrc = `frontend/public/img/weather_icons/pos/Icons_Pos_${imgRegex}.png`;
+            } else {
+                const imageSrc = `frontend/public/img/weather_icons/neg/Icons_Neg_${imgRegex}.png`;
+            }
+
 
             // Create the image element
             const imageElement = document.createElement('img');
