@@ -18,6 +18,10 @@ require_once '../components/layout.php';
 </head>
 <body class="bg-background">
     <main class="w-full bg-background p-4">
+        <div class="container mx-auto text-left">
+                <h1 class="text-4xl font-bold text-text mb-1">WETTERMIXER</h1>
+        </div>
+       <div>
         <canvas id="myScatterChart" width="400" height="800"></canvas>
         <script>
             const ctx = document.getElementById('myScatterChart').getContext('2d');
@@ -69,9 +73,30 @@ require_once '../components/layout.php';
                             { x: 1, y: 22 },
                             { x: 1, y: 23 }
                         ],
-                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
+                        backgroundColor: function(context) {
+                            const xValue = context.raw.x;
+                            if (xValue === 7) return 'rgb(17, 15, 26)';
+                            if (xValue === 6) return 'rgb(184, 200, 217)';
+                            if (xValue === 5) return 'rgb(89, 108, 128)';
+                            if (xValue === 4) return 'rgb(172, 191, 185)';
+                            if (xValue === 3) return 'rgb(170, 177, 178)';
+                            if (xValue === 2) return 'rgb(163, 180, 204)';
+                            if (xValue === 1) return 'rgb(255, 181, 77)';
+                            return 'rgba(75, 192, 192, 0.6)'; // Default color
+                        },
+                         borderColor: function(context) {
+                            const xValue = context.raw.x;
+                            if (xValue === 7) return 'rgb(17, 15, 26)';
+                            if (xValue === 6) return 'rgb(184, 200, 217)';
+                            if (xValue === 5) return 'rgb(89, 108, 128)';
+                            if (xValue === 4) return 'rgb(172, 191, 185)';
+                            if (xValue === 3) return 'rgb(170, 177, 178)';
+                            if (xValue === 2) return 'rgb(163, 180, 204)';
+                            if (xValue === 1) return 'rgb(255, 181, 77)';
+                            return 'rgba(75, 192, 192, 1)'; // Default color
+                        },
+                        borderWidth: 1,
+                        pointRadius: 8 // default is 3
                     }]
                 },
                 options: {
@@ -88,10 +113,26 @@ require_once '../components/layout.php';
                             type: 'linear',
                             position: 'bottom',
                             min: 0,
-                            max: 7,
+                            max: 8,
+                            grid: {
+                                drawBorder: false,
+                                color: function(context) {
+                                    if (context.tick.value === 0) {
+                                        return 'rgba(0, 0, 0, 1)';
+                                    }
+                                    return 'rgba(0, 0, 0, 0)';
+                                },
+                                lineWidth: function(context) {
+                                    if (context.tick.value === 0) {
+                                        return 2;
+                                    }
+                                    return 0;
+                                }
+                            },
                             ticks: {
+                                color: 'rgb(10, 10, 10)',
                                 callback: function(value) {
-                                    const labels = ['', 'KLAR', 'WULCHE', 'NÄBU', 'NISU', 'RÄGE', 'SCHNEE', 'STURM'];
+                                    const labels = ['', 'KLAR', 'WULCHE', 'NÄBU', 'NISU', 'RÄGE', 'SCHNEE', 'STURM',''];
                                     return labels[value];
                                 },
                                 minRotation: 90,
@@ -101,8 +142,24 @@ require_once '../components/layout.php';
                         y: {
                             type: 'linear',
                             min: 0,
-                            max: 23,
+                            max: 24,
+                            grid: {
+                                drawBorder: false,
+                                color: function(context) {
+                                    if (context.tick.value === 0) {
+                                        return 'rgba(0, 0, 0, 1)';
+                                    }
+                                    return 'rgba(0, 0, 0, 0)';
+                                },
+                                lineWidth: function(context) {
+                                    if (context.tick.value === 0) {
+                                        return 2;
+                                    }
+                                    return 0;
+                                }
+                            },
                             ticks: {
+                                color: 'rgb(10, 10, 10)',
                                 stepSize: 1,
                                 callback: function(value) {
                                     const labels = [
@@ -119,5 +176,18 @@ require_once '../components/layout.php';
                 }
             });
         </script>
-    </main>
-</body>
+        </div> 
+        <div class="container mx-auto text-left">
+                <h1 class="text-4xl font-bold text-text mt-4">Wie geht das?</h1>
+        </div>
+        <div class="container mx-auto bg-background flex flex-col text-left">
+            <p class="text-text mb-4">
+                Alle 30 Minuten überprüft unsere Wetterfee das Wetter in Bern und schickt dieses an unsere Witterungs-DJs. Diese kreieren eine Playlist aus dem Wetter angepassten Songs und stellen dir diese per Spotify zur Verfügung.<br>
+                Somit kannst du Sonne, Regen und Schnee mit den richtigen Tunes geniessen.<br><br>
+                Falls du genauer wissen möchtest, wie unsere Playlists zusammengestellt werden, findest du weitere Informationen in der Grafik. Die Daten dafür werden von <a href="https://open-meteo.com/" class="underline">OpenMeteo</a> und der <a href="https://developer.spotify.com/documentation/web-api" class="underline">Spotify Web API</a> bezogen.
+            </p>
+        </div>
+    
+    </main>     
+</body>  
+
