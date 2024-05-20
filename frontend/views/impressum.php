@@ -5,12 +5,12 @@ require_once '../components/layout.php';
 <html lang="de" id="webPage" data-theme="fallback">
 
 <body class="bg-bg">
-    <div class="w-full bg-white shadow-md p-6">
+    <div class="w-full bg-bg p-6">
         <div class="container mx-auto flex justify-center">
             <img src="frontend\public\img\groupphoto\PH-gruppenfoto.jpg" alt="Group Picture" class="rounded-lg shadow-lg w-full max-w-4xl">
         </div>
     </div>
-    <div class="container mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
+    <div class="container mx-auto mt-10 p-6 bg-bg">
         <p class="text-gray-700 mb-4">
             Entwickelt und gestaltet wurde Weathertunes von Cla Töny, Joél Schaller und Yannick Spriessler im Rahmen ihres Bachelorstudiums 
             in Multimedia Productions an der FHGR und BFH. Mehr Informationen findest du hier.
