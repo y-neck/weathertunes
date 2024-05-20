@@ -11,6 +11,7 @@ const player = document.querySelector('#spotify-container');
 
 // Event listener for tune in button
 tuneInBtn.addEventListener('click', () => {
+    // Debug:
     console.log("tune in button clicked");
 
     // Load fallback playlist
@@ -25,6 +26,7 @@ tuneInBtn.addEventListener('click', () => {
                 return response.json();
             })
             .then(data => {
+                // Debug:
                 console.log('Current Playlist Properties: ', data)
                 let playerFallbackUrl = data.fallbackPlaylist
                 player.innerHTML = `<iframe style="border-radius:12px" src="${playerFallbackUrl}" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
@@ -32,6 +34,11 @@ tuneInBtn.addEventListener('click', () => {
     } catch (error) {
         console.error(error);
     }
+
+    // Get and display playlist
+    getPlaylist();
+    // Debug:
+    console.log("Playlist loaded")
 }
 )
 
@@ -48,17 +55,69 @@ function getPlaylist() {
                 return response.json();
             })
             .then(data => {
+                // Debug:
                 console.log('Spotify Parameters: ', data);
 
-                // TODO: create url with parameters
+                // Get request parameters
+                let paramSeedGenre = data.seedGenre.replace(/['"]+/g, ''); // Remove quotes
+                console.log(paramSeedGenre);
+                let paramMinAcousticness = data.minAcousticness;
+                let paramMaxAcousticness = data.maxAcousticness;
+                let paramMinDanceability = data.minDanceability;
+                let paramMaxDanceability = data.maxDanceability;
+                let paramMinEnergy = data.minEnergy;
+                let paramMaxEnergy = data.maxEnergy;
+                let paramMaxSpeechyness = data.maxSpeechyness;
+                let paramMinValence = data.minValence;
+                let paramMaxValence = data.maxValence;
 
-                // TODO: fetch spotify data
+                let genPlaylistUrl = `https://api.spotify.com/v1/recommendations?limit=20&seed_genres=${paramSeedGenre}&min_acousticness=${paramMinAcousticness}&max_acousticness=${paramMaxAcousticness}&min_danceability=${paramMinDanceability}&max_danceability=${paramMaxDanceability}&min_energy=${paramMinEnergy}&max_energy=${paramMaxEnergy}&max_speechiness=${paramMaxSpeechyness}&min_valence=${paramMinValence}&max_valence=${paramMaxValence}`;
 
-                // TODO: insert spotify data into html
+                // Debug:
+                //console.log('API Fetch url: ', genPlaylistUrl);
 
+                // fetch spotify data
+                async function getRecommendations(genPlaylistUrl) {
+                    // Get access token
+                    let accessToken = localStorage.getItem("access_token");
+                    if (!accessToken) {
+                        console.error('Access token is missing');
+                        return;
+                    }
 
-            })
+                    // Fetch recommendations using bearer token
+                    const response = await fetch(genPlaylistUrl, {
+                        headers: {
+                            Authorization: 'Bearer ' + accessToken
+                        }
+                    });
+                    // TODO: insert spotify data into html
+                    const recommendationsData = await response.json();
+                    // Debug:
+                    console.log(recommendationsData);
+                }
+
+                getRecommendations(genPlaylistUrl);
+            });
     } catch (error) {
         console.log(error)
     }
 }
+
+// Initialize the application
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+
+    if (!code) {
+        redirectToAuthCodeFlow(clientId);
+    } else {
+        (async () => {
+            const accessToken = await getAccessToken(clientId, code, redirectUri);
+            localStorage.setItem('access_token', accessToken);
+            const profile = await fetchProfile(accessToken);
+            // Debug:
+            console.log('Profile from spotifyETL: ', profile);
+        })();
+    }
+});
