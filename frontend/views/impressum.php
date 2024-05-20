@@ -4,15 +4,15 @@ require_once '../components/layout.php';
 
 <html lang="de" id="webPage" data-theme="fallback">
 
-<body class="bg-bg">
-    <div class="w-full bg-bg p-4">
+<body class="bg-background">
+    <main class="w-full bg-bg p-4">
         <div class="container mx-auto text-left">
             <h1 class="text-4xl font-bold text-text mb-4">Impressum</h1>
         </div>
         <div class="container mx-auto flex justify-center">
             <img src="..\public\img\groupphoto\PH-gruppenfoto.jpg" alt="Group Picture" class="rounded-lg shadow-lg w-full max-w-4xl">
         </div>
-    </div>
+    </main>
     <div class="container mx-auto mt-0 p-4 bg-bg">
         <p class="text-text mb-4">
             Entwickelt und gestaltet wurde Weathertunes von Cla Töny, Joél Schaller und Yannick Spriessler im Rahmen ihres Bachelorstudiums 
@@ -28,6 +28,11 @@ require_once '../components/layout.php';
             <h2 class="text-2xl font-semibold text-text mb-2">Backend Magician</h2>
             <p class="text-text">Yannick Spriessler</p>
         </div>
-    </div>
-
+    </main>
+    <?php require_once 'frontend/components/footer.html'; ?>    
 </body>
+
+<script src="backend/models/weatherETL.js"></script>
+<script type="module" src="backend/models/spotifyETL.js"></script>
+
+</html>
