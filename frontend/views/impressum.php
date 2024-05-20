@@ -6,6 +6,7 @@ require_once '../components/layout.php';
 
 <body class="bg-background">
     <main class="w-full bg-bg p-4">
+    <div>
         <div class="container mx-auto text-left">
             <h1 class="text-4xl font-bold text-text mb-4">Impressum</h1>
         </div>
@@ -28,8 +29,9 @@ require_once '../components/layout.php';
             <h2 class="text-2xl font-semibold text-text mb-2">Backend Magician</h2>
             <p class="text-text">Yannick Spriessler</p>
         </div>
+     </div>
     </main>
-    <?php require_once 'frontend/components/footer.html'; ?>    
+    <?php require_once '../components/footer.html'; ?>    
 </body>
 
 <script src="backend/models/weatherETL.js"></script>
