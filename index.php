@@ -28,7 +28,6 @@ require_once 'backend/db/db.config.php';
         </div>
         <!-- Adjusted div for Spotify iframe -->
         <div id="spotify-container" class="flex justify-center mb-5 m-2 mx-auto w-full">
-            <iframe style="border-radius:12px" class="hidden" src="https://open.spotify.com/embed/playlist/4VN7J0uq62foOhZndwOegy?utm_source=generator&theme=0" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
 
         <div id="past-weather-box" class="flex flex-col gap-0 w-full">
