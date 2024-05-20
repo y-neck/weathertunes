@@ -50,6 +50,7 @@ const redirectToAuthCodeFlow = async (clientId) => {
 
 // Fetch user profile
 /**
+
  * Fetch user profile
  * @param {string} token - Spotify access token
  * @returns {Promise<Object>} - User's profile information
@@ -67,15 +68,20 @@ const fetchProfile = async (token) => {
 
 
 if (!code) {
+    // Debug:
     console.log('Code not found')
     redirectToAuthCodeFlow(clientId);
 } else {
     const accessToken = await getAccessToken(clientId, code);
     const profile = await fetchProfile(accessToken);
 
-    //console.log(code);
+    // Store access token in localStorage
+    localStorage.setItem('access_token', accessToken);
+
+    // Debug:
+    // console.log('Code:',code);
     // console.log('Access token:', accessToken);
-    // console.log('Profile:', profile);
+    // console.log('Profile from spotifyAuth:', profile);
 
 }
 
