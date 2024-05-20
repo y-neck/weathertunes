@@ -1,6 +1,6 @@
 <?php
-require_once './frontend/components/layout.php';
-require_once './backend/db/db.config.php';
+require_once 'frontend/components/layout.php';
+require_once 'backend/db/db.config.php';
 ?>
 
 <html lang="de" id="webPage" data-theme="fallback">
@@ -49,10 +49,10 @@ require_once './backend/db/db.config.php';
             </div>
         </div>
     </main>
-    <?php require_once './frontend/components/footer.html'; ?>
+    <?php require_once 'frontend/components/footer.html'; ?>
 </body>
 
-<script src="./backend/models/weatherETL.js"></script>
-<script type="module" src="./backend/models/spotifyETL.js"></script>
+<script src="backend/models/weatherETL.js"></script>
+<script type="module" src="backend/models/spotifyETL.js"></script>
 
 </html>
