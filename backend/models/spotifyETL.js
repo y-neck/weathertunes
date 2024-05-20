@@ -29,16 +29,18 @@ tuneInBtn.addEventListener('click', () => {
                 // Debug:
                 console.log('Current Playlist Properties: ', data)
                 let playerFallbackUrl = data.fallbackPlaylist
-                player.innerHTML = `<iframe style="border-radius:12px" src="${playerFallbackUrl}" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
+                player.innerHTML = `<iframe id="spotify-fallback-player" style="border-radius:12px" src="${playerFallbackUrl}" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
             })
     } catch (error) {
         console.error(error);
     }
 
     // Get and display playlist
-    getPlaylist();
-    // Debug:
-    console.log("Playlist loaded")
+    if (localStorage.getItem("access_token")) {
+        getPlaylist();
+        // Debug:
+        console.log("Playlist loaded")
+    }
 }
 )
 
@@ -82,6 +84,7 @@ function getPlaylist() {
                     let accessToken = localStorage.getItem("access_token");
                     if (!accessToken) {
                         console.error('Access token is missing');
+                        // Display
                         return;
                     }
 
@@ -91,10 +94,16 @@ function getPlaylist() {
                             Authorization: 'Bearer ' + accessToken
                         }
                     });
-                    // TODO: insert spotify data into html
                     const recommendationsData = await response.json();
+
+                    // Hijack spotify player :)
                     // Debug:
                     console.log(recommendationsData);
+
+                    if (response.ok) {
+                        // Deactivate fallback playlist if data is available
+                        document.getElementById("spotify-fallback-player").style.display = "none";
+                    }
                 }
 
                 getRecommendations(genPlaylistUrl);
