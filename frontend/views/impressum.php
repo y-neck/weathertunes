@@ -16,13 +16,13 @@ require_once '../components/layout.php';
             in Multimedia Productions an der FHGR und BFH. Mehr Informationen findest du hier.
         </p>
         <div class="mt-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-2">Master Frontend</h2>
+            <h2 class="text-2xl font-semibold text-text mb-2">Master Frontend</h2>
             <p class="text-gray-700 mb-6">Cla Töny</p>
 
-            <h2 class="text-2xl font-semibold text-gray-800 mb-2">Head of Design</h2>
+            <h2 class="text-2xl font-semibold text-text mb-2">Head of Design</h2>
             <p class="text-gray-700 mb-6">Joél Schaller</p>
 
-            <h2 class="text-2xl font-semibold text-gray-800 mb-2">Backend Magician</h2>
+            <h2 class="text-2xl font-semibold text-text mb-2">Backend Magician</h2>
             <p class="text-gray-700">Yannick Spriessler</p>
         </div>
     </div>
