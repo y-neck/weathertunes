@@ -9,6 +9,7 @@ $data = [
     'windSpeed' => $weatherdata['windSpeed'],
 ];
 
+// Debug:
 // print_r($data);
 
 try {
@@ -21,7 +22,7 @@ try {
         'windSpeed' => $weatherdata['windSpeed'],
     ];
 
-    // Print data for debugging
+    // Debug:
     print_r($data);
 
     // connect to database

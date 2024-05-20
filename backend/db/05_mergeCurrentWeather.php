@@ -3,6 +3,7 @@
 require_once '../db/db.config.php';
 require '../db/04_unloadCurrentWeather.php';
 
+// Debug:
 // print_r($weatherdata);
 
 // Extract weatherCode from $weatherdata
@@ -20,7 +21,7 @@ try {
     $stmt->execute();
     $weatherCodeData = $stmt->fetchAll(PDO::FETCH_ASSOC);   // Fetch data from database table Weather_code_description
 
-    // Control current weatherCode read from weather db
+    // Debug:
     // print_r('WeatherCodeValue: ' . $weatherCodeValue);
 
     // Add error handling

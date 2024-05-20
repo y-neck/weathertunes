@@ -1,9 +1,9 @@
 <?php
 require_once '../db/01_extractWeather.php';
 
+// Debug:
 // print_r($weatherdata);
 reduceWeatherData($weatherdata);
-
 //print_r($weatherdata);
 
 
