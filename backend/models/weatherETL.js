@@ -35,7 +35,7 @@ try {
             temperatureBox.innerHTML = `${data.temperature}°C`
             weatherDescriptionBox.innerHTML = data.weatherCodeDescription;
 
-            // Test themes
+            // // Debug themes:
             // data.weatherCodeDescription = 'Klar';
             // data.isDay = 0;
             // date = '';
@@ -100,7 +100,7 @@ try {
         })
 }
 catch (error) {
-    console.log(error)
+    console.error(error)
 }
 
 // Insert past weather into weather review container
@@ -177,3 +177,5 @@ fetch(pastWeatherUrl)
     .catch(error => {
         console.error('Error fetching past weather data:', error);
     });
+
+// TODO: Add eastereggs
