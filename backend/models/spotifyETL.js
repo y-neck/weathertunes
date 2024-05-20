@@ -14,6 +14,9 @@ tuneInBtn.addEventListener('click', () => {
     // Debug:
     console.log("tune in button clicked");
 
+    // Hide placeholder
+    document.querySelector('#spotify-placeholder').style.display = 'none';
+
     // Load fallback playlist
     try {
         fetch(spotifyParametersUrl)
