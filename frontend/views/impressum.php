@@ -17,7 +17,7 @@ require_once '../components/layout.php';
             <div class="container mx-auto mt-0 p-4 bg-background flex flex-col text-left">
                 <p class="text-text">
                     Entwickelt und gestaltet wurde Weathertunes von Cla Töny, Joél Schaller und Yannick Spriessler im Rahmen ihres Bachelorstudiums
-                    in Multimedia Productions an der FHGR und BFH. Mehr Informationen findest du <a href="/human.txt" class="underline">hier</a>.
+                    in Multimedia Productions an der FHGR und BFH. Mehr Informationen findest du <a href="/humans.txt" class="underline">hier</a>.
                 </p>
             </div>
         </div>
