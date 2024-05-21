@@ -1,21 +1,24 @@
-//<link rel="author" href="humans.txt">
-
 /* TEAM */
-                         
-Role: Name, company      
-Site: email, link to a contact form, etc.
-GitHub:                           
-Location: City, Country.
 
-[...]
-													
-/* THANKS */
-						
-Name: name or url
-[...]
+Master of Frontend: 
+Cla Töny
+GitHub: Clatoeny
+Switzerland
+
+Head of Design: 
+Joél Schaller
+https://djo-productions.ch
+GitHub: joggiletti
+Switzerland
+
+Backend Magician: 
+Yannick Spriessler
+https://neckxproductions.ch
+GitHub: y-neck
+Switzerland
                                                    
 /* SITE */
 
 Built with                            
-Components:
-Software:
+PHP, Javascript, HTML, LottieFiles, TailwindCSS
+open-meteo API, Spotify API

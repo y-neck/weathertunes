@@ -9,6 +9,7 @@
     <meta name="keywords" content="weather, tunes, music, spotify, api">
     <!--Responsive web design:https://www.w3schools.com/css/css_rwd_viewport.asp-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="author" href="humans.txt">
 
     <!--TODO: Tab image-->
     <link rel="icon" href="">
