@@ -22,7 +22,7 @@ require_once '../components/layout.php';
             </div>
         </div>
         <div class="mt-8 leading-none">
-            <h2 class="text-2xl font-semibold text-text mb-2">Master Frontend</h2>
+            <h2 class="text-2xl font-semibold text-text mb-2">Master of Frontend</h2>
             <p class="text-text mb-6">Cla Töny</p>
 
             <h2 class="text-2xl font-semibold text-text mb-2">Head of Design</h2>
