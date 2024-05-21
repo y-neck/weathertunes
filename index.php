@@ -28,6 +28,7 @@ require_once 'backend/db/db.config.php';
         </div>
         <!-- Adjusted div for Spotify iframe -->
         <div id="spotify-container" class="flex justify-center mb-5 m-2 mx-auto w-full">
+            Klicke auf “Tune In”, um dir deinen Wettermix generieren zu lassen.
         </div>
 
         <div id="past-weather-box" class="flex flex-col gap-0 w-full">

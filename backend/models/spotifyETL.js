@@ -8,14 +8,10 @@ const weatherdataUrl = './backend/db/05_mergeCurrentWeather.php'; // Needed for 
 // Get html elements
 const tuneInBtn = document.querySelector('#play-button');
 const player = document.querySelector('#spotify-container');
+const recommendationsPlayer = document.querySelector('#spotify-recommendations-player');
 
 // Event listener for tune in button
 tuneInBtn.addEventListener('click', () => {
-    // Debug:
-    console.log("tune in button clicked");
-
-    // // TODO:Hide placeholder
-    // document.querySelector('#spotify-placeholder').style.display = 'none';
 
     // Load fallback playlist
     try {
@@ -29,8 +25,8 @@ tuneInBtn.addEventListener('click', () => {
                 return response.json();
             })
             .then(data => {
-                // Debug:
-                console.log('Current Playlist Properties: ', data)
+                // // Debug:
+                // console.log('Current Playlist Properties: ', data)
                 let playerFallbackUrl = data.fallbackPlaylist
                 player.innerHTML = `<iframe id="spotify-fallback-player" style="border-radius:12px" src="${playerFallbackUrl}" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
             })
@@ -41,14 +37,20 @@ tuneInBtn.addEventListener('click', () => {
     // Get and display playlist
     if (localStorage.getItem("access_token")) {
         getPlaylist();
-        // Debug:
-        console.log("Playlist loaded")
+        // // Debug:
+        // console.log("Playlist loaded")
     }
 }
 )
 
 // Fetch parameter data
 function getPlaylist() {
+
+    // // Hide player and show recommendations
+    // player.style.display = "none";
+    // recommendationsPlayer.classList.remove("hidden");
+    // recommendationsPlayer.classList.add("flex");
+
     try {
         fetch(spotifyParametersUrl)
             .then(response => {
@@ -59,9 +61,9 @@ function getPlaylist() {
                 // Parse the JSON response
                 return response.json();
             })
-            .then(data => {
-                // Debug:
-                console.log('Spotify Parameters: ', data);
+            .then(async data => {
+                // // Debug:
+                // console.log('Spotify Parameters: ', data);
 
                 // Get request parameters
                 let paramSeedGenre = data.seedGenre.replace(/['"]+/g, ''); // Remove quotes
@@ -77,8 +79,8 @@ function getPlaylist() {
 
                 let genPlaylistUrl = `https://api.spotify.com/v1/recommendations?limit=20&seed_genres=${paramSeedGenre}&min_acousticness=${paramMinAcousticness}&max_acousticness=${paramMaxAcousticness}&min_danceability=${paramMinDanceability}&max_danceability=${paramMaxDanceability}&min_energy=${paramMinEnergy}&max_energy=${paramMaxEnergy}&max_speechiness=${paramMaxSpeechyness}&min_valence=${paramMinValence}&max_valence=${paramMaxValence}`;
 
-                // Debug:
-                //console.log('API Fetch url: ', genPlaylistUrl);
+                // // Debug:
+                // console.log('API Fetch url: ', genPlaylistUrl);
 
                 // fetch spotify data
                 async function getRecommendations(genPlaylistUrl) {
@@ -98,7 +100,7 @@ function getPlaylist() {
                     });
                     const recommendationsData = await recommendationsResponse.json();
                     // Debug:
-                    console.log(recommendationsData);
+                    console.log('Recommendation data: ', recommendationsData);
 
                     // Hijack spotify player :)
 
@@ -112,24 +114,57 @@ function getPlaylist() {
 
                     const profileData = await profile.json();
                     const spotifyProduct = profileData.product;
-                    // Debug:
-                    console.log('Profile Data: ', profileData, spotifyProduct);
+                    // // Debug:
+                    // console.log('Profile Data: ', profileData, spotifyProduct);
 
                     if (recommendationsResponse.ok && spotifyProduct === "premium") {
                         // Deactivate fallback playlist if data is available and profile is premium
                         document.getElementById("spotify-fallback-player").style.display = "none";
 
-                        // TODO: recommendations to queue
+                        // Add recommendations to queue: https://developer.spotify.com/documentation/web-api/reference/add-to-queue
+                        // FIXME: currently same track gets appended to queue multiple times
+                        try {
+                            for (const track of recommendationsData.tracks) {
+                                // const uri = track.uri.replace(/:/g, '%3A');
+                                const uri = "spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh"
+                                const queueEndpoint = `https://api.spotify.com/v1/me/player/queue?uri=${uri}`;
+                                await fetch(queueEndpoint, {
+                                    method: 'POST',
+                                    headers: {
+                                        Authorization: 'Bearer ' + accessToken  // Send bearer token with request
+                                    }
 
-                        // TODO: Play
+                                });
+
+                                // Debug:
+                                console.log('Track queued: ', track.name);
+                            }
+                        } catch (error) {
+                            console.log(error)
+                        }
+
+
+
+
+
+                        //     const player = document.querySelector('#spotify-container');
+                        //     if (player) {
+                        //         player.innerHTML = `
+                        //     <div id="recommendations-player-controls">
+                        //         <button id="recommendations-player-play">Play</button>
+                        //         <button id="recommendations-player-pause">Pause</button>
+                        //     </div>
+                        //     <ul id="recommendations-player-list">yfdjd</ul>
+                        // `};
                     }
                 }
 
+
                 getRecommendations(genPlaylistUrl);
+
+
             });
     } catch (error) {
         console.log(error)
     }
 }
-
-// TODO: Add eastereggs
