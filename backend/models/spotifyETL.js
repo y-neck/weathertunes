@@ -125,8 +125,9 @@ function getPlaylist() {
                         // FIXME: currently same track gets appended to queue multiple times
                         try {
                             for (const track of recommendationsData.tracks) {
-                                // const uri = track.uri.replace(/:/g, '%3A');
-                                const uri = "spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh"
+                                const uri = track.uri.replace(/:/g, '%3A');
+                                // // Debug:
+                                // const uri = "spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh"
                                 const queueEndpoint = `https://api.spotify.com/v1/me/player/queue?uri=${uri}`;
                                 await fetch(queueEndpoint, {
                                     method: 'POST',
@@ -162,9 +163,9 @@ function getPlaylist() {
 
                 getRecommendations(genPlaylistUrl);
 
+                const accessToken = localStorage.getItem("access_token");
                 //TODO: Skip one track to start with queue directly 
                 // TODO: Play/pause btns: https://developer.spotify.com/documentation/web-api/reference/start-a-users-playback
-                const accessToken = localStorage.getItem("access_token");
                 const playFunction = "https://api.spotify.com/v1/me/player/play";
                 try {
                     await fetch(playFunction, {
