@@ -2,9 +2,8 @@
 require_once '../db/db.config.php';
 require '../db/04_unloadCurrentWeather.php';
 
-// Control weatherCode for debugging
-// Debug:
-$weatherCode = 0;
+// // Debug:
+// $weatherCode = 0;
 // print_r('Current weatherCode:' . $weatherCode);
 
 try {
