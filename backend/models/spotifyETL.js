@@ -162,6 +162,20 @@ function getPlaylist() {
 
                 getRecommendations(genPlaylistUrl);
 
+                //TODO: Skip one track to start with queue directly 
+                // TODO: Play/pause btns: https://developer.spotify.com/documentation/web-api/reference/start-a-users-playback
+                const accessToken = localStorage.getItem("access_token");
+                const playFunction = "https://api.spotify.com/v1/me/player/play";
+                try {
+                    await fetch(playFunction, {
+                        method: 'PUT',
+                        headers: {
+                            Authorization: 'Bearer ' + accessToken  // Send bearer token with request
+                        }
+                    })
+                } catch (error) {
+                    console.error('Error playing playlist:', error);
+                }
 
             });
     } catch (error) {
