@@ -151,20 +151,6 @@ function getPlaylist() {
                         } catch (error) {
                             console.log(error)
                         }
-
-
-
-
-
-                        //     const player = document.querySelector('#spotify-container');
-                        //     if (player) {
-                        //         player.innerHTML = `
-                        //     <div id="recommendations-player-controls">
-                        //         <button id="recommendations-player-play">Play</button>
-                        //         <button id="recommendations-player-pause">Pause</button>
-                        //     </div>
-                        //     <ul id="recommendations-player-list">yfdjd</ul>
-                        // `};
                     }
                 }
 
@@ -172,8 +158,8 @@ function getPlaylist() {
                 getRecommendations(genPlaylistUrl);
 
                 const accessToken = localStorage.getItem("access_token");
-                //TODO: Skip one track to start with queue directly 
-                // TODO: Play/pause btns: https://developer.spotify.com/documentation/web-api/reference/start-a-users-playback
+
+                // Play/pause btns: https://developer.spotify.com/documentation/web-api/reference/start-a-users-playback
                 const playFunction = "https://api.spotify.com/v1/me/player/play";
                 try {
                     await fetch(playFunction, {
@@ -186,6 +172,18 @@ function getPlaylist() {
                     console.error('Error playing playlist:', error);
                 }
 
+                //Skip one track to start with queue directly 
+                const skipEndpoint = "https://api.spotify.com/v1/me/player/next";
+                try {
+                    await fetch(skipEndpoint, {
+                        method: 'POST',
+                        headers: {
+                            Authorization: 'Bearer ' + accessToken  // Send bearer token with request
+                        }
+                    })
+                } catch (error) {
+                    console.error('Error skipping track:', error);
+                }
             });
     } catch (error) {
         console.log(error)
