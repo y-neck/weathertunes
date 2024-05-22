@@ -7,14 +7,16 @@ const weatherdataUrl = './backend/db/05_mergeCurrentWeather.php'; // Needed for 
 
 // Get html elements
 const tuneInBtn = document.querySelector('#play-button');
+const spotifyText = document.querySelector('#spotify-text');
 const iframePlayer = document.querySelector('#spotify-iframe');
 const recommendationsPlayer = document.querySelector('#spotify-recommendations-player');
 
 // Event listener for tune in button
 tuneInBtn.addEventListener('click', () => {
 
-    // Rename button 
+    // Rename button, remove info text
     tuneInBtn.textContent = "REMIX";
+    spotifyText.style.display = "none";
 
     // Load fallback playlist
     try {

@@ -32,7 +32,6 @@ require_once 'backend/db/db.config.php';
             <div id="spotify-iframe"></div>
             <div id="recommendations-player">
                 <div id="recommendations-player-controls">
-                    <button id="recommendations-player-play">Play</button>
                     <button id="recommendations-player-pause">Pause</button>
                 </div>
                 <ul id="recommendations-player-list"></ul>
