@@ -7,7 +7,7 @@ const weatherdataUrl = './backend/db/05_mergeCurrentWeather.php'; // Needed for 
 
 // Get html elements
 const tuneInBtn = document.querySelector('#play-button');
-const player = document.querySelector('#spotify-container');
+const iframePlayer = document.querySelector('#spotify-iframe');
 const recommendationsPlayer = document.querySelector('#spotify-recommendations-player');
 
 // Event listener for tune in button
@@ -28,7 +28,7 @@ tuneInBtn.addEventListener('click', () => {
                 // // Debug:
                 // console.log('Current Playlist Properties: ', data)
                 let playerFallbackUrl = data.fallbackPlaylist
-                player.innerHTML = `<iframe id="spotify-fallback-player" style="border-radius:12px" src="${playerFallbackUrl}" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
+                iframePlayer.innerHTML = `<iframe id="spotify-fallback-player" style="border-radius:12px" src="${playerFallbackUrl}" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
             })
     } catch (error) {
         console.error(error);
@@ -45,11 +45,6 @@ tuneInBtn.addEventListener('click', () => {
 
 // Fetch parameter data
 function getPlaylist() {
-
-    // // Hide player and show recommendations
-    // player.style.display = "none";
-    // recommendationsPlayer.classList.remove("hidden");
-    // recommendationsPlayer.classList.add("flex");
 
     try {
         fetch(spotifyParametersUrl)
@@ -119,10 +114,9 @@ function getPlaylist() {
 
                     if (recommendationsResponse.ok && spotifyProduct === "premium") {
                         // Deactivate fallback playlist if data is available and profile is premium
-                        document.getElementById("spotify-fallback-player").style.display = "none";
+                        iframePlayer.style.display = "none";
 
                         // Add recommendations to queue: https://developer.spotify.com/documentation/web-api/reference/add-to-queue
-                        // FIXME: currently same track gets appended to queue multiple times
                         try {
                             for (const track of recommendationsData.tracks) {
                                 const uri = track.uri.replace(/:/g, '%3A');
