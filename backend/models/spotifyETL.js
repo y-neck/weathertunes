@@ -7,9 +7,13 @@ const weatherdataUrl = './backend/db/05_mergeCurrentWeather.php'; // Needed for 
 
 // Get html elements
 const tuneInBtn = document.querySelector('#play-button');
+const pauseBtn = document.querySelector('#recommendations-player-pause');
 const spotifyText = document.querySelector('#spotify-text');
 const iframePlayer = document.querySelector('#spotify-iframe');
 const recommendationsPlayer = document.querySelector('#spotify-recommendations-player');
+
+// // Hide pause btn
+// pauseBtn.style.display = "none";
 
 // Event listener for tune in button
 tuneInBtn.addEventListener('click', () => {
@@ -44,6 +48,7 @@ tuneInBtn.addEventListener('click', () => {
     // Get and display playlist
     if (localStorage.getItem("access_token")) {
         getPlaylist();
+        pauseBtn.style.display = "block";
         // // Debug:
         // console.log("Playlist loaded")
     }
@@ -193,7 +198,6 @@ function getPlaylist() {
 }
 
 // Pause playback button
-const pauseBtn = document.querySelector('#recommendations-player-pause');
 pauseBtn.addEventListener('click', async () => {
     const accessToken = localStorage.getItem("access_token");
     const pauseFunction = "https://api.spotify.com/v1/me/player/pause";
