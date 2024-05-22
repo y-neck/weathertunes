@@ -34,7 +34,7 @@ require_once 'backend/db/db.config.php';
                 <div id="recommendations-player-controls">
                     <button id="recommendations-player-pause">Pause</button>
                 </div>
-                <ul id="recommendations-player-list"></ul>
+                <ol id="recommendations-player-list"></ol>
             </div>
         </div>
 

@@ -136,8 +136,17 @@ function getPlaylist() {
 
                                 });
 
-                                // Debug:
-                                console.log('Track queued: ', track.name);
+                                // Append tracks to track list
+                                const recommendationsList = document.querySelector('#recommendations-player-list');
+                                if (recommendationsList) {
+                                    const li = document.createElement('li');
+                                    li.className = "trackTitle";
+                                    li.textContent = track.name;
+                                    recommendationsList.appendChild(li);
+                                    console.log('Track queued: ', track.name);
+                                } else {
+                                    console.error('Recommendations list element not found');
+                                }
                             }
                         } catch (error) {
                             console.log(error)
