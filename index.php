@@ -28,10 +28,10 @@ require_once 'backend/db/db.config.php';
         </div>
        
         <!-- Adjusted div for Spotify iframe -->
-        <div id="spotify-container" class="flex flex-col justify-center mb-5 m-2 mx-auto w-full">
-         <div id="placeholder-box" class="flex justify-center text-center items-center col-span-2 shadow-main rounded-lg bg-middle h-[500px] uppercase">
+        <div id="spotify-container" class="flex flex-col justify-center text-center items-center col-span-2 mb-5 shadow-main rounded-lg bg-middle h-[500px] uppercase">
+         
             <p id="spotify-text" class="m-[20%]">Öffne Spotify und klicke auf “Tune In”, um dir deinen Wettermix generieren zu lassen. <br><br> Falls die Wiedergabe nicht automatisch startet, musst du eventuell zuerst selbst einen Song abspielen, damit Spotify dein Gerät erkennt.</p> 
-        </div>  
+          
             <div id="spotify-iframe"></div>
             <div id="recommendations-player">
                 <div id="recommendations-player-controls">
