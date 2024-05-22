@@ -17,6 +17,8 @@ tuneInBtn.addEventListener('click', () => {
     // Rename button, remove info text
     tuneInBtn.textContent = "REMIX";
     spotifyText.style.display = "none";
+    // Reset track list on remix
+    document.querySelector('#recommendations-player-list').innerHTML = '';
 
     // Load fallback playlist
     try {
@@ -189,3 +191,20 @@ function getPlaylist() {
         console.log(error)
     }
 }
+
+// Pause playback button
+const pauseBtn = document.querySelector('#recommendations-player-pause');
+pauseBtn.addEventListener('click', async () => {
+    const accessToken = localStorage.getItem("access_token");
+    const pauseFunction = "https://api.spotify.com/v1/me/player/pause";
+    try {
+        await fetch(pauseFunction, {
+            method: 'PUT',
+            headers: {
+                Authorization: 'Bearer ' + accessToken  // Send bearer token with request
+            }
+        })
+    } catch (error) {
+        console.error('Error pausing playback:', error);
+    }
+});
