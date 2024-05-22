@@ -12,7 +12,7 @@
     <link rel="author" href="humans.txt">
 
     <!--TODO: Tab image-->
-    <link rel="icon" href="">
+    <link rel="icon" href="frontend/public/img/favicon/Favicon.ico">
 
     <!-- Tailwind Config -->
     <script src="https://cdn.tailwindcss.com"></script>
