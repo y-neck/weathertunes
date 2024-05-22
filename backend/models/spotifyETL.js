@@ -13,6 +13,9 @@ const recommendationsPlayer = document.querySelector('#spotify-recommendations-p
 // Event listener for tune in button
 tuneInBtn.addEventListener('click', () => {
 
+    // Rename button 
+    tuneInBtn.textContent = "REMIX";
+
     // Load fallback playlist
     try {
         fetch(spotifyParametersUrl)
