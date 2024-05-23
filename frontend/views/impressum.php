@@ -11,7 +11,7 @@ require_once '../components/layout.php';
                 <h1 class="text-4xl font-bold text-text">Impressum</h1>
             </div>
             <div class="container mx-auto flex justify-center">
-                <img src="..\public\img\groupphoto\PH-gruppenfoto.jpg" alt="Group Picture" class="rounded-lg shadow-lg w-full max-w-4xl">
+                <img src="..\public\img\groupphoto\teambild.webp" alt="Group Picture" class="rounded-lg shadow-lg w-full max-w-4xl">
             </div>
 
             <div class="container mx-auto mt-0 p-4 bg-background flex flex-col text-left">
