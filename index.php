@@ -83,7 +83,10 @@ require_once 'backend/db/db.config.php';
                 </div>
             </div>
         </div>
-    
+        <div id="bottom-text-box" class="flex justify-center items-center text-center shadow-main rounded-lg h-[20vh] bg-middle uppercase">
+        Made For You with ♥<br>
+        BY Cla, Joél and Yannick
+        </div>
     <?php require_once 'frontend/components/footer.html'; ?>
     </main>
 </body>
