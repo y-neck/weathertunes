@@ -43,7 +43,7 @@ require_once 'backend/db/db.config.php';
                 </div>
             </div>
             <div id="recommendations-player" class="overflow-y-auto w-[90%]">
-             
+                <!-- List for Songs, scrollable -->
                 <ol id="recommendations-player-list" class="h-[calc(100vh - 10vh)]">
                     <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
                     <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
