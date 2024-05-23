@@ -83,8 +83,9 @@ require_once 'backend/db/db.config.php';
                 </div>
             </div>
         </div>
-    </main>
+    
     <?php require_once 'frontend/components/footer.html'; ?>
+    </main>
 </body>
 
 <script src="backend/models/weatherETL.js"></script>
