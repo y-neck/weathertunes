@@ -28,37 +28,42 @@ require_once 'backend/db/db.config.php';
         </div>
 
         <!-- Adjusted div for Spotify iframe -->
-        <div id="spotify-container" class="flex flex-col justify-center text-center items-center col-span-2 mb-5 shadow-main rounded-lg bg-middle h-[500px] uppercase">
-
+        <div id="spotify-container" class="flex flex-col justify-center text-center items-center col-span-2 mb-5 shadow-main rounded-lg bg-middle h-[500px] uppercase=">
             <p id="spotify-text" class="m-[20%]">Öffne Spotify und klicke auf “Tune In”, um dir deinen Wettermix generieren zu lassen. <br><br> Falls die Wiedergabe nicht automatisch startet, musst du eventuell zuerst selbst einen Song abspielen, damit Spotify dein Gerät erkennt.</p>
 
             <div id="spotify-iframe"></div>
-            <div id="recommendations-player">
-                <div id="recommendations-player-controls">
-                    <button id="recommendations-player-pause">Pause</button>
+            <div class="flex h-auto w-[90%] justify-center items-center">
+                <div style="padding: 0" class="container text-left">
+                    <h1 class="text-4xl font-bold text-text">WETTERMIX</h1>
                 </div>
-                <ol id="recommendations-player-list" >
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
-                    <li class="track-list-item">bakjbgag</li>
+                <div id="recommendations-player-controls" class="flex h-[30px] w-[30px] items-center bg-white bg-text2 rounded-full">
+                    <button id="recommendations-player-pause">
+                        <img src="frontend/public/img/standard_icons/Play.svg" alt="Play Icon" class="h-[25px] w-auto">
+                    </button>
+                </div>
+            </div>
+            <div id="recommendations-player" class="overflow-y-auto w-[90%]">
+             
+                <ol id="recommendations-player-list" class="h-[calc(100vh - 10vh)]">
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+                    <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
                 </ol>
+
             </div>
         </div>
 
@@ -89,3 +94,20 @@ require_once 'backend/db/db.config.php';
 <script type="module" src="backend/models/spotifyETL.js"></script>
 
 </html>
+
+
+<style>
+    .track-list-item {
+        list-style-type: decimal;
+        text-transform: uppercase;
+        border-bottom: 1px solid #ccc;
+    }
+    ol {
+        list-style-position: inside;
+        padding-inline-start: 0;
+    }
+    li:not(:last-child) {
+        margin-bottom: 0.5em;
+    }
+</style>
+
