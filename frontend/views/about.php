@@ -17,7 +17,8 @@ require_once '../components/layout.php';
     </style>
 </head>
 <body class="bg-background">
-    <main class="w-full bg-background p-4">
+    <main class="w-full bg-background flex flex-col md:gap-[5%] justify-center md:flex-row p-4">
+        <div id="left-box" class="">
         <div class="container mx-auto text-left">
                 <h1 class="text-4xl font-bold text-text mb-1">WETTERMIXER</h1>
         </div>
@@ -177,20 +178,24 @@ require_once '../components/layout.php';
             });
         </script>
         </div> 
-        <div class="container mx-auto text-left">
-                <h1 class="text-4xl font-bold text-text mt-4">Wie geht das?</h1>
         </div>
-        <div class="container mx-auto bg-background flex flex-col text-left">
+        <div id="right-box" class="md:max-w-[400px]">
+            <div class="container mx-auto text-left">
+                <h1 class="text-4xl font-bold md:mt-0 text-text mt-4">Wie geht das?</h1>
+            </div>
+            <div class="container mx-auto bg-background flex flex-col text-left">
             <p class="text-text mb-4">
                 Alle 30 Minuten überprüft unsere Wetterfee das Wetter in Bern und schickt dieses an unsere Witterungs-DJs. Diese kreieren eine Playlist aus dem Wetter angepassten Songs und stellen dir diese per Spotify zur Verfügung.<br>
                 Somit kannst du Sonne, Regen und Schnee mit den richtigen Tunes geniessen.<br><br>
                 Falls du genauer wissen möchtest, wie unsere Playlists zusammengestellt werden, findest du weitere Informationen in der Grafik. Die Daten dafür werden von <a href="https://open-meteo.com/" class="underline">OpenMeteo</a> und der <a href="https://developer.spotify.com/documentation/web-api" class="underline">Spotify Web API</a> bezogen.
             </p>
+        
         </div>
-    
+        <?php require_once '../components/footer.html'; ?>
+    </div>
     </main>     
 </body>  
-<?php require_once '../components/footer.html'; ?>
+
 
 <script src="backend/models/weatherETL.js"></script>
 <script type="module" src="backend/models/spotifyETL.js"></script>
