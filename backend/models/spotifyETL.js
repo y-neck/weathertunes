@@ -11,9 +11,11 @@ const pauseBtn = document.querySelector('#recommendations-player-pause');
 const spotifyText = document.querySelector('#spotify-text');
 const iframePlayer = document.querySelector('#spotify-iframe');
 const recommendationsPlayer = document.querySelector('#spotify-recommendations-player');
+const weathermixPlayer = document.querySelector("#weathermix-player");
 
-// // Hide pause btn
-// pauseBtn.style.display = "none";
+// Hide pause btn
+pauseBtn.style.display = "none";
+weathermixPlayer.style.display = "none";
 
 // Event listener for tune in button
 tuneInBtn.addEventListener('click', () => {
@@ -48,6 +50,7 @@ tuneInBtn.addEventListener('click', () => {
     // Get and display playlist
     if (localStorage.getItem("access_token")) {
         getPlaylist();
+        weathermixPlayer.style.display = "block";
         pauseBtn.style.display = "block";
         // // Debug:
         // console.log("Playlist loaded")

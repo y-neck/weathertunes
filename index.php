@@ -28,10 +28,9 @@ require_once 'backend/db/db.config.php';
 
             <!-- Adjusted div for Spotify iframe -->
             <div id="spotify-container" class="flex flex-col justify-center text-center items-center col-span-2 mb-5 sm:mt-5 md:mt-0 shadow-main rounded-lg bg-middle md:h-[100%] h-[500px] uppercase md:w-1/2">
-              <!--   <p id="spotify-text" class="m-[20%]">Öffne Spotify und klicke auf “Tune In”, um dir deinen Wettermix generieren zu lassen. <br><br> Falls die Wiedergabe nicht automatisch startet, musst du eventuell zuerst selbst einen Song abspielen, damit Spotify dein Gerät erkennt.</p>
-                   Ds isch dä doof text. Usegno für styling    -->
+                <p id="spotify-text" class="m-[20%]">Öffne Spotify und klicke auf “Tune In”, um dir deinen Wettermix generieren zu lassen. <br><br> Falls die Wiedergabe nicht automatisch startet, musst du eventuell zuerst selbst einen Song abspielen, damit Spotify dein Gerät erkennt.</p>
                 <div id="spotify-iframe"></div>
-                <div class="flex h-auto w-[90%] justify-center items-center">
+                <div id="weathermix-player" class="flex h-auto w-[90%] justify-center items-center">
                     <div style="padding: 0" class="container text-left">
                         <h1 class="text-4xl font-bold text-text">WETTERMIX</h1>
                     </div>
@@ -44,53 +43,38 @@ require_once 'backend/db/db.config.php';
                 <div id="recommendations-player" class="overflow-y-auto w-[90%]">
                     <!-- List for Songs, scrollable -->
                     <ol id="recommendations-player-list" class="h-[calc(100vh - 10vh)]">
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
-                        <li class="track-list-item text-left pl-[10px]">bakjbgag</li>
+
                     </ol>
                 </div>
             </div>
         </div>
-<div id="responsive-box-unten" class="md:flex max-w-[925px] gap-[5%]">
-        <div id="past-weather-box" class="flex flex-col gap-0 w-full md:w-1/2">
-            <div id="past-weather-text-box" class="flex justify-center items-center rounded-t-lg h-[10vh] text-moButton shadow-main bg-middle">WETTERRÜCKBLICK</div>
-            <div id="past-weather-icon-box" class="relative flex justify-start mb-5 items-center rounded-b-lg h-[10vh] shadow-main bg-dark">
-                <img src="frontend/public/img/standard_icons/timeline.svg" alt="Past Weather Icon" class="h-auto w-[96%]">
-                <div class="placeholder-container absolute top-0 left-0 w-full h-full flex justify-center items-center gap-[10%] z-10">
-                    <div id="past-weather-icon-1" class="placeholder-item bg-dark px-2 h-[60%] w-auto">
-                        <img src="frontend/public/img/weather_icons/neg/Icons_Neg_Klar_Nacht.png" alt="Placeholder 1" class="h-full w-auto">
-                    </div>
-                    <div id="past-weather-icon-2" class="placeholder-item bg-dark px-2 h-[60%] w-auto">
-                        <img src="frontend/public/img/weather_icons/neg/Icons_Neg_Klar_Nacht.png" alt="Placeholder 2" class="h-full w-auto">
-                    </div>
-                    <div id="past-weather-icon-3" class="placeholder-item bg-dark px-2 h-[60%] w-auto">
-                        <img src="frontend/public/img/weather_icons/neg/Icons_Neg_Klar_Nacht.png" alt="Placeholder 3" class="h-full w-auto">
+        <div id="responsive-box-unten" class="md:flex max-w-[925px] gap-[5%]">
+            <div id="past-weather-box" class="flex flex-col gap-0 w-full md:w-1/2">
+                <div id="past-weather-text-box" class="flex justify-center items-center rounded-t-lg h-[10vh] text-moButton shadow-main bg-middle">WETTERRÜCKBLICK</div>
+                <div id="past-weather-icon-box" class="relative flex justify-start mb-5 items-center rounded-b-lg h-[10vh] shadow-main bg-dark">
+                    <img src="frontend/public/img/standard_icons/timeline.svg" alt="Past Weather Icon" class="h-auto w-[96%]">
+                    <div class="placeholder-container absolute top-0 left-0 w-full h-full flex justify-center items-center gap-[10%] z-10">
+                        <div id="past-weather-icon-1" class="placeholder-item bg-dark px-2 h-[60%] w-auto">
+                            <img src="frontend/public/img/weather_icons/neg/Icons_Neg_Klar_Nacht.png" alt="Placeholder 1" class="h-full w-auto">
+                        </div>
+                        <div id="past-weather-icon-2" class="placeholder-item bg-dark px-2 h-[60%] w-auto">
+                            <img src="frontend/public/img/weather_icons/neg/Icons_Neg_Klar_Nacht.png" alt="Placeholder 2" class="h-full w-auto">
+                        </div>
+                        <div id="past-weather-icon-3" class="placeholder-item bg-dark px-2 h-[60%] w-auto">
+                            <img src="frontend/public/img/weather_icons/neg/Icons_Neg_Klar_Nacht.png" alt="Placeholder 3" class="h-full w-auto">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="footer-box" class="flex flex-col gap-5 w-full md:h-[20vh] md:w-1/2 md:ml-4">
-            <div id="bottom-text-box" class="flex justify-center items-center text-center shadow-main rounded-lg h-full bg-middle uppercase max-sm:hidden h-full">
-                Made For You with ♥<br>
-                BY Cla, Joél and Yannick
+            <div id="footer-box" class="flex flex-col gap-5 w-full md:h-[20vh] md:w-1/2 md:ml-4">
+                <div id="bottom-text-box" class="flex justify-center items-center text-center shadow-main rounded-lg h-full bg-middle uppercase max-sm:hidden h-full">
+                    Made For You with ♥<br>
+                    BY Cla, Joél and Yannick
+                </div>
+                <?php require_once 'frontend/components/footer.html'; ?>
             </div>
-            <?php require_once 'frontend/components/footer.html';?>
         </div>
-    </div>
-    <div class="bg-background h-[2vh] md:hidden"></div>
+        <div class="bg-background h-[2vh] md:hidden"></div>
     </main>
 </body>
 
@@ -106,17 +90,21 @@ require_once 'backend/db/db.config.php';
             display: none;
         }
     }
+
     .track-list-item {
         list-style-type: decimal;
         text-transform: uppercase;
         border-bottom: 1px solid #ccc;
+        text-align: left;
+        padding-left: 10px;
     }
+
     ol {
         list-style-position: inside;
         padding-inline-start: 0;
     }
+
     li:not(:last-child) {
         margin-bottom: 0.5em;
     }
 </style>
-
