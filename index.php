@@ -65,8 +65,8 @@ require_once 'backend/db/db.config.php';
                 </div>
             </div>
         </div>
-
-        <div id="past-weather-box" class="flex flex-col gap-0 w-full">
+<div id="responsive-box-unten" class="md:flex gap-[5%]">
+        <div id="past-weather-box" class="flex flex-col gap-0 w-full md:w-1/2">
             <div id="past-weather-text-box" class="flex justify-center items-center rounded-t-lg h-[10vh] text-moButton shadow-main bg-middle">WETTERRÜCKBLICK</div>
             <div id="past-weather-icon-box" class="relative flex justify-start mb-5 items-center rounded-b-lg h-[10vh] shadow-main bg-dark">
                 <img src="frontend/public/img/standard_icons/timeline.svg" alt="Past Weather Icon" class="h-auto w-[96%]">
@@ -83,13 +83,15 @@ require_once 'backend/db/db.config.php';
                 </div>
             </div>
         </div>
-    <div class=" h-[20vh] w-full">
-        <div id="bottom-text-box" class="flex justify-center items-center text-center shadow-main rounded-lg h-full bg-middle uppercase">
-        Made For You with ♥<br>
-        BY Cla, Joél and Yannick
+        <div id="footer-box" class="flex flex-col gap-5 w-full md:h-[20vh] md:w-1/2 md:ml-4">
+            <div id="bottom-text-box" class="flex justify-center items-center text-center shadow-main rounded-lg h-full bg-middle uppercase md:h-full">
+                Made For You with ♥<br>
+                BY Cla, Joél and Yannick
+            </div>
+            <?php require_once 'frontend/components/footer.html';?>
         </div>
-    <?php require_once 'frontend/components/footer.html'; ?>
     </div>
+    <div class="bg-background h-[2vh] md:hidden"></div>
     </main>
 </body>
 
