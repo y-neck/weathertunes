@@ -5,7 +5,7 @@ require_once '../components/layout.php';
 <html lang="de" id="webPage" data-theme="fallback">
 
 <body class="bg-background">
-    <main class="w-full bg-bg px-4 flex flex-col">
+    <main class="w-full bg-bg p-5 flex flex-col">
         <div>
             <div class="container mx-auto text-left">
                 <h1 class="text-4xl font-bold text-text">Impressum</h1>
@@ -14,7 +14,7 @@ require_once '../components/layout.php';
                 <img src="..\public\img\groupphoto\teambild.webp" alt="Group Picture" class="rounded-lg shadow-lg w-full max-w-4xl">
             </div>
 
-            <div class="container mx-auto mt-0 p-4 bg-background flex flex-col text-left">
+            <div class="container mx-auto mt-5 bg-background flex flex-col text-left">
                 <p class="text-text">
                     Entwickelt und gestaltet wurde Weathertunes von Cla Töny, Joél Schaller und Yannick Spriessler im Rahmen ihres Bachelorstudiums
                     in Multimedia Productions an der FHGR und BFH. Mehr Informationen findest du <a href="/humans.txt" class="underline">hier</a>.

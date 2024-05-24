@@ -5,10 +5,10 @@ require_once 'backend/db/db.config.php';
 
 <html lang="de" id="webPage" data-theme="fallback">
 
-<body>
-    <main class="bg-background text-text px-[5%] font-bold pt-[5%]">
+<body class="bg-background h-full">
+    <main class="text-text px-[5%] font-bold pt-[5%]">
         <div id="Screen-anpassen-box" class="flex flex-col md:flex-row md:h-[38%] md:gap-[6.5%] max-w-[925px] md:mb-[5%]">
-            <div id="main-box" class="flex flex-col gap-5 aspect-[3/2] w-full md:w-1/2">
+            <div id="main-box" class="flex flex-col justify-between gap-5 aspect-[3/2] mb-5 md:mb-0  w-full md:w-1/2">
                 <div id="top-box" class="flex flex-row gap-5 w-full">
                     <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] text-moButton gap-2 w-full">
                         <div id="weather-desc-box" class="flex justify-center items-center col-span-2 shadow-main rounded-lg bg-middle uppercase"></div>
@@ -27,16 +27,16 @@ require_once 'backend/db/db.config.php';
             </div>
 
             <!-- Adjusted div for Spotify iframe -->
-            <div id="spotify-container" class="flex flex-col justify-center text-center items-center col-span-2 mb-5 sm:mt-5 md:mt-0 shadow-main rounded-lg bg-middle md:h-[100%] h-[500px] uppercase md:w-1/2">
+            <div id="spotify-container" class="flex flex-col justify-center text-center items-center col-span-2 mb-5 md:mt-0 shadow-main rounded-lg bg-middle md:h-[100%] h-[500px] uppercase md:w-1/2">
                 <p id="spotify-text" class="m-[20%]">Öffne Spotify und klicke auf “Tune In”, um dir deinen Wettermix generieren zu lassen. <br><br> Falls die Wiedergabe nicht automatisch startet, musst du eventuell zuerst selbst einen Song abspielen, damit Spotify dein Gerät erkennt.</p>
                 <div id="spotify-iframe"></div>
                 <div id="weathermix-player" class="flex h-auto w-[90%] justify-center items-center">
                     <div style="padding: 0" class="container text-left">
                         <h1 class="text-4xl font-bold text-text">WETTERMIX</h1>
                     </div>
-                    <div id="recommendations-player-controls" class="flex h-[30px] w-[30px] items-center bg-white bg-text2 rounded-full">
+                    <div id="recommendations-player-controls" class="flex items-center">
                         <button id="recommendations-player-pause">
-                            <img src="frontend/public/img/standard_icons/Play.svg" alt="Play Icon" class="h-[25px] w-auto">
+                            <img src="frontend\public\img\standard_icons\Play_neg.svg" alt="Play Icon" class="h-[40px] w-auto">
                         </button>
                     </div>
                 </div>
