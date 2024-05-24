@@ -6,7 +6,7 @@ require_once '../components/layout.php';
 
 <body class="bg-background">
     <main class="w-full bg-bg p-5 flex flex-col">
-        <div>
+        
             <div class="container mx-auto text-left">
                 <h1 class="text-4xl font-bold text-text">Impressum</h1>
             </div>
@@ -20,8 +20,8 @@ require_once '../components/layout.php';
                     in Multimedia Productions an der FHGR und BFH. Mehr Informationen findest du <a href="/humans.txt" class="underline">hier</a>.
                 </p>
             </div>
-        </div>
-        <div class="mt-8 leading-none mb-4">
+        
+        <div class="mt-8 w-full leading-none mb-4">
             <h2 class="text-2xl font-semibold text-text mb-2">Master of Frontend</h2>
             <p class="text-text mb-6">Cla Töny</p>
 
