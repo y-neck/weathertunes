@@ -6,9 +6,9 @@ require_once 'backend/db/db.config.php';
 <html lang="de" id="webPage" data-theme="fallback">
 
 <body class="bg-background h-full">
-    <main class="text-text px-[5%] font-bold pt-[5%]">
+    <main class="text-text px-[5%] font-bold pt-[5%] w-full">
         <div id="Screen-anpassen-box" class="flex flex-col md:flex-row md:h-[38%] md:gap-[6.5%] max-w-[925px] md:mb-[5%]">
-            <div id="main-box" class="flex flex-col justify-between gap-5 aspect-[3/2] mb-5 md:mb-0  w-full md:w-1/2">
+            <div id="main-box" class="flex flex-col justify-between gap-5 aspect-[3/2] mb-5 md:mb-0  w-full ">
                 <div id="top-box" class="flex flex-row gap-5 w-full">
                     <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] text-moButton gap-2 w-full">
                         <div id="weather-desc-box" class="flex justify-center items-center col-span-2 shadow-main rounded-lg bg-middle uppercase"></div>
@@ -27,10 +27,10 @@ require_once 'backend/db/db.config.php';
             </div>
 
             <!-- Adjusted div for Spotify iframe -->
-            <div id="spotify-container" class="flex flex-col justify-center text-center items-center col-span-2 mb-5 md:mt-0 shadow-main rounded-lg bg-middle md:h-[100%] h-[500px] uppercase md:w-1/2">
+            <div id="spotify-container" class="flex flex-col justify-center text-center items-center col-span-2 mb-5 md:mt-0 shadow-main rounded-lg bg-middle md:h-[100%] h-[500px] uppercase w-full ">
                 <p id="spotify-text" class="m-[20%]">Öffne Spotify und klicke auf “Tune In”, um dir deinen Wettermix generieren zu lassen. <br><br> Falls die Wiedergabe nicht automatisch startet, musst du eventuell zuerst selbst einen Song abspielen, damit Spotify dein Gerät erkennt.</p>
                 <div id="spotify-iframe"></div>
-                <div id="weathermix-player" class="flex h-auto w-[90%] justify-center items-center">
+                <div id="weathermix-player" class="flex flex-row h-auto w-[90%] justify-between items-center">
                     <div style="padding: 0" class="container text-left">
                         <h1 class="text-4xl font-bold text-text">WETTERMIX</h1>
                     </div>
@@ -42,7 +42,7 @@ require_once 'backend/db/db.config.php';
                 </div>
                 <div id="recommendations-player" class="overflow-y-auto w-[90%]">
                     <!-- List for Songs, scrollable -->
-                    <ol id="recommendations-player-list" class="h-[calc(100vh - 10vh)]">
+                    <ol id="recommendations-player-list" class="h-[calc(100vh - 10vh)] text-left items-left">
 
                     </ol>
                 </div>
