@@ -41,7 +41,7 @@ const redirectToAuthCodeFlow = async (clientId) => {
     params.append("client_id", clientId); // Add client ID
     params.append("response_type", "code"); // Set response type to "code"
     params.append("redirect_uri", redirectUri); // Add redirect URI
-    params.append("scope", "user-read-private user-read-email"); // Add scopes
+    params.append("scope", "user-read-private user-read-email user-modify-playback-state user-read-playback-state user-read-currently-playing"); // Add scopes: required scopes for getting profile (user-read-private, user-read-email), modifying playback and queue (user-modify-playback-state)
     params.append("code_challenge_method", "S256"); // Set challenge method to SHA-256
     params.append("code_challenge", challenge); // Add challenge generated from code verifier
 
@@ -78,7 +78,7 @@ if (!code) {
     // Store access token in localStorage
     localStorage.setItem('access_token', accessToken);
 
-    // Debug:
+    // // Debug:
     // console.log('Code:',code);
     // console.log('Access token:', accessToken);
     // console.log('Profile from spotifyAuth:', profile);
