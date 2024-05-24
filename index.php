@@ -84,7 +84,7 @@ require_once 'backend/db/db.config.php';
             </div>
         </div>
         <div id="footer-box" class="flex flex-col gap-5 w-full md:h-[20vh] md:w-1/2 md:ml-4">
-            <div id="bottom-text-box" class="flex justify-center items-center text-center shadow-main rounded-lg h-full bg-middle uppercase md:h-full">
+            <div id="bottom-text-box" class="flex justify-center items-center text-center shadow-main rounded-lg h-full bg-middle uppercase max-sm:hidden h-full">
                 Made For You with ♥<br>
                 BY Cla, Joél and Yannick
             </div>
@@ -102,6 +102,11 @@ require_once 'backend/db/db.config.php';
 
 
 <style>
+    @media (max-width: 768px) {
+        #bottom-text-box {
+            display: none;
+        }
+    }
     .track-list-item {
         list-style-type: decimal;
         text-transform: uppercase;
