@@ -7,7 +7,7 @@ require_once 'backend/db/db.config.php';
 
 <body>
     <main class="bg-background text-text px-[5%] font-bold pt-[5%]">
-        <div id="Screen-anpassen-box" class="flex flex-col md:flex-row md:h-[40%] md:gap-[6.5%] max-w-[1000px] md:mb-[5%]">
+        <div id="Screen-anpassen-box" class="flex flex-col md:flex-row md:h-[38%] md:gap-[6.5%] max-w-[925px] md:mb-[5%]">
             <div id="main-box" class="flex flex-col gap-5 aspect-[3/2] w-full md:w-1/2">
                 <div id="top-box" class="flex flex-row gap-5 w-full">
                     <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] text-moButton gap-2 w-full">
@@ -64,7 +64,7 @@ require_once 'backend/db/db.config.php';
                 </div>
             </div>
         </div>
-<div id="responsive-box-unten" class="md:flex max-w-[1000px] gap-[5%]">
+<div id="responsive-box-unten" class="md:flex max-w-[925px] gap-[5%]">
         <div id="past-weather-box" class="flex flex-col gap-0 w-full md:w-1/2">
             <div id="past-weather-text-box" class="flex justify-center items-center rounded-t-lg h-[10vh] text-moButton shadow-main bg-middle">WETTERRÜCKBLICK</div>
             <div id="past-weather-icon-box" class="relative flex justify-start mb-5 items-center rounded-b-lg h-[10vh] shadow-main bg-dark">
