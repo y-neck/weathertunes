@@ -7,8 +7,8 @@ require_once 'backend/db/db.config.php';
 
 <body>
     <main class="bg-background text-text px-[5%] font-bold pt-[5%]">
-        <div id="Screen-anpassen-box" class="flex flex-col md:flex-row md:gap-20">
-            <div id="main-box" class="flex flex-col gap-5 mb-5 aspect-[3/2] w-full md:w-1/2">
+        <div id="Screen-anpassen-box" class="flex flex-col md:flex-row md:h-[40%] md:gap-[6.5%] max-w-[1000px] md:mb-[5%]">
+            <div id="main-box" class="flex flex-col gap-5 aspect-[3/2] w-full md:w-1/2">
                 <div id="top-box" class="flex flex-row gap-5 w-full">
                     <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] text-moButton gap-2 w-full">
                         <div id="weather-desc-box" class="flex justify-center items-center col-span-2 shadow-main rounded-lg bg-middle uppercase"></div>
@@ -21,16 +21,15 @@ require_once 'backend/db/db.config.php';
                     </div>
                     <div id="temp-box" class="flex justify-center items-center text-moTemp bg-dark shadow-main rounded-main rounded-lg w-full">Temp</div>
                 </div>
-
                 <div id="bottom-box" class="flex flex-row h-[10vh] w-full">
                     <button id="play-button" class="flex justify-center items-center bg-text shadow-main text-moButton text-dark hover:bg-dark hover:text-text transition duration-200 ease-in-out rounded-lg w-full">TUNE IN</button>
                 </div>
             </div>
 
             <!-- Adjusted div for Spotify iframe -->
-            <div id="spotify-container" class="flex flex-col justify-center text-center items-center col-span-2 mb-5 shadow-main rounded-lg bg-middle h-[500px] uppercase md:w-1/2">
-                <p id="spotify-text" class="m-[20%]">Öffne Spotify und klicke auf “Tune In”, um dir deinen Wettermix generieren zu lassen. <br><br> Falls die Wiedergabe nicht automatisch startet, musst du eventuell zuerst selbst einen Song abspielen, damit Spotify dein Gerät erkennt.</p>
-
+            <div id="spotify-container" class="flex flex-col justify-center text-center items-center col-span-2 mb-5 sm:mt-5 md:mt-0 shadow-main rounded-lg bg-middle md:h-[100%] h-[500px] uppercase md:w-1/2">
+              <!--   <p id="spotify-text" class="m-[20%]">Öffne Spotify und klicke auf “Tune In”, um dir deinen Wettermix generieren zu lassen. <br><br> Falls die Wiedergabe nicht automatisch startet, musst du eventuell zuerst selbst einen Song abspielen, damit Spotify dein Gerät erkennt.</p>
+                   Ds isch dä doof text. Usegno für styling    -->
                 <div id="spotify-iframe"></div>
                 <div class="flex h-auto w-[90%] justify-center items-center">
                     <div style="padding: 0" class="container text-left">
@@ -65,7 +64,7 @@ require_once 'backend/db/db.config.php';
                 </div>
             </div>
         </div>
-<div id="responsive-box-unten" class="md:flex gap-[5%]">
+<div id="responsive-box-unten" class="md:flex max-w-[1000px] gap-[5%]">
         <div id="past-weather-box" class="flex flex-col gap-0 w-full md:w-1/2">
             <div id="past-weather-text-box" class="flex justify-center items-center rounded-t-lg h-[10vh] text-moButton shadow-main bg-middle">WETTERRÜCKBLICK</div>
             <div id="past-weather-icon-box" class="relative flex justify-start mb-5 items-center rounded-b-lg h-[10vh] shadow-main bg-dark">
