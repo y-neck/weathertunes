@@ -36,7 +36,7 @@ require_once 'backend/db/db.config.php';
                     </div>
                     <div id="recommendations-player-controls" class="flex items-center">
                         <button id="recommendations-player-pause">
-                            <img src="frontend\public\img\standard_icons\Play_neg.svg" alt="Play Icon" class="h-[40px] w-auto">
+                            <img src="frontend\public\img\standard_icons\Pause_neg.svg" alt="Play Icon" class="h-[40px] w-auto">
                         </button>
                     </div>
                 </div>
