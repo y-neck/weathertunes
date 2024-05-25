@@ -2,6 +2,7 @@
 require_once '../components/layout.php';
 ?>
 
+<link rel="stylesheet" href="/frontend/public/styles/themes.css">
 <html lang="de" id="webPage" data-theme="fireplace">
 
 <body class="bg-background h-full w-screen min-h-screen overflow-auto">
@@ -45,6 +46,11 @@ require_once '../components/layout.php';
 
 
 <style>
+    @font-face {
+        font-family: 'Roboto Flex';
+        src: url('/frontend/public/fonts/RobotoFlex-VariableFont.ttf') format('truetype');
+    }
+
     @media (max-width: 768px) {
         #bottom-text-box {
             display: none;

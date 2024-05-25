@@ -5,7 +5,7 @@ require_once '../components/layout.php';
 <html lang="de" id="webPage" data-theme="fallback">
 
 <body class="bg-background">
-    <main class="w-full p-5 flex flex-col w-full bg-background flex flex-col md:gap-[5%] justify-center md:flex-row p-4">
+    <main class="w-full p-5 flex flex-col w-full bg-background flex flex-col md:gap-[5%] justify-center p-4">
 
         <div class="container mx-auto text-left">
             <h1 class="text-4xl font-bold text-text">Impressum</h1>
