@@ -42,6 +42,7 @@ tuneInBtn.addEventListener('click', () => {
                 // console.log('Current Playlist Properties: ', data)
                 let playerFallbackUrl = data.fallbackPlaylist
                 iframePlayer.innerHTML = `<iframe id="spotify-fallback-player" style="border-radius:12px" src="${playerFallbackUrl}" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
+                document.querySelector('#weathermix-player').style.display = "none";
             })
     } catch (error) {
         console.error(error);
