@@ -85,6 +85,13 @@
         --color-text2: 242 242 242;
     }
 
-
+    html[data-theme="fireplace"] {
+        /* Color as rgb values */
+        --color-text: 242 242 242;
+        --color-background: 26 4 0;
+        --color-middle: 115 29 11;
+        --color-dark: 77 16 4;
+        --color-text2: 242 242 242;
+    }
 
 }

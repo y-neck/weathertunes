@@ -50,7 +50,7 @@
         }
     </script>
 
-    <link rel="stylesheet" href="./frontend/public/styles/themes.css">
+    <link rel="stylesheet" href="/frontend/public/styles/themes.css">
 </head>
 
 <style>
