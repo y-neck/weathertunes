@@ -5,9 +5,9 @@ require_once 'backend/db/db.config.php';
 
 <html lang="de" id="webPage" data-theme="fallback">
 
-<body class="bg-background h-full">
+<body class="bg-background h-full w-full">
     <main class="text-text px-[5%] font-bold pt-[5%] w-full">
-        <div id="Screen-anpassen-box" class="flex flex-col md:flex-row md:h-[38%] md:gap-[6.5%] max-w-[925px] md:mb-[5%]">
+        <div id="Screen-anpassen-box" class="flex flex-col md:flex-row md:h-[38%] md:gap-[6.5%] max-w-[925px] md:mb-[5%] w-full">
             <div id="main-box" class="flex flex-col justify-between gap-5 aspect-[3/2] mb-5 md:mb-0  w-full ">
                 <div id="top-box" class="flex flex-row gap-5 w-full">
                     <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] text-moButton gap-2 w-full">
@@ -27,10 +27,10 @@ require_once 'backend/db/db.config.php';
             </div>
 
             <!-- Adjusted div for Spotify iframe -->
-            <div id="spotify-container" class="flex flex-col justify-center text-center items-center col-span-2 mb-5 md:mt-0 shadow-main rounded-lg bg-middle md:h-[100%] h-[500px] uppercase w-full ">
+            <div id="spotify-container" class="flex flex-col justify-center text-center items-center col-span-2 mb-5 md:mt-0 shadow-main rounded-lg bg-middle md:h-[100%] h-full uppercase w-full ">
                 <p id="spotify-text" class="m-[20%]">Öffne Spotify und klicke auf “Tune In”, um dir deinen Wettermix generieren zu lassen. <br><br> Falls die Wiedergabe nicht automatisch startet, musst du eventuell zuerst selbst einen Song abspielen, damit Spotify dein Gerät erkennt.</p>
-                <div id="spotify-iframe"></div>
-                <div id="weathermix-player" class="flex flex-row h-auto w-[90%] justify-between items-center">
+                <div id="spotify-iframe" class="w-full h-full overflow-hidden"></div>
+                <div id="weathermix-player" class="flex flex-row h-full w-full justify-between items-center">
                     <div style="padding: 0" class="container text-left">
                         <h1 class="text-4xl font-bold text-text">WETTERMIX</h1>
                     </div>
