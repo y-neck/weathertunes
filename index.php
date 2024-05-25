@@ -6,9 +6,9 @@ require_once 'backend/db/db.config.php';
 <html lang="de" id="webPage" data-theme="fallback">
 
 <body class="bg-background h-full w-screen min-h-screen overflow-auto">
-    <main class="text-text px-[5%] font-bold pt-[5%] w-screen mx-auto">
-        <div id="Screen-anpassen-box" class="flex flex-col md:flex-row md:h-[38%] md:gap-[6.5%] max-w-[925px] md:mb-[5%] w-full">
-            <div id="main-box" class="flex flex-col justify-between gap-5 aspect-[3/2] mb-5 md:mb-0  w-full">
+    <main class="flex flex-col text-text px-[5%] font-bold pt-[5%] w-screen mx-auto">
+        <div id="Screen-anpassen-box" class="flex flex-col md:flex-row md:h-[38%] md:gap-[6.5%] md:mb-[5%] w-full box-border">
+            <div id="main-box" class="flex flex-col gap-5 aspect-[3/2] mb-5 md:mb-0  w-full">
                 <div id="top-box" class="flex flex-row gap-5 w-full">
                     <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] text-moButton gap-2 w-full">
                         <div id="weather-desc-box" class="flex justify-center items-center col-span-2 shadow-main rounded-lg bg-middle uppercase"></div>
@@ -21,8 +21,8 @@ require_once 'backend/db/db.config.php';
                     </div>
                     <div id="temp-box" class="flex justify-center items-center text-moTemp bg-dark shadow-main rounded-main rounded-lg w-full">Temp</div>
                 </div>
-                <div id="bottom-box" class="flex flex-row h-[10vh] w-full">
-                    <button id="play-button" class="flex justify-center items-center bg-text shadow-main text-moButton text-dark hover:bg-dark hover:text-text transition duration-200 ease-in-out rounded-lg w-full">TUNE IN</button>
+                <div id="bottom-box" class="flex flex-row w-full">
+                    <button id="play-button" class="flex justify-center bg-text shadow-main text-moButton text-dark hover:bg-dark hover:text-text transition duration-200 ease-in-out rounded-lg w-full h-full">TUNE IN</button>
                 </div>
             </div>
 
@@ -48,7 +48,7 @@ require_once 'backend/db/db.config.php';
                 </div>
             </div>
         </div>
-        <div id="responsive-box-unten" class="md:flex max-w-[925px] gap-[5%]">
+        <div id="responsive-box-unten" class="md:flex gap-[5%] w-full">
             <div id="past-weather-box" class="flex flex-col gap-0 w-full md:w-1/2">
                 <div id="past-weather-text-box" class="flex justify-center items-center rounded-t-lg h-[10vh] text-moButton shadow-main bg-middle">WETTERRÜCKBLICK</div>
                 <div id="past-weather-icon-box" class="relative flex justify-start mb-5 items-center rounded-b-lg h-[10vh] shadow-main bg-dark">
@@ -67,14 +67,13 @@ require_once 'backend/db/db.config.php';
                 </div>
             </div>
             <div id="footer-box" class="flex flex-col gap-5 w-full md:h-[20vh] md:w-1/2 md:ml-4">
-                <div id="bottom-text-box" class="flex justify-center items-center text-center shadow-main rounded-lg h-full bg-middle uppercase max-sm:hidden h-full">
+                <div id="bottom-text-box" class="flex justify-center items-center text-center shadow-main rounded-lg h-full bg-middle uppercase max-sm:hidden w-full">
                     Made For You with ♥<br>
                     BY Cla, Joél and Yannick
                 </div>
                 <?php require_once 'frontend/components/footer.html'; ?>
             </div>
         </div>
-        <div class="bg-background h-[2vh] md:hidden"></div>
     </main>
 </body>
 
