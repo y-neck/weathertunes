@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="author" href="humans.txt">
 
-    <!--TODO: Tab image-->
+    <!--Tab image-->
     <link rel="icon" href="frontend/public/img/favicon/Favicon.ico">
 
     <!-- Tailwind Config -->
