@@ -19,6 +19,6 @@ Switzerland
                                                    
 /* SITE */
 
-Built with                            
-PHP, Javascript, HTML, LottieFiles, TailwindCSS
-open-meteo API, Spotify API
+Built with:                          
+PHP, Javascript, HTML, LottieFiles, TailwindCSS,
+OpenMeteo API, Spotify Web API
