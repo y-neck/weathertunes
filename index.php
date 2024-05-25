@@ -5,10 +5,10 @@ require_once 'backend/db/db.config.php';
 
 <html lang="de" id="webPage" data-theme="fallback">
 
-<body class="bg-background h-full w-full">
-    <main class="text-text px-[5%] font-bold pt-[5%] w-full">
+<body class="bg-background h-full w-screen min-h-screen overflow-auto">
+    <main class="text-text px-[5%] font-bold pt-[5%] w-screen mx-auto">
         <div id="Screen-anpassen-box" class="flex flex-col md:flex-row md:h-[38%] md:gap-[6.5%] max-w-[925px] md:mb-[5%] w-full">
-            <div id="main-box" class="flex flex-col justify-between gap-5 aspect-[3/2] mb-5 md:mb-0  w-full ">
+            <div id="main-box" class="flex flex-col justify-between gap-5 aspect-[3/2] mb-5 md:mb-0  w-full">
                 <div id="top-box" class="flex flex-row gap-5 w-full">
                     <div id="status-box" class="grid grid-rows-2 grid-cols-2 aspect-[1/1] text-moButton gap-2 w-full">
                         <div id="weather-desc-box" class="flex justify-center items-center col-span-2 shadow-main rounded-lg bg-middle uppercase"></div>
