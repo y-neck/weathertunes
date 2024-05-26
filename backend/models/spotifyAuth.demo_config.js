@@ -1,6 +1,6 @@
 const clientId = ''; // Replace with your client ID
 const params = new URLSearchParams(window.location.search);
-const redirectUri = ''
+const redirectUri = ''; // Replace with your redirect URI
 const code = params.get("code");
 
 const getAccessToken = async (clientId, code) => {
@@ -25,7 +25,7 @@ const getAccessToken = async (clientId, code) => {
     // Parse JSON response and return access_token
     const { access_token } = await result.json();
     return access_token;
-}
+};
 
 /**
  * Redirects user to Spotify's authorization code flow
@@ -46,7 +46,7 @@ const redirectToAuthCodeFlow = async (clientId) => {
     params.append("code_challenge", challenge); // Add challenge generated from code verifier
 
     document.location = `https://accounts.spotify.com/authorize?${params.toString()}`; // Redirect user to Spotify's authorization code flow
-}
+};
 
 // Fetch user profile
 /**
@@ -64,12 +64,12 @@ const fetchProfile = async (token) => {
 
     // Parse JSON response and return profile object
     return await result.json();
-}
+};
 
 
 if (!code) {
     // Debug:
-    console.log('Code not found')
+    console.log('Code not found');
     redirectToAuthCodeFlow(clientId);
 } else {
     const accessToken = await getAccessToken(clientId, code);
@@ -77,13 +77,7 @@ if (!code) {
 
     // Store access token in localStorage
     localStorage.setItem('access_token', accessToken);
-
-    // // Debug:
-    // console.log('Code:',code);
-    // console.log('Access token:', accessToken);
-    // console.log('Profile from spotifyAuth:', profile);
-
-}
+};
 
 
 
@@ -119,4 +113,4 @@ async function generateCodeChallenge(codeVerifier) {
 // Export functions
 export {
     redirectToAuthCodeFlow, getAccessToken, fetchProfile
-}
+};

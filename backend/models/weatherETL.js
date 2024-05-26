@@ -4,13 +4,13 @@ const mergedWeatherUrl = './backend/db/05_mergeCurrentWeather.php';
 const spotifyParametersUrl = './backend/db/04_unloadSpotify.php';
 
 // Define html elements
-const htmlPage = document.querySelector('#webPage')
-const weatherDescriptionBox = document.querySelector('#weather-desc-box')
-const weatherIconBox = document.querySelector('#weather-icon-box')
-const windBox = document.querySelector('#flag-icon-box')
-const temperatureBox = document.querySelector('#temp-box')
+const htmlPage = document.querySelector('#webPage');
+const weatherDescriptionBox = document.querySelector('#weather-desc-box');
+const weatherIconBox = document.querySelector('#weather-icon-box');
+const windBox = document.querySelector('#flag-icon-box');
+const temperatureBox = document.querySelector('#temp-box');
 // Players
-const lottiePlayer = document.querySelector('lottie-player')
+const lottiePlayer = document.querySelector('lottie-player');
 const player = document.querySelector('#spotify-container');
 // Weather review container
 const weatherReviewSlot1 = document.querySelector('#past-weather-icon-1');
@@ -31,8 +31,8 @@ try {
         })
         // Append to html
         .then(data => {
-            console.log('Current Weather: ', data)
-            temperatureBox.innerHTML = `${data.temperature}°C`
+            console.log('Current Weather: ', data);
+            temperatureBox.innerHTML = `${data.temperature}°C`;
             weatherDescriptionBox.innerHTML = data.weatherCodeDescription;
 
             // // Debug themes:
@@ -97,10 +97,10 @@ try {
                     lottiePlayer.load('frontend/public/animations/Wind_Neg_Level_3.json');
                 }
             }
-        })
+        });
 }
 catch (error) {
-    console.error(error)
+    console.error(error);
 }
 
 // Insert past weather into weather review container

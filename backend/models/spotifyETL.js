@@ -1,7 +1,3 @@
-import { redirectToAuthCodeFlow } from "./spotifyAuth.config.js";
-import { getAccessToken } from "./spotifyAuth.config.js";
-import { fetchProfile } from "./spotifyAuth.config.js";
-
 const spotifyParametersUrl = './backend/db/04_unloadSpotify.php';
 const weatherdataUrl = './backend/db/05_mergeCurrentWeather.php'; // Needed for easter eggs
 
@@ -40,10 +36,10 @@ tuneInBtn.addEventListener('click', () => {
             .then(data => {
                 // // Debug:
                 // console.log('Current Playlist Properties: ', data)
-                let playerFallbackUrl = data.fallbackPlaylist
-                iframePlayer.innerHTML = `<iframe id="spotify-fallback-player" style="border-radius:12px" src="${playerFallbackUrl}" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
+                let playerFallbackUrl = data.fallbackPlaylist;
+                iframePlayer.innerHTML = `<iframe id="spotify-fallback-player" style="border-radius:12px" src="${playerFallbackUrl}" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
                 document.querySelector('#weathermix-player').style.display = "none";
-            })
+            });
     } catch (error) {
         console.error(error);
     }
@@ -57,7 +53,7 @@ tuneInBtn.addEventListener('click', () => {
         // console.log("Playlist loaded")
     }
 }
-)
+);
 
 // Fetch parameter data
 function getPlaylist() {
@@ -178,7 +174,7 @@ function getPlaylist() {
                         headers: {
                             Authorization: 'Bearer ' + accessToken  // Send bearer token with request
                         }
-                    })
+                    });
                 } catch (error) {
                     console.error('Error playing playlist:', error);
                 }
@@ -191,13 +187,13 @@ function getPlaylist() {
                         headers: {
                             Authorization: 'Bearer ' + accessToken  // Send bearer token with request
                         }
-                    })
+                    });
                 } catch (error) {
                     console.error('Error skipping track:', error);
                 }
             });
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
@@ -211,7 +207,7 @@ pauseBtn.addEventListener('click', async () => {
             headers: {
                 Authorization: 'Bearer ' + accessToken  // Send bearer token with request
             }
-        })
+        });
     } catch (error) {
         console.error('Error pausing playback:', error);
     }
