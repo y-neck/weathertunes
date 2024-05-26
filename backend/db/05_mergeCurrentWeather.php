@@ -21,9 +21,6 @@ try {
     $stmt->execute();
     $weatherCodeData = $stmt->fetchAll(PDO::FETCH_ASSOC);   // Fetch data from database table Weather_code_description
 
-    // // Debug:
-    // print_r('WeatherCodeValue: ' . $weatherCodeValue);
-
     // Add error handling
     if (empty($weatherCodeData)) {
         http_response_code(404);

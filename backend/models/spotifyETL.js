@@ -49,8 +49,6 @@ tuneInBtn.addEventListener('click', () => {
         getPlaylist();
         weathermixPlayer.style.display = "block";
         pauseBtn.style.display = "block";
-        // // Debug:
-        // console.log("Playlist loaded")
     }
 }
 );
@@ -107,7 +105,7 @@ function getPlaylist() {
                     });
                     const recommendationsData = await recommendationsResponse.json();
                     // Debug:
-                    console.log('Recommendation data: ', recommendationsData);
+                    // console.log('Recommendation data: ', recommendationsData);
 
                     // Hijack spotify player :)
 
@@ -132,8 +130,6 @@ function getPlaylist() {
                         try {
                             for (const track of recommendationsData.tracks) {
                                 const uri = track.uri.replace(/:/g, '%3A');
-                                // // Debug:
-                                // const uri = "spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh"
                                 const queueEndpoint = `https://api.spotify.com/v1/me/player/queue?uri=${uri}`;
                                 await fetch(queueEndpoint, {
                                     method: 'POST',

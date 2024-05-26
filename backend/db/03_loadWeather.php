@@ -9,9 +9,6 @@ $data = [
     'windSpeed' => $weatherdata['windSpeed'],
 ];
 
-// Debug:
-// print_r($data);
-
 try {
     // Transform weather data if necessary
     // Assuming $weatherdata is properly populated before this point

@@ -179,5 +179,3 @@ fetch(pastWeatherUrl)
     .catch(error => {
         console.error('Error fetching past weather data:', error);
     });
-
-// TODO: Add eastereggs
