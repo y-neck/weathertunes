@@ -94,4 +94,19 @@
         --color-text2: 242 242 242;
     }
 
+    html[data-theme="joel"] {
+        --color-text: 242 242 242;
+        --color-background: 255 190 70;
+        --color-middle: 59 140 233;
+        --color-dark: 130 1 1;
+        --color-text2: 242 242 242;
+    }
+
+    html[data-theme="stpatrick"] {
+        --color-text: 242 242 242;
+        --color-background: 15 124 52;
+        --color-middle: 179 211 162;
+        --color-dark: 108 172 87;
+        --color-text2: 242 242 242;
+    }
 }

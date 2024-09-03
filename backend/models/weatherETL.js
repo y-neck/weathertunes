@@ -12,6 +12,7 @@ const temperatureBox = document.querySelector('#temp-box');
 // Players
 const lottiePlayer = document.querySelector('lottie-player');
 const player = document.querySelector('#spotify-container');
+let iframePlayer = document.querySelector('#spotify-iframe');
 // Weather review container
 const weatherReviewSlot1 = document.querySelector('#past-weather-icon-1');
 const weatherReviewSlot2 = document.querySelector('#past-weather-icon-2');
@@ -40,6 +41,11 @@ try {
             // data.isDay = 0;
             // date = '';
             // console.log(data.weatherCodeDescription, data.isDay, date);
+
+            // Easter eggs
+            let date = new Date();
+            let dateDay = date.getDay();
+            let dateMonth = date.getMonth();
 
             // Case switch for weather icon
             switch (data.weatherCodeDescription) {
@@ -74,7 +80,19 @@ try {
                 case 'Sturm':
                     htmlPage.setAttribute('data-theme', 'sturm');
                     weatherIconBox.innerHTML = `<img src="frontend/public/img/weather_icons/neg/Icons_Neg_Sturm.png" alt="Sturm" class="h-full w-auto p-[10px]">`;
+                    break;
             }
+
+            //Easter egg themes
+            if (dateDay === 23 && dateMonth === 3) {
+                htmlPage.setAttribute('data-theme', 'joel');
+                iframePlayer.innerHTML = `<iframe id="spotify-fallback-player" style="border-radius:12px" src="https://open.spotify.com/playlist/6A8WG11y1wfsFXlCOPNNke?si=173f485a9ddd448c" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+            }
+            if (dateDay === 17 && dateMonth === 3) {
+                htmlPage.setAttribute('data-theme', 'stpatrick');
+                iframePlayer.innerHTML = `<iframe id="spotify-fallback-player" style="border-radius:12px" src="https://open.spotify.com/playlist/4nuO2cmmwyQIP2Zqco61UE?si=04f9abe28cd34b9d" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+            }
+
 
             if (data.windSpeed < 12) {
                 if (data.weatherCodeDescription === 'Schnee') {
