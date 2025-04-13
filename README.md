@@ -5,7 +5,7 @@ Weathertunes sammelt alle 30 Minuten die aktuellen Wetterdaten der Stadt Bern, u
 
 ### Data Flow
 
-![Flowchart](https://github.com/y-neck/weathertunes/blob/main/frontend/public/img/documentation/api_flowchart_weathertunes.drawio.svg)
+![Flowchart](https://github.com/y-neck/weathertunes/blob/main/public/img/documentation/api_flowchart_weathertunes.drawio.svg)
 
 Weathertunes speichert alle 30 Minuten das aktuelle Wetter der [OpenMeteo](https://open-meteo.com/) API in einer Datenbank. Über eine weitere Datenbank wird das aktuelle Wetter der Wetterbeschreibung zugeordnet und im Frontend der Website dem Nutzer angezeigt.
 
