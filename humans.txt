@@ -1,5 +1,5 @@
 /* TEAM */
-
+V1:
 Master of Frontend: 
 Cla Töny
 GitHub: Clatoeny
@@ -22,3 +22,11 @@ Switzerland
 Built with:                          
 PHP, Javascript, HTML, LottieFiles, TailwindCSS,
 OpenMeteo API, Spotify Web API
+
+---------------------------------------------------
+V2: 
+© 2025 Yannick Spriessler
+GitHub: y-neck
+Switzerland
+
+Built with Nuxt, TailwindCSS, LottieFiles, OpenMeteo API, Spotify Web API
