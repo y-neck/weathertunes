@@ -1,1 +1,9 @@
+User-agent: *
+Crawl-delay: 3
 
+Disallow: /datenschutz.vue
+Disallow: /impressum.vue
+Disallow: /error.vue
+
+User-agent: GPTBot
+Disallow: /
