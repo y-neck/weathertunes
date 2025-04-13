@@ -1,6 +1,8 @@
 # Weathertunes
 Weathertunes sammelt alle 30 Minuten die aktuellen Wetterdaten der Stadt Bern, um dir bei jeder Wetterlage eine passende Spotify-Playlist zusammenzustellen.
 
+> Weathertunes wird momentan überarbeitet. Bald erwartet dich v2!
+
 ## Übersicht
 
 ### Data Flow
