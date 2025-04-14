@@ -25,7 +25,7 @@
       </p>
     </div>
 
-    <div class="mt-8 mb-4 w-full p-5 leading-none">
+    <div class="mt-4 mb-4 w-full p-5 leading-none">
       <h3 class="text-text mb-2 text-2xl font-semibold">V1</h3>
       <h3 class="text-text mb-2 text-2xl font-semibold">Master of Frontend</h3>
       <p class="text-text mb-6">Cla Töny</p>
@@ -36,7 +36,7 @@
       <h3 class="text-text mb-2 text-2xl font-semibold">Backend Magician</h3>
       <p class="text-text">Yannick Spriessler</p>
     </div>
-    <div>
+    <div class="mt-4 mb-4 w-full p-5 leading-none">
       <h2 class="text-text text-4xl font-bold">Datenschutz</h2>
       <br />
       <p>Zuletzt aktualisiert am: 15.04.2025</p>
