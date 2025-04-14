@@ -32,7 +32,7 @@
 
 <style scoped>
 .footer-link {
-  @apply flex h-[48px] w-full cursor-pointer items-center justify-center gap-[16px] rounded-[16px] bg-[#f2f2f2] text-center text-[#000];
+  @apply flex h-[48px] w-full cursor-pointer items-center justify-center gap-[16px] rounded-[16px] bg-[#f2f2f2] text-center text-[#000] no-underline;
 }
 .hover\\:text-gray-300:hover {
   color: #e0e0e0;

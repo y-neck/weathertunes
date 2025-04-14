@@ -21,7 +21,7 @@ export default {
                 sans: ['Roboto Flex', 'sans-serif'],
             },
             fontSize: {
-                sm: '0.8rem',
+                sm: '0.75rem',
                 base: '1rem',
                 xl: '2rem',
                 'moButton': '2.2rem',
