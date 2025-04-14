@@ -4,6 +4,19 @@
   </NuxtLayout>
 </template>
 
+<script setup lang="ts">
+useSeoMeta({
+  ogSiteName: "weathertunes" /* Overall site name */,
+  ogType: "website" /* 'website' | 'article' | 'book' | 'profile' */,
+  description:
+    "Alle 30 Minuten überprüft unsere Wetterfee das Wetter und schickt dieses an unsere Witterungs-DJs. Diese kreieren eine Playlist aus dem Wetter angepassten Songs und stellen dir diese per Spotify zur Verfügung. Somit kannst du Sonne, Regen und Schnee mit den richtigen Tunes geniessen.",
+  ogDescription:
+    "Alle 30 Minuten überprüft unsere Wetterfee das Wetter und schickt dieses an unsere Witterungs-DJs. Diese kreieren eine Playlist aus dem Wetter angepassten Songs und stellen dir diese per Spotify zur Verfügung. Somit kannst du Sonne, Regen und Schnee mit den richtigen Tunes geniessen.",
+  creator: "©2025 neckXproductions",
+  ogImage: "~/public/img/Favicon.ico" /* Image of page when sharing */,
+}); /* https://nuxt.com/docs/api/composables/use-seo-meta */
+</script>
+
 <style>
 /* Style definitions by https://github.com/joggiletti */
 /* Load Font */
