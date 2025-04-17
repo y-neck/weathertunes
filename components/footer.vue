@@ -16,14 +16,14 @@
           class="footer-icon h-full w-auto p-2"
         />
       </NuxtLink>
-      <NuxtLink to="/fireplace.vue" class="footer-link">
+      <NuxtLink to="/fireplace" class="footer-link">
         <img
           src="~/public/img/standard_icons/Fireplace_pos_Mug.png"
           alt="Fireplace"
           class="footer-icon h-full w-auto p-2"
         />
       </NuxtLink>
-      <NuxtLink to="/about.vue" class="footer-link">About</NuxtLink>
+      <NuxtLink to="/about" class="footer-link">About</NuxtLink>
     </div>
   </footer>
 </template>
