@@ -15,6 +15,12 @@ useSeoMeta({
   creator: "©2025 neckXproductions",
   ogImage: "~/public/img/Favicon.ico" /* Image of page when sharing */,
 }); /* https://nuxt.com/docs/api/composables/use-seo-meta */
+
+useHead({
+  htmlAttrs: {
+    "data-theme": "fallback",
+  },
+});
 </script>
 
 <style>
@@ -22,8 +28,7 @@ useSeoMeta({
 /* Load Font */
 @font-face {
   font-family: "Roboto Flex";
-  src: url("./frontend/public/fonts/RobotoFlex-VariableFont.ttf")
-    format("truetype");
+  src: url("assets/fonts/RobotoFlex-VariableFont.ttf") format("truetype");
 }
 
 /* Font styling Moblile */
