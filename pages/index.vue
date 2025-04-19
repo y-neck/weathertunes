@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-background h-full min-h-screen w-full overflow-auto">
+  <div class="bg-background h-full min-h-screen w-full overflow-auto p-8 md:p-24">
     <main class="text-text mx-auto flex w-full flex-col font-bold">
       <div
         id="upper-container"
@@ -12,7 +12,7 @@
           <div id="top-box" class="flex w-full flex-row gap-5">
             <div
               id="status-box"
-              class="text-moButton grid aspect-[1/1] w-full grid-cols-2 grid-rows-2 gap-2"
+              class="text-moButton grid aspect-[1/1] w-full grid-cols-2 grid-rows-2 gap-2 md:gap-4"
             >
               <div
                 id="weather-desc-box"
@@ -60,7 +60,7 @@
           class="shadow-main bg-middle col-span-2 mb-5 flex h-full w-full flex-col items-center justify-center overflow-scroll rounded-lg p-2 text-center uppercase md:mt-0 md:h-[100%]"
         >
           <p id="spotify-text" class="m-[20%]">
-            Öffne Spotify und klicke auf “Tune In”, um dir deinen Wettermix
+            Öffne Spotify und klicke anschliessend auf “Tune In”, um dir deinen Wettermix
             generieren zu lassen. <br /><br />
             Falls die Wiedergabe nicht automatisch startet, musst du eventuell
             zuerst selbst einen Song abspielen, damit Spotify dein Gerät
@@ -160,6 +160,7 @@
         </div>
       </div>
     </main>
+    <Footer class="mt-auto" />
   </div>
 </template>
 

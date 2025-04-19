@@ -16,11 +16,6 @@ useSeoMeta({
   ogImage: "~/public/img/Favicon.ico" /* Image of page when sharing */,
 }); /* https://nuxt.com/docs/api/composables/use-seo-meta */
 
-useHead({
-  htmlAttrs: {
-    "data-theme": "fallback",
-  },
-});
 </script>
 
 <style>

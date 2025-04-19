@@ -22,7 +22,8 @@ export default defineNuxtConfig({
                 },
             ],
             htmlAttrs: {
-                lang: 'ch-de' /* Set lang attribute on <html> tag */,
+                lang: 'de-CH' /* Set lang attribute on <html> tag */,
+                'data-theme': 'fallback' /* Set data-theme attribute on <html> tag */,
             },
         },
     },

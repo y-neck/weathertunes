@@ -32,10 +32,25 @@
 
 <style scoped>
 .footer-link {
-  @apply flex h-[48px] w-full cursor-pointer items-center justify-center gap-[16px] rounded-[16px] text-center text-[#000] no-underline;
+  /* @apply bg-text shadow-main text-moButton text-dark hover:bg-dark hover:text-text flex h-[48px] w-full cursor-pointer items-center justify-center gap-[16px] rounded-[16px] text-center no-underline transition duration-200 ease-in-out; */
+  background-color: #f2f2f2;
+  color: #000;
+  text-decoration: none;
+  border: none;
+  border-radius: 25px;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  gap: 10px;
   box-shadow: 0 2px 15px -2px rgba(0, 0, 0, 0.2);
 }
 .footer-link:hover {
-  background-color: #e0e0e0;
+  color: var(--color-text);
+  background-color: var(--color-dark);
+  transition: all 0.2s ease-in-out;
 }
 </style>

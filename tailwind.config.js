@@ -8,18 +8,19 @@ export default {
         "./app.vue",
         "./error.vue",
     ],
+    fontFamily: {
+        sans: ['Roboto Flex', 'sans-serif'],
+    },
     theme: {
         extend: {
             colors: {
-                text: 'rgb(var(--color-text) / <alpha-value>)',
-                background: 'rgb(var(--color-background) / <alpha-value>)',
-                middle: 'rgb(var(--color-middle) / <alpha-value>)',
-                dark: 'rgb(var(--color-dark) / <alpha-value>)',
-                text2: 'rgb(var(--color-text2) / <alpha-value>)',
+                text: 'var(--color-text)',
+                background: 'var(--color-background)',
+                middle: 'var(--color-middle)',
+                dark: 'var(--color-dark)',
+                text2: 'var(--color-text2)',
             },
-            fontFamily: {
-                sans: ['Roboto Flex', 'sans-serif'],
-            },
+
             fontSize: {
                 sm: '0.75rem',
                 base: '1rem',
@@ -33,9 +34,6 @@ export default {
                 'main': '0 2px 15px -2px rgba(0, 0, 0, 0.2)',
             }
         }
-    },
-    extend: {	/* Extend default css values */
-        prefix: 'tw-', /* PostCSS: Add prefix for tailwind classes */
     },
 }
 
