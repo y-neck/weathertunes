@@ -57,7 +57,7 @@ export default defineEventHandler(async (event) => {
     .limit(1);
 
   // check if last entry is older than x minutes
-  let delay = 2;
+  let delay = 14.9;
   if (
     last?.length &&
     new Date().getTime() - new Date(last[0].time).getTime() < delay * 60_000
@@ -74,7 +74,7 @@ export default defineEventHandler(async (event) => {
       .insert({
         latitude: latitude,
         longitude: longitude,
-        time: new Date().toLocaleString(),
+        time: new Date().toISOString(),
         isDay: weatherData.current.isDay,
         temperature2m: Math.round(weatherData.current.temperature2m),
         windSpeed10m: weatherData.current.windSpeed10m,
@@ -84,5 +84,21 @@ export default defineEventHandler(async (event) => {
   } catch (error) {
     console.error("Error storing current weather data:", error);
   }
+
+  /* delete all entries older than x minutes */
+  let timespan = 120;
+  try {
+    const { error } = await supabase
+      .from("weather")
+      .delete()
+      .lte("time", new Date(Date.now() - timespan * 60_000).toISOString());
+
+    if (error) {
+      throw error;
+    }
+  } catch (error) {
+    console.error("Error deleting old weather data:", error);
+  }
+
   return weatherData;
 });
