@@ -1,9 +1,9 @@
 import { fetchWeatherApi } from "openmeteo";
-import { supabase } from "~/middleware/supabase-config";
+import { getSupabaseClient } from "~/server/utils/supabase-config";
 
 export default defineEventHandler(async (event) => {
+  const supabase = getSupabaseClient();
   /* extract */
-
   /**
    * @param latitude {number} – Latitude of the location in WGS84 format (Payerne, CH)
    * @param longitude {number} – Longitude of the location (Payerne, CH)
