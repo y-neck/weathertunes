@@ -9,6 +9,7 @@ useHead({
     id: "webPage",
   },
 });
+// DEBUG:
 console.log("theme:", theme.value);
 
 /** Call this to change theme:
