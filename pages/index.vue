@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-background h-full min-h-screen w-full overflow-auto p-8 md:p-24">
+  <div
+    class="bg-background h-full min-h-screen w-full overflow-auto p-8 md:p-24"
+  >
     <main class="text-text mx-auto flex w-full flex-col font-bold">
       <div
         id="upper-container"
@@ -28,13 +30,14 @@
                 id="flag-icon-box"
                 class="bg-middle shadow-main flex items-center justify-center rounded-lg"
               >
-                <lottie-player
+                <!--                 <lottie-player
                   background="transparent"
                   speed="1"
                   style="height: 100%; width: 100%"
                   loop
                   autoplay
                 ></lottie-player>
+ -->
               </div>
             </div>
             <div
@@ -60,8 +63,8 @@
           class="shadow-main bg-middle col-span-2 mb-5 flex h-full w-full flex-col items-center justify-center overflow-scroll rounded-lg p-2 text-center uppercase md:mt-0 md:h-[100%]"
         >
           <p id="spotify-text" class="m-[20%]">
-            Öffne Spotify und klicke anschliessend auf “Tune In”, um dir deinen Wettermix
-            generieren zu lassen. <br /><br />
+            Öffne Spotify und klicke anschliessend auf “Tune In”, um dir deinen
+            Wettermix generieren zu lassen. <br /><br />
             Falls die Wiedergabe nicht automatisch startet, musst du eventuell
             zuerst selbst einen Song abspielen, damit Spotify dein Gerät
             erkennt.
@@ -165,6 +168,12 @@
 </template>
 
 <script setup lang="ts">
+/* API fetching */
+const { data: weatherData } = await useFetch("/api/weatherAPI", {
+  key: "weatherData", // key to identify the request, make sure the fetch is only called once
+});
+console.log("Weather Data from API: ", weatherData.value);
+
 useSeoMeta({
   title: "weathertunes",
   ogTitle: "weathertunes" /* Title of page without branding */,
