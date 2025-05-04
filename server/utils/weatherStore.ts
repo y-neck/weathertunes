@@ -5,30 +5,6 @@ export async function storeCurrentWeather() {
   /* extract */
   const supabase = getSupabaseClient();
 
-  // FIXME: Early exit if no data is available; currently still stores new entries even if last entry is younger than x minutes
-  /* EARLY EXIT: Return last entry if it is younger than x minutes */
-  const delayMinutes = 15; // INFO: Set delay in minutes
-  // get last database entry
-  const { data: lastEntry, error: lastEntryError } = await supabase
-    .from("weather")
-    .select("time, isDay, temperature2m, windSpeed10m, weatherCode")
-    .order("time", { ascending: false })
-    .limit(1);
-
-  if (lastEntryError) {
-    console.error("Error retrieving last weather entry: ", lastEntryError);
-  }
-
-  // check if last entry is older than x minutes
-  if (lastEntry?.length) {
-    const age = Date.now() - new Date(lastEntry[0].time).getTime();
-    // If last entry is younger than x minutes, return last entry
-    if (age < delayMinutes * 60_000) {
-      console.log("Last entry returned: ", lastEntry[0]);
-      return lastEntry[0];
-    }
-  }
-
   /* Fetch current weather data from Open-Meteo API */
   /**
    * @param latitude {number} – Latitude of the location in WGS84 format (Payerne, CH)
