@@ -1,4 +1,5 @@
 <template>
+  <pre>{{ weatherData }}</pre>
   <div
     class="bg-background h-full min-h-screen w-full overflow-auto p-8 md:p-24"
   >
@@ -171,8 +172,23 @@
 /* API fetching */
 const { data: weatherData } = await useFetch("/api/weatherAPI", {
   key: "weatherData", // key to identify the request, make sure the fetch is only called once
+  // server: false,
 });
-console.log("Weather Data from API: ", weatherData.value);
+
+onMounted(() => {
+  console.log("Weather Data loaded on index: ", weatherData.value);
+});
+
+if (!weatherData.value) {
+  console.log("Weather Data not loaded on index");
+} else {
+  console.log(
+    "Weather Data loaded on index: ",
+    weatherData.value,
+    // "e.g. Temperature: ",
+    // weatherData.value.current.temperature2m
+  );
+}
 
 useSeoMeta({
   title: "weathertunes",
