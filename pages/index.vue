@@ -1,5 +1,5 @@
 <template>
-  <pre>{{ weatherData }}</pre>
+  <pre> Weather Data: {{ currentWeatherData }}</pre>
   <div
     class="bg-background h-full min-h-screen w-full overflow-auto p-8 md:p-24"
   >
@@ -45,7 +45,7 @@
               id="temp-box"
               class="text-moTemp bg-dark shadow-main rounded-main flex w-full items-center justify-center rounded-lg"
             >
-              Temp
+              {{ `${currentWeatherData?.temperature2m}°C` }}
             </div>
           </div>
           <div id="bottom-box" class="flex w-full flex-row">
@@ -169,26 +169,34 @@
 </template>
 
 <script setup lang="ts">
+import WeatherDescriptions from "~/models/WeatherDescription";
+
 /* API fetching */
-const { data: weatherData } = await useFetch("/api/weatherAPI", {
+const { data: currentWeatherData } = await useFetch("/api/weatherAPI", {
   key: "weatherData", // key to identify the request, make sure the fetch is only called once
   // server: false,
 });
 
-onMounted(() => {
-  console.log("Weather Data loaded on index: ", weatherData.value);
-});
+// define html elements
+const weatherDescriptionBox = ref("#weather-desc-box");
+const weatherIconBox = ref("#weather-icon-box");
+const windBox = ref("#flag-icon-box");
 
-if (!weatherData.value) {
-  console.log("Weather Data not loaded on index");
-} else {
-  console.log(
-    "Weather Data loaded on index: ",
-    weatherData.value,
-    // "e.g. Temperature: ",
-    // weatherData.value.current.temperature2m
-  );
+const lottiePlayer = ref("lottie-player");
+const spotifyContainer = ref("#spotify-container");
+const iframePlayer = ref("#spotify-iframe");
+
+const weatherReviewSlot1 = ref("#past-weather-icon-1");
+const weatherReviewSlot2 = ref("#past-weather-icon-2");
+const weatherReviewSlot3 = ref("#past-weather-icon-3");
+
+async function unloadCurrentWeather() {
+  /* TODO: Change weather description */
 }
+
+onMounted(() => {
+  unloadCurrentWeather();
+});
 
 useSeoMeta({
   title: "weathertunes",
