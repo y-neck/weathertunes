@@ -1,6 +1,6 @@
 <template>
   <main
-    class="bg-text mb-4 flex w-full flex-col justify-center p-4 md:flex-row md:gap-[5%]"
+    class="bg-background flex w-full flex-col justify-center p-4 md:flex-row md:gap-[5%]"
   >
     <div id="left-box" class="flex h-full w-full flex-col">
       <div class="container mx-auto text-left">

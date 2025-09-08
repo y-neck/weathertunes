@@ -10,12 +10,12 @@
       >
         <div
           id="main-box"
-          class="mb-5 flex aspect-[3/2] w-full flex-col gap-5 md:mb-0"
+          class="mb-5 flex aspect-3/2 w-full flex-col gap-5 md:mb-0"
         >
           <div id="top-box" class="flex w-full flex-row gap-5">
             <div
               id="status-box"
-              class="text-moButton grid aspect-[1/1] w-full grid-cols-2 grid-rows-2 gap-2 md:gap-4"
+              class="text-moButton grid aspect-square w-full grid-cols-2 grid-rows-2 gap-2 md:gap-4"
             >
               <div
                 id="weather-desc-box"
@@ -61,7 +61,7 @@
         <!-- Adjusted div for Spotify iframe -->
         <div
           id="spotify-container"
-          class="shadow-main bg-middle col-span-2 mb-5 flex h-full w-full flex-col items-center justify-center overflow-scroll rounded-lg p-2 text-center uppercase md:mt-0 md:h-[100%]"
+          class="shadow-main bg-middle col-span-2 mb-5 flex h-full w-full flex-col items-center justify-center overflow-scroll rounded-lg p-2 text-center uppercase md:mt-0 md:h-full"
         >
           <p id="spotify-text" class="m-[20%]">
             Öffne Spotify und klicke anschliessend auf “Tune In”, um dir deinen
@@ -164,7 +164,7 @@
         </div>
       </div>
     </main>
-    <Footer class="mt-auto" />
+    <Footer />
   </div>
 </template>
 

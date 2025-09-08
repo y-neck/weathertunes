@@ -1,10 +1,57 @@
-@import "tailwindcss";
-@tailwind utilities;
+@font-face{
+  font-family: 'Roboto Flex';
+  src: url('/fonts/RobotoFlex-VariableFont.ttf')format('truetype');
+  font-variation-settings:
+    "slnt" 0,
+    /* Slant */ "wdth" 50,
+    /* Width */ "wght" 550,
+    /* Weight */ "GRAD" 50,
+    /* Grad */ "XOPQ" 96,
+    /* Parametric Thick Stroke */ "XTRA" 468,
+    /* Parametric Counter Width */ "YOPQ" 79,
+    /* Parametric Thin Stroke */ "YTAS" 750,
+    /* Parametric Ascender Height */ "YTDE" -203,
+    /* Parametric Descender Depth */ "YTFI" 738,
+    /* Parametric Figure Height */ "YTLC" 514,
+    /* Parametric Lowercase Height */ "YTUC" 712,
+    /* Parametric Uppercase Height  */ "opsz" 44;
+  /* Optical Size */
+}
+
+@import 'tailwindcss' layer(utilities);
+@import 'tailwindcss/utilities' layer(utilities);
+
+@layer utilities{
+  .font-roboto-flex{
+    font-family: 'RobotoFlex', sans-serif;
+  }
+}
 
 @theme {
-    --color-text: rgb(242, 242, 242);
-    --color-background: rgb(26, 26, 26);
-    --color-middle: rgb(89, 89, 89);
-    --color-dark: rgb(51, 51, 51);
-    --color-text2: rgb(242, 242, 242);
+  --font-roboto-flex: 'RobotoFlex', sans-serif;
+  --color-text: rgb(242, 242, 242);
+  --color-background: rgb(26, 26, 26);
+  --color-middle: rgb(89, 89, 89);
+  --color-dark: rgb(51, 51, 51);
+  --color-text2: rgb(242, 242, 242);
+}
+@layer base{
+  * {
+    font-family: var(--font-roboto-flex);
+    font-variation-settings:
+      "slnt" 0,
+      /* Slant */ "wdth" 50,
+      /* Width */ "wght" 550,
+      /* Weight */ "GRAD" 50,
+      /* Grad */ "XOPQ" 96,
+      /* Parametric Thick Stroke */ "XTRA" 468,
+      /* Parametric Counter Width */ "YOPQ" 79,
+      /* Parametric Thin Stroke */ "YTAS" 750,
+      /* Parametric Ascender Height */ "YTDE" -203,
+      /* Parametric Descender Depth */ "YTFI" 738,
+      /* Parametric Figure Height */ "YTLC" 514,
+      /* Parametric Lowercase Height */ "YTUC" 712,
+      /* Parametric Uppercase Height  */ "opsz" 44;
+    /* Optical Size */    
+  }
 }

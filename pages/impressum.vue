@@ -1,13 +1,17 @@
 <template>
   <main class="bg-background flex w-full flex-col justify-center gap-8 p-4">
-    <div><h1 class="text-text text-4xl font-bold">Impressum</h1></div>
+    <div>
+      <h1 class="text-text font-roboto-flex text-4xl font-bold">Impressum</h1>
+    </div>
 
     <img
       src="~/public/img/groupphoto/teambild.webp"
       alt="Group picture"
       class="pointer-events-none w-full max-w-4xl self-center rounded-lg shadow-lg"
     />
-    <div class="bg-background mx-auto mt-5 flex flex-col gap-4 p-5 text-left">
+    <div
+      class="bg-background text-text mx-auto mt-5 flex flex-col gap-4 p-5 text-left"
+    >
       <p class="text-text">
         Entwickelt und gestaltet wurde Weathertunes von Cla Töny, Joél Schaller
         und Yannick Spriessler im Rahmen ihres Bachelorstudiums in Multimedia
@@ -25,19 +29,19 @@
       </p>
     </div>
 
-    <div class="mt-4 mb-4 w-full p-5 leading-none">
-      <h3 class="text-text mb-2 text-2xl font-semibold">V1</h3>
-      <h3 class="text-text mb-2 text-2xl font-semibold">Master of Frontend</h3>
-      <p class="text-text mb-6">Cla Töny</p>
+    <div class="mt-4 mb-4 w-full p-5 leading-none text-text">
+      <h3 class=" mb-2 text-2xl font-semibold">V1</h3>
+      <h3 class=" mb-2 text-2xl font-semibold">Master of Frontend</h3>
+      <p class=" mb-6">Cla Töny</p>
 
-      <h3 class="text-text mb-2 text-2xl font-semibold">Head of Design</h3>
-      <p class="text-text mb-6">Joél Schaller</p>
+      <h3 class=" mb-2 text-2xl font-semibold">Head of Design</h3>
+      <p class=" mb-6">Joél Schaller</p>
 
-      <h3 class="text-text mb-2 text-2xl font-semibold">Backend Magician</h3>
-      <p class="text-text">Yannick Spriessler</p>
+      <h3 class=" mb-2 text-2xl font-semibold">Backend Magician</h3>
+      <p class="">Yannick Spriessler</p>
     </div>
-    <div class="mt-4 mb-4 w-full p-5 leading-none">
-      <h2 class="text-text text-4xl font-bold">Datenschutz</h2>
+    <div class="text-text mt-4 mb-4 w-full p-5 text-pretty tracking-wide leading-7">
+      <h2 class="text-4xl font-bold">Datenschutz</h2
       <br />
       <p>Zuletzt aktualisiert am: 15.04.2025</p>
       <br />

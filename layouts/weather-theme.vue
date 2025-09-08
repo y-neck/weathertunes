@@ -23,7 +23,7 @@ console.log("theme:", theme.value);
 </script>
 
 <template>
-  <div class="border-box font-[Roboto Flex] flex min-h-screen w-full flex-col">
+  <div class="border-box flex min-h-screen w-full flex-col">
     <slot />
   </div>
 </template>
