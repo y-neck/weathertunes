@@ -1,4 +1,5 @@
 <template>
+  <!-- DEBUG: -->
   <pre> Weather Data: {{ currentWeatherData }}</pre>
   <div
     class="bg-background h-full min-h-screen w-full overflow-auto p-8 md:p-24"
@@ -170,12 +171,8 @@
 
 <script setup lang="ts">
 import WeatherDescriptions from "~/models/WeatherDescription";
-
-/* API fetching */
-const { data: currentWeatherData } = await useFetch("/api/weatherAPI", {
-  key: "weatherData", // key to identify the request, make sure the fetch is only called once
-  // server: false,
-});
+// import { loadCurrentWeather } from "~/composables/unloadWeather";
+import { onMounted, ref } from "vue";
 
 // define html elements
 const weatherDescriptionBox = ref("#weather-desc-box");
@@ -190,13 +187,21 @@ const weatherReviewSlot1 = ref("#past-weather-icon-1");
 const weatherReviewSlot2 = ref("#past-weather-icon-2");
 const weatherReviewSlot3 = ref("#past-weather-icon-3");
 
-async function unloadCurrentWeather() {
-  /* TODO: Change weather description */
+/* fetch api data */
+const fetchedWeatherData = ref(null);
+try {
+  fetchedWeatherData.value = await loadCurrentWeather();
+  // DEBUG:
+  console.log("Index: currentWeatherData loaded:", fetchedWeatherData.value);
+} catch (error) {
+  console.error(
+    "Index: Unexpected error fetching current weather data:",
+    error,
+  );
 }
+const currentWeatherData = fetchedWeatherData.value;
 
-onMounted(() => {
-  unloadCurrentWeather();
-});
+
 
 useSeoMeta({
   title: "weathertunes",
