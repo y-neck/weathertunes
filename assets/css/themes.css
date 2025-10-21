@@ -32,7 +32,7 @@
         --color-text2: rgb(242, 242, 242);
     }
 
-    [data-theme="näbu"] {
+    [data-theme="naebu"] {
         --color-text: rgb(242, 242, 242);
         --color-background: rgb(170, 177, 178);
         --color-middle: rgb(85, 88, 89);
@@ -48,7 +48,7 @@
         --color-text2: rgb(242, 242, 242);
     }
 
-    [data-theme="räge"] {
+    [data-theme="raege"] {
         --color-text: rgb(242, 242, 242);
         --color-background: rgb(89, 108, 128);
         --color-middle: rgb(46, 61, 77);

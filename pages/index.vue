@@ -1,6 +1,6 @@
 <template>
   <!-- DEBUG: -->
-  <pre> Weather Data: {{ currentWeatherData }}</pre>
+  <!-- <pre> Weather Data: {{ currentWeather }}</pre> -->
   <div
     class="bg-background h-full min-h-screen w-full overflow-auto p-8 md:p-24"
   >
@@ -21,7 +21,7 @@
               <div
                 id="weather-desc-box"
                 class="shadow-main bg-middle col-span-2 flex items-center justify-center rounded-lg uppercase"
-              ></div>
+              >{{ currentWeather?.weatherDescription }}</div>
               <div
                 id="weather-icon-box"
                 class="bg-middle shadow-main flex items-center justify-center rounded-lg"
@@ -44,9 +44,9 @@
             </div>
             <div
               id="temp-box"
-              class="text-moTemp bg-dark shadow-main rounded-main flex w-full items-center justify-center rounded-lg"
+              class="bg-dark shadow-main rounded-main flex w-full items-center justify-center rounded-lg"
             >
-              {{ `${currentWeatherData?.temperature2m}°C` }}
+              {{ `${currentWeather?.temperature2m}°C` }}
             </div>
           </div>
           <div id="bottom-box" class="flex w-full flex-row">
@@ -170,51 +170,35 @@
 </template>
 
 <script setup lang="ts">
-import WeatherDescriptions from "~/models/WeatherDescription";
-// import { loadCurrentWeather } from "~/composables/unloadWeather";
-import { onMounted, ref } from "vue";
-
 // define html elements
-const weatherDescriptionBox = ref("#weather-desc-box");
-const weatherIconBox = ref("#weather-icon-box");
-const windBox = ref("#flag-icon-box");
+const weatherDescriptionBox = ref('#weather-desc-box');
+const weatherIconBox = ref('#weather-icon-box');
+const windBox = ref('#flag-icon-box');
 
-const lottiePlayer = ref("lottie-player");
-const spotifyContainer = ref("#spotify-container");
-const iframePlayer = ref("#spotify-iframe");
+const lottiePlayer = ref('lottie-player');
+const spotifyContainer = ref('#spotify-container');
+const iframePlayer = ref('#spotify-iframe');
 
-const weatherReviewSlot1 = ref("#past-weather-icon-1");
-const weatherReviewSlot2 = ref("#past-weather-icon-2");
-const weatherReviewSlot3 = ref("#past-weather-icon-3");
+const weatherReviewSlot1 = ref('#past-weather-icon-1');
+const weatherReviewSlot2 = ref('#past-weather-icon-2');
+const weatherReviewSlot3 = ref('#past-weather-icon-3');
 
-/* fetch api data */
-const fetchedWeatherData = ref(null);
-try {
-  fetchedWeatherData.value = await loadCurrentWeather();
-  // DEBUG:
-  console.log("Index: currentWeatherData loaded:", fetchedWeatherData.value);
-} catch (error) {
-  console.error(
-    "Index: Unexpected error fetching current weather data:",
-    error,
-  );
-}
-const currentWeatherData = fetchedWeatherData.value;
-
-
+/* use fetched data */
+const { data: currentWeather } = await currentWeatherData();
+console.log('currentWeather mapped: ', currentWeather);
 
 useSeoMeta({
-  title: "weathertunes",
-  ogTitle: "weathertunes" /* Title of page without branding */,
+  title: 'weathertunes',
+  ogTitle: 'weathertunes' /* Title of page without branding */,
   description:
-    "Alle 30 Minuten überprüft unsere Wetterfee das Wetter und schickt dieses an unsere Witterungs-DJs. Diese kreieren eine Playlist aus dem Wetter angepassten Songs und stellen dir diese per Spotify zur Verfügung. Somit kannst du Sonne, Regen und Schnee mit den richtigen Tunes geniessen.",
+    'Alle 30 Minuten überprüft unsere Wetterfee das Wetter und schickt dieses an unsere Witterungs-DJs. Diese kreieren eine Playlist aus dem Wetter angepassten Songs und stellen dir diese per Spotify zur Verfügung. Somit kannst du Sonne, Regen und Schnee mit den richtigen Tunes geniessen.',
   ogDescription:
-    "Alle 30 Minuten überprüft unsere Wetterfee das Wetter und schickt dieses an unsere Witterungs-DJs. Diese kreieren eine Playlist aus dem Wetter angepassten Songs und stellen dir diese per Spotify zur Verfügung. Somit kannst du Sonne, Regen und Schnee mit den richtigen Tunes geniessen.",
-  robots: "index, follow",
+    'Alle 30 Minuten überprüft unsere Wetterfee das Wetter und schickt dieses an unsere Witterungs-DJs. Diese kreieren eine Playlist aus dem Wetter angepassten Songs und stellen dir diese per Spotify zur Verfügung. Somit kannst du Sonne, Regen und Schnee mit den richtigen Tunes geniessen.',
+  robots: 'index, follow',
 }); /* https://nuxt.com/docs/api/composables/use-seo-meta */
 
 definePageMeta({
-  layout: "weather-theme",
+  layout: 'weather-theme',
 });
 </script>
 

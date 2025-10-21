@@ -1,5 +1,5 @@
 // Fetch and process weather data from Open-Meteo API
-import { fetchWeatherApi } from "openmeteo";
+import { fetchWeatherApi } from 'openmeteo';
 
 export async function getCurrentWeather() {
   /* Fetch current weather data from Open-Meteo API */
@@ -12,20 +12,20 @@ export async function getCurrentWeather() {
   const params = {
     latitude: 46.8219,
     longitude: 6.9382,
-    current: ["temperature_2m", "is_day", "wind_speed_10m", "weather_code"],
-    timezone: "Europe/Berlin",
+    current: ['temperature_2m', 'is_day', 'wind_speed_10m', 'weather_code'],
+    timezone: 'Europe/Berlin',
   };
-  const url = "https://api.open-meteo.com/v1/forecast"; // API endpoint base url
+  const url = 'https://api.open-meteo.com/v1/forecast'; // API endpoint base url
 
   let responses;
   try {
     responses = await fetchWeatherApi(url, params); // Fetch assembled API request url
   } catch (error) {
-    console.error("Error fetching current weather data from API:", error);
+    console.error('Error fetching current weather data from API:', error);
     return null;
   }
   if (!responses || !responses[0]) {
-    console.error("Invalid response from weather API");
+    console.error('Invalid response from weather API');
     return null; // Handle empty or invalid response
   }
 
@@ -42,7 +42,7 @@ export async function getCurrentWeather() {
     current: {
       time: new Date(Date.now() + 2 * 60 * 60 * 1000)
         .toISOString()
-        .replace(/[ZT]/g, " ["), // INFO: Adjust to CET/CEST timezone (UTC+2)
+        .replace(/[ZT]/g, ' ['), // INFO: Adjust to CET/CEST timezone (UTC+2)
       latitude: response.latitude,
       longitude: response.longitude,
       temperature2m: Math.round(current.variables(0)!.value()),
@@ -51,6 +51,6 @@ export async function getCurrentWeather() {
       weatherCode: current.variables(3)!.value(),
     },
   };
-  console.log("Fetched current weather data from API: ", weatherData);
+  console.log('Fetched current weather data from API: ', weatherData);
   return weatherData.current;
 }
