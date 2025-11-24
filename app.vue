@@ -22,7 +22,7 @@ useSeoMeta({
 /* Load Font */
 @font-face {
   font-family: "Roboto Flex";
-  src: url("assets/fonts/RobotoFlex-VariableFont.ttf") format("truetype");
+  src: url("/fonts/RobotoFlex-VariableFont.ttf") format("truetype");
 }
 
 /* Font styling Moblile */
