@@ -32,7 +32,8 @@
                 id="flag-icon-box"
                 class="bg-middle shadow-main flex items-center justify-center rounded-lg"
               >
-                <WindSpeedIcon :src="`/img/animations/${currentWeather?.windSpeedIcon}.json`" />
+              <!-- DEPRECATED <WindSpeedIcon :src="`${currentWeather?.windSpeedIcon}`" /> -->
+               <img v-if="currentWeather?.windSpeedIcon" :src="`/lottie/${currentWeather?.windSpeedIcon}.gif`" alt="Piktogramm des aktuellen Wetters" class="h-full w-auto " />
               </div>
             </div>
             <div

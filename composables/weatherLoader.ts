@@ -31,19 +31,3 @@ export async function loadCurrentWeather() {
     return null;
   }
 }
-
-// // get past weather data from supabase
-// const supabase = getSupabaseClient();
-// try {
-//   const { data, error } = await supabase
-//     .from("weather")
-//     .select("time, isDay, temperature2m, windSpeed10m, weatherCode")
-//     .order("time", { ascending: false })
-//     .limit(1)
-//     .single();
-
-//   console.log("Past weather Data from weatherLoader: ", data);
-//   return data;
-// } catch (error) {
-//   console.log("Error retrieving current weather from database: ", error);
-// }
