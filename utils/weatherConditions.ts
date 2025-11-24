@@ -33,20 +33,20 @@ export default function weatherCodeMapper(
     case 0:
       weatherDescription = 'Klar';
       theme = day ? 'klar' : 'nacht'; // switch theme based on day/night
-      weatherIcon = day ? 'Icons_Neg_Klar_Tag' : 'Icons_Neg_Klar_Nacht';
+      weatherIcon = day ? 'neg/Icons_Neg_Klar_Tag' : 'neg/Icons_Neg_Klar_Nacht';
       break;
     case 1:
     case 2:
     case 3:
       weatherDescription = 'Wulche';
       theme = 'wulche';
-      weatherIcon = 'Icons_Neg_Wulche';
+      weatherIcon = 'neg/Icons_Neg_Wulche';
       break;
     case 45:
     case 48:
       weatherDescription = 'Näbu';
       theme = 'naebu';
-      weatherIcon = 'Icons_Neg_Naebu';
+      weatherIcon = 'neg/Icons_Neg_Naebu';
       break;
     case 51:
     case 53:
@@ -55,7 +55,7 @@ export default function weatherCodeMapper(
     case 57:
       weatherDescription = 'Nisu';
       theme = 'nisu';
-      weatherIcon = 'Icons_Neg_Nisu';
+      weatherIcon = 'neg/Icons_Neg_Nisu';
       break;
     case 61:
     case 63:
@@ -67,7 +67,7 @@ export default function weatherCodeMapper(
     case 82:
       weatherDescription = 'Räge';
       theme = 'raege';
-      weatherIcon = 'Icons_Neg_Raege';
+      weatherIcon = 'neg/Icons_Neg_Raege';
       break;
     case 71:
     case 73:
@@ -77,14 +77,14 @@ export default function weatherCodeMapper(
     case 86:
       weatherDescription = 'Schnee';
       theme = 'schnee';
-      weatherIcon = 'Icons_Pos_Schnee';
+      weatherIcon = 'pos/Icons_Pos_Schnee';
       break;
     case 95:
     case 96:
     case 99:
       weatherDescription = 'Sturm';
       theme = 'sturm';
-      weatherIcon = 'Icons_Neg_Sturm';
+      weatherIcon = 'neg/Icons_Neg_Sturm';
       break;
   }
 

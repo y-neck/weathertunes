@@ -1,6 +1,6 @@
 <template>
   <!-- DEBUG: -->
-  <!-- <pre> Weather Data: {{ currentWeather }}</pre> -->
+  <pre> Weather Data: {{ currentWeather }}</pre>
   <div
     class="bg-background h-full min-h-screen w-full overflow-auto p-8 md:p-24"
   >
@@ -20,31 +20,24 @@
             >
               <div
                 id="weather-desc-box"
-                class="shadow-main bg-middle col-span-2 flex items-center justify-center rounded-lg uppercase"
+                class="shadow-main bg-middle col-span-2 flex items-center justify-center rounded-lg uppercase text-5xl md:text-4xl lg:text-6xl"
               >{{ currentWeather?.weatherDescription }}</div>
               <div
                 id="weather-icon-box"
-                class="bg-middle shadow-main flex items-center justify-center rounded-lg"
+                class="bg-middle shadow-main flex items-center justify-center rounded-lg p-3 lg:p-6"
               >
-                <img src="" alt="Wätterlag" class="h-full w-auto" />
+                <img v-if="currentWeather?.weatherIcon" :src="`/img/weather_icons/${currentWeather?.weatherIcon}.png`" alt="Piktogramm des aktuellen Wetters" class="h-full w-auto " />
               </div>
               <div
                 id="flag-icon-box"
                 class="bg-middle shadow-main flex items-center justify-center rounded-lg"
               >
-                <!--                 <lottie-player
-                  background="transparent"
-                  speed="1"
-                  style="height: 100%; width: 100%"
-                  loop
-                  autoplay
-                ></lottie-player>
- -->
+                <WindSpeedIcon :src="`/img/animations/${currentWeather?.windSpeedIcon}.json`" />
               </div>
             </div>
             <div
               id="temp-box"
-              class="bg-dark shadow-main rounded-main flex w-full items-center justify-center rounded-lg"
+              class="bg-dark shadow-main rounded-main flex w-full items-center justify-center rounded-lg text-8xl"
             >
               {{ `${currentWeather?.temperature2m}°C` }}
             </div>
@@ -52,7 +45,7 @@
           <div id="bottom-box" class="flex w-full flex-row">
             <button
               id="play-button"
-              class="bg-text shadow-main text-moButton text-dark hover:bg-dark hover:text-text flex h-full w-full justify-center rounded-lg transition duration-200 ease-in-out"
+              class="bg-text shadow-main text-moButton text-dark hover:bg-dark hover:text-text flex h-full w-full justify-center rounded-lg transition duration-200 ease-in-out text-4xl"
             >
               TUNE IN
             </button>
@@ -171,11 +164,6 @@
 
 <script setup lang="ts">
 // define html elements
-const weatherDescriptionBox = ref('#weather-desc-box');
-const weatherIconBox = ref('#weather-icon-box');
-const windBox = ref('#flag-icon-box');
-
-const lottiePlayer = ref('lottie-player');
 const spotifyContainer = ref('#spotify-container');
 const iframePlayer = ref('#spotify-iframe');
 
@@ -185,7 +173,26 @@ const weatherReviewSlot3 = ref('#past-weather-icon-3');
 
 /* use fetched data */
 const { data: currentWeather } = await currentWeatherData();
-console.log('currentWeather mapped: ', currentWeather);
+
+/* update weather theme */
+// set document attribute
+useHead({
+  htmlAttrs: {
+    'data-theme': currentWeather?.value?.theme ?? 'fallback',
+    lang: 'de-CH',
+    id: 'webPage',
+  },
+});
+// set data theme globally to keep layout/watchers in sync
+const theme = useState('theme', () => 'fallback');
+if (currentWeather?.value?.theme) {
+  // run during ssr and persist to client via nuxt state
+  theme.value = currentWeather.value.theme;
+}
+// update client-side in case of later changes
+if (import.meta.client) {
+  document.documentElement.setAttribute('data-theme', theme.value);
+}
 
 useSeoMeta({
   title: 'weathertunes',

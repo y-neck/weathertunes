@@ -1,15 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
-  compatibilityDate: "2024-11-01",
+  compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  css: ["~/assets/css/main.css", "~/assets/css/themes.css"],
-  plugins: ["~/plugins/preamble.client.ts"],
+  css: ['~/assets/css/main.css', '~/assets/css/themes.css'],
+  plugins: ['~/plugins/preamble.client.ts'],
   vite: {
     plugins: [tailwindcss()],
   },
-  modules: ["@nuxtjs/supabase"],
+  modules: ['@nuxtjs/supabase'],
   runtimeConfig: {
     /* https://supabase.nuxtjs.org/get-started */
     public: {
@@ -22,12 +22,12 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      charset: "utf-8",
-      viewport: "width=device-width, initial-scale=1",
-      title: "Weathertunes",
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      title: 'Weathertunes',
       htmlAttrs: {
-        lang: "de-CH" /* Set lang attribute on <html> tag */,
-        "data-theme": "fallback" /* Set data-theme attribute on <html> tag */,
+        lang: 'de-CH' /* Set lang attribute on <html> tag */,
+        'data-theme': 'fallback' /* Set data-theme attribute on <html> tag */,
       },
     },
   },
