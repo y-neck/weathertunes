@@ -1,8 +1,8 @@
 /* map weather data to the corresponding visuals and descriptions */
 /**
- * define the structure of the returned WeatherProperties object
+ * define the structure of the returned CustomWeatherProperties object
  */
-export interface WeatherProperties {
+export interface CustomWeatherProperties {
   weatherDescription: string;
   theme: string;
   weatherIcon: string;
@@ -14,14 +14,14 @@ export interface WeatherProperties {
  * @param {number} weatherCode – the weather code provided by the Open-Meteo API
  * @param {boolean| number} isDay – indicates if it's day (1) or night (0)
  * @param {number} windSpeed10m - the wind speed at 10m in km/h
- * @return {WeatherProperties} – an object containing weather description, theme, and icon
+ * @return {CustomWeatherProperties} – an object containing weather description, theme, and icon
  */
 export default function weatherCodeMapper(
   weatherCode: number,
   isDay: boolean | number,
   windSpeed10m: number,
   time: string,
-): WeatherProperties {
+): CustomWeatherProperties {
   let weatherDescription = 'Wätter';
   let theme = 'fallback';
   let weatherIcon = '';
