@@ -11,16 +11,20 @@ export interface CustomWeatherProperties {
 
 /**
  * map weather code to weather description
- * @param {number} weatherCode – the weather code provided by the Open-Meteo API
+ * @param {number} latitude - the latitude of the location for which the weather data is being mapped
+ * @param {number} longitude - the longitude of the location for which the weather data is being mapped
  * @param {boolean| number} isDay – indicates if it's day (1) or night (0)
+ * @param {number} weatherCode – the weather code provided by the Open-Meteo API
  * @param {number} windSpeed10m - the wind speed at 10m in km/h
  * @return {CustomWeatherProperties} – an object containing weather description, theme, and icon
  */
 export default function weatherCodeMapper(
-  weatherCode: number,
-  isDay: boolean | number,
-  windSpeed10m: number,
   time: string,
+  latitude: number,
+  longitude: number,
+  isDay: boolean | number,
+  weatherCode: number,
+  windSpeed10m: number,
 ): CustomWeatherProperties {
   let weatherDescription = 'Wätter';
   let theme = 'fallback';

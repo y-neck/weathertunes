@@ -174,6 +174,7 @@ const weatherReviewSlot3 = ref('#past-weather-icon-3');
 
 /* use fetched data */
 const { data: currentWeather } = await currentWeatherData();
+// TODO #3: await pastWeatherData
 
 /* update weather theme */
 // set document attribute
