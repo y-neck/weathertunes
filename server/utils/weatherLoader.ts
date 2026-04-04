@@ -49,7 +49,7 @@ export async function loadCurrentWeather() {
 
 // get past weather data from supabase
 export async function storePastWeather(currentWeatherData: CurrentWeatherData) {
-  // // DEBUG:
+  // // DEBUG: check if currentWeatherData is being passed correctly to the function
   // console.log(
   //   'storePastWeather called with currentWeatherData: ',
   //   currentWeatherData,
@@ -64,11 +64,29 @@ export async function storePastWeather(currentWeatherData: CurrentWeatherData) {
         'weatherLoader storePastWeather: currentWeatherData time is unavailable.',
       );
     }
-    const currentWeatherTime: Date = new Date(currentWeatherData.time);
-    const currentWeatherTimestamp: number = currentWeatherTime.getTime(); // in milliseconds
+    // enforce utc parsing to avoid timezone issues
+    const normaliseToUtc: (timestamp: string) => number = (
+      timestamp: string,
+    ): number => {
+      const isUtcDesignated: boolean =
+        timestamp.endsWith('Z') || /[+-]\d{2}:\d{2}$/.test(timestamp); // check if timestamp is UTC
+      const utcString: string = isUtcDesignated ? timestamp : `${timestamp}Z`; // ensure UTC designation
+      const currentTimeMs: number = new Date(utcString).getTime(); // create new date object and get time in milliseconds
+
+      if (Number.isNaN(currentTimeMs)) {
+        throw new Error(
+          `weatherLoader storePastWeather: Invalid timestamp — could not parse "${timestamp}" as UTC.`,
+        );
+      }
+      return currentTimeMs;
+    };
+
+    const currentWeatherTimestamp: number = normaliseToUtc(
+      currentWeatherData.time,
+    );
+
     // get the latest weather entry from the database
     const supabase = getSupabaseClient();
-
     const { data: latestWeatherEntry, error } = await supabase
       .from('weather')
       .select('time')
@@ -82,16 +100,26 @@ export async function storePastWeather(currentWeatherData: CurrentWeatherData) {
         error,
       );
     }
+
     // check if the entry should be stored
     let shouldStore: boolean = false;
     if (!latestWeatherEntry) {
       shouldStore = true;
     } else {
-      const lastEntryTimestamp: number = new Date(
+      const lastEntryTimestamp: number = normaliseToUtc(
         latestWeatherEntry.time,
-      ).getTime();
-      const age: number = currentWeatherTimestamp - lastEntryTimestamp; //numeric time comparison in milliseconds
-      shouldStore = age >= storageDelay;
+      ); // get utc-normalized timestamp of last entry in milliseconds
+      const agecurrentTimeMs: number =
+        currentWeatherTimestamp - lastEntryTimestamp; //numeric time comparison in milliseconds
+      const ageSeconds: number = Math.round(agecurrentTimeMs / 1000);
+
+      // // DEBUG:
+      // console.log(
+      //   `storePastWeather — age: ${ageSeconds}s | threshold: ${storageDelay / 1000}s | shouldStore: ${agecurrentTimeMs >= storageDelay}`,
+      // );
+
+      // store entry if the age of the last entry exceeds the storage delay threshold
+      shouldStore = agecurrentTimeMs >= storageDelay;
     }
 
     if (!shouldStore) {
@@ -100,7 +128,7 @@ export async function storePastWeather(currentWeatherData: CurrentWeatherData) {
     // store the current weather data as a new entry in the database
     const { error: insertError } = await supabase.from('weather').insert({
       ...currentWeatherData,
-      time: new Date(currentWeatherTimestamp).toISOString(),
+      time: new Date(currentWeatherTimestamp).toISOString(), // convert timestamp to ISO string, ensuring consistent formatting ending with 'Z' for UTC
     });
     if (insertError) {
       console.error('Supabase insert error full object:', insertError);
